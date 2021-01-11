@@ -23,7 +23,7 @@ functional-test:
   stage: preprod
   script:
     - docker pull postman/newman
-    - docker run -user $(id -u):$(id -g) -v $(pwd) -t postman/newman run tests/postman_collection.json -e tests/postman_environment.json
+    - docker run -user $(id -u):$(id -g) -v $(pwd):/src/ -t postman/newman run /src/tests/postman_collection.json -e /src/tests/postman_environment.json
 
 dast-tool_zap-basic:
   stage: preprod
