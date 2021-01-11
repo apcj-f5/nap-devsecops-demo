@@ -1,0 +1,69 @@
+image: docker:latest
+
+services:
+  - docker:dind
+
+stages:
+  - build
+  - test
+  - preprod
+  - prod
+
+build-code:
+  stage: build
+  script:
+   - echo "This is a build step"
+
+unit-test-code:
+  stage: test
+  script:
+   - echo "This is a build step"
+
+functional-test:
+  stage: preprod
+  before_script:
+    - node --version
+    - npm --version
+    - node_modules/.bin/newman --version
+  script:
+   - node_modules/.bin/newman run tests/postman_collection.json -e tests/postman_environment.json
+
+dast-tool_zap-basic:
+  stage: preprod
+  needs: functional-test
+  script:
+    - docker pull owasp/zap2docker-stable
+    - docker run --user $(id -u):$(id -g) -w /zap -v $(pwd):/zap/wrk:rw --rm owasp/zap2docker-stable zap-baseline.py -t http://hapi.f5labs.dev -J dast-tool_zap_baseline_scan-results.json
+  rules: 
+    - if: $DAST != "full"
+      when: always
+  after_script:
+    - docker rmi owasp/zap2docker-stable  # clean up the image to save the disk space
+  artifacts:
+    paths: [dast-tool_zap_baseline_scan-results.json]
+    when: always
+    expire_in: one week
+  allow_failure: true
+
+deploy_to_prod:
+  stage: prod
+  script:
+    - echo "This is a deploy step"
+  when: always # Continuous Deployment
+
+dast-tool_zap-full:
+  stage: prod
+  needs: deploy_to_prod
+  script:
+    - docker pull owasp/zap2docker-stable
+    - docker run --user $(id -u):$(id -g) -w /zap -v $(pwd):/zap/wrk:rw --rm owasp/zap2docker-stable zap-full-scan.py -t http://hapi.f5labs.dev/fhir -J dast-tool_zap_full_scan-results.json
+  rules: 
+    - if: $DAST == "full"
+      when: always
+  after_script:
+    - docker rmi owasp/zap2docker-stable  # clean up the image to save the disk space
+  artifacts:
+    paths: [dast-tool_zap_full_scan-results.json]
+    when: always
+    expire_in: one week
+  allow_failure: true
