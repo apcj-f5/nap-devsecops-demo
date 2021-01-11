@@ -23,7 +23,12 @@ functional-test:
   stage: preprod
   script:
     - docker pull postman/newman
-    - docker run --user $(id -u):$(id -g) $(pwd)/tests:/etc/newman -t postman/newman run postman_collection.json -e postman_environment.json
+    - docker run --user $(id -u):$(id -g) $(pwd)/tests:/etc/newman -t postman/newman run postman_collection.json -e postman_environment.json --reporters cli,json --reporter-json-export functional-test-tool_newman_results.json
+  artifacts:
+    paths: [functional-test-tool_newman_results.json]
+    when: always
+    expire_in: one week
+  allow_failure: false
 
 dast-tool_zap-basic:
   stage: preprod
