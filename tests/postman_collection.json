@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "Search all CodeSystems, return their names and urls Copy",
+			"name": "Search all CodeSystems, return their names and urls",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -29,7 +29,7 @@
 			"response": []
 		},
 		{
-			"name": "Lookup a SNOMED code",
+			"name": "Lookup a SNOMED code (in JSON)",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -140,7 +140,7 @@
 			"response": []
 		},
 		{
-			"name": "Read a specific version of a Concept Map, in XML Copy",
+			"name": "Read a specific version of a Concept Map (in XML)",
 			"request": {
 				"method": "GET",
 				"header": [],
