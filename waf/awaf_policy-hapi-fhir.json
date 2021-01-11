@@ -1,6 +1,6 @@
 {
     "policy": {
-        "name": "policy-api-fhir",
+        "name": "policy-hapi-fhir",
         "description": "HAPI Policy for FHIR",
         "template": {
             "name": "POLICY_TEMPLATE_API_SECURITY"
@@ -12,9 +12,6 @@
             },
             {
                 "serverTechnologyName": "Unix/Linux"
-            },
-            {
-                "serverTechnologyName": "MongoDB"
             }
         ],
         "signature-settings": {
