@@ -21,12 +21,9 @@ unit-test-code:
 
 functional-test:
   stage: preprod
-  before_script:
-    - node --version
-    - npm --version
-    - node_modules/.bin/newman --version
   script:
-   - node_modules/.bin/newman run tests/postman_collection.json -e tests/postman_environment.json
+    - docker pull postman/newman
+    - docker run -t postman/newman run tests/postman_collection.json -e tests/postman_environment.json
 
 dast-tool_zap-basic:
   stage: preprod
