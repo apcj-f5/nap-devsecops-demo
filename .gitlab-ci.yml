@@ -30,7 +30,7 @@ dast-tool_zap-basic:
   stage: preprod
   script:
     - docker pull owasp/zap2docker-stable
-    - docker run --user $(id -u):$(id -g) -w /zap -v $(pwd):/zap/wrk:rw --rm owasp/zap2docker-stable zap-baseline.py -t http://hapi.f5labs.dev/fhir -J dast-tool_zap_baseline_scan-results.json
+    - docker run --user $(id -u):$(id -g) -w /zap -v $(pwd):/zap/wrk:rw --rm owasp/zap2docker-stable zap-baseline.py -t http://hapi.f5labs.dev:8080/fhir -J dast-tool_zap_baseline_scan-results.json
   rules: 
     - if: $DAST != "full"
       when: always
@@ -52,7 +52,7 @@ dast-tool_zap-full:
   stage: prod
   script:
     - docker pull owasp/zap2docker-stable
-    - docker run --user $(id -u):$(id -g) -w /zap -v $(pwd):/zap/wrk:rw --rm owasp/zap2docker-stable zap-full-scan.py -t http://hapi.f5labs.dev/fhir -J dast-tool_zap_full_scan-results.json
+    - docker run --user $(id -u):$(id -g) -w /zap -v $(pwd):/zap/wrk:rw --rm owasp/zap2docker-stable zap-full-scan.py -t http://hapi.f5labs.dev:8080/fhir -J dast-tool_zap_full_scan-results.json
   rules: 
     - if: $DAST == "full"
       when: always
