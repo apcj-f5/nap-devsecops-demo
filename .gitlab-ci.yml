@@ -13,7 +13,7 @@ stages:
 build-code:
   stage: build
   script:
-   - echo "This is a build step!"
+   - echo "This is a build step"
 
 unit-test-code:
   stage: test
