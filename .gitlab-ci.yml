@@ -24,7 +24,7 @@ push-waf-policy:
   stage: deploy
   script:
     - curl -H "Content-Type: application/json" --data-binary @waf/awaf_policy-hapi-fhir.json https://${WAF_HOSTNAME}/mgmt/tm/asm/tasks/import-policy/
-  allow_failure: false
+  allow_failure: true
 
 
 functional-test:
