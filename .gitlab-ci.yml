@@ -18,14 +18,7 @@ build-code:
 unit-test-code:
   stage: test
   script:
-   - echo "This is a build step"
-
-push-waf-policy:
-  stage: deploy
-  script:
-    - curl -H "Content-Type: application/json" --data-binary @waf/awaf_policy-hapi-fhir.json https://${WAF_HOSTNAME}/mgmt/tm/asm/tasks/import-policy/
-  allow_failure: true
-
+    - echo "This is a build step"
 
 functional-test:
   stage: staging
