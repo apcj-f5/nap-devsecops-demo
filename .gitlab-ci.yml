@@ -54,7 +54,7 @@ dast-tool_zap-basic:
     name: owasp/zap2docker-weekly
     entrypoint: [""]
   script:
-    - /zap/zap-baseline.py -t http://hapi.fhir.org/baseR4 -J /zap/wrk/dast-tool_zap_baseline_scan-results.json
+    - /zap/zap-baseline.py -t http://hapi.fhir.org/baseR4 -J dast-tool_zap_baseline_scan-results.json
   rules: 
     - if: $DAST != "full"
       when: always
@@ -69,7 +69,7 @@ dast-tool_zap-full:
   image:
     name: owasp/zap2docker-weekly
   script:
-    - /zap/zap-full-scan.py -t http://hapi.fhir.org/baseR4 -J /zap/wrk/dast-tool_zap_full_scan-results.json
+    - /zap/zap-full-scan.py -t http://hapi.fhir.org/baseR4 -J dast-tool_zap_full_scan-results.json
   rules: 
     - if: $DAST == "full"
       when: always
