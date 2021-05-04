@@ -13,7 +13,7 @@ stages:
 build-code:
   stage: build
   script:
-   - docker-compose build
+   - docker-compose up -d --build
 
 unit-test-code:
   stage: test
