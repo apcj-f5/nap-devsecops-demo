@@ -8,15 +8,8 @@ stages:
   - test
   - deploy
 
-
-build-code:
+unit-test:
   stage: build
-  script:
-   - docker-compose up -d --build
-  allow_failure: false
-
-unit-test-code:
-  stage: test
   script:
     - docker pull maven:3.6.3-jdk-11-slim
     - docker run --user $(id -u):$(id -g) -w /src -v $(pwd):/src -t maven:3.6.3-jdk-11-slim mvn test
@@ -26,6 +19,12 @@ unit-test-code:
       junit:
         - surefire-reports/TEST-*.xml
         - failsafe-reports/TEST-*.xml
+  allow_failure: false
+
+build-container:
+  stage: build
+  script:
+   - docker-compose up -d --build
   allow_failure: false
 
 functional-test:
