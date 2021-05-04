@@ -8,7 +8,7 @@ stages:
 
 unit-test:
   stage: build
-  image: 
+  image:
     name: maven:3.6.3-jdk-11-slim
   only:
     changes:
@@ -55,11 +55,11 @@ dast-tool_zap-basic:
     entrypoint: [""]
   script:
     - /zap/zap-baseline.py -t http://hapi.fhir.org/baseR4 -J dast-tool_zap_baseline_scan-results.json
-  rules: 
+  rules:
     - if: $DAST != "full"
       when: always
   artifacts:
-    paths: [dast-tool_zap_baseline_scan-results.json]
+    paths: [/zap/wrk/dast-tool_zap_baseline_scan-results.json]
     when: always
     expire_in: one week
   allow_failure: false
@@ -70,11 +70,11 @@ dast-tool_zap-full:
     name: owasp/zap2docker-weekly
   script:
     - /zap/zap-full-scan.py -t http://hapi.fhir.org/baseR4 -J dast-tool_zap_full_scan-results.json
-  rules: 
+  rules:
     - if: $DAST == "full"
       when: always
   artifacts:
-    paths: [dast-tool_zap_full_scan-results.json]
+    paths: [/zap/wrk/dast-tool_zap_full_scan-results.json]
     when: always
     expire_in: one week
   allow_failure: false
