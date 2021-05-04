@@ -53,6 +53,8 @@ dast-tool_zap-basic:
   image:
     name: owasp/zap2docker-weekly
     entrypoint: [""]
+  before_script:
+    - mount /zap/wrk
   script:
     - /zap/zap-baseline.py -t http://hapi.fhir.org/baseR4 -J dast-tool_zap_baseline_scan-results.json
   rules:
