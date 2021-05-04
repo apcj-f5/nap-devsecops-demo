@@ -19,7 +19,7 @@ unit-test-code:
   stage: test
   script:
     - docker pull maven:3.6.3-jdk-11-slim
-    - docker run --user $(id -u):$(id -g) -w /src -v $(pwd):/src -t maven:3.6.3-jdk-11-slim mvn verify
+    - docker run --user $(id -u):$(id -g) -w /src -v $(pwd):/src -t maven:3.6.3-jdk-11-slim mvn test
   artifacts:
     when: always
     reports:
