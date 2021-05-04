@@ -18,13 +18,14 @@ build-code:
 unit-test-code:
   stage: test
   script:
-    - mvn verify
+    - docker pull maven:3.6.3-jdk-11-slim
+    - docker run --user $(id -u):$(id -g) -w /src -v $(pwd):/src mvn verify
   artifacts:
     when: always
     reports:
       junit:
-        - target/surefire-reports/TEST-*.xml
-        - target/failsafe-reports/TEST-*.xml
+        - surefire-reports/TEST-*.xml
+        - failsafe-reports/TEST-*.xml
 
 functional-test:
   stage: deploy
