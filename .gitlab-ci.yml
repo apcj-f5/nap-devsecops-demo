@@ -41,7 +41,7 @@ dast-tool_zap-basic:
     paths: [dast-tool_zap_baseline_scan-results.json]
     when: always
     expire_in: one week
-  allow_failure: true
+  allow_failure: false
 
 deploy_to_prod:
   stage: prod
@@ -63,4 +63,4 @@ dast-tool_zap-full:
     paths: [dast-tool_zap_full_scan-results.json]
     when: always
     expire_in: one week
-  allow_failure: true
+  allow_failure: false
