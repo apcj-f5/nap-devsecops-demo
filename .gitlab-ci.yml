@@ -10,6 +10,10 @@ unit-test:
   stage: build
   image: 
     name: maven:3.6.3-jdk-11-slim
+  only:
+    changes:
+      - pom.xml
+      - src/*
   script:
     - mvn verify
   artifacts:
@@ -25,6 +29,12 @@ build-container:
   stage: build
   image:
     name: tmaier/docker-compose:latest
+  only:
+    changes:
+      - Dockerfile
+      - docker-compose.yml
+      - pom.xml
+      - src/*
   script:
    - docker-compose up -d --build
   allow_failure: false
