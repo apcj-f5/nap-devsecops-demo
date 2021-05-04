@@ -44,7 +44,7 @@ functional-test:
   image:
     name: postman/newman
   script:
-    - docker run --user $(id -u):$(id -g) -v $(pwd)/test:/etc/newman -t postman/newman run postman_collection.json -e postman_environment.json --insecure
+    - newman run $WORKDIR/test/postman_collection.json -e $WORKDIR/test/postman_environment.json --insecure
   allow_failure: false
 
 dast-tool_zap-basic:
