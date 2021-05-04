@@ -43,6 +43,7 @@ functional-test:
   stage: test
   image:
     name: postman/newman
+    entrypoint: [""]
   script:
     - newman run $WORKDIR/test/postman_collection.json -e $WORKDIR/test/postman_environment.json --insecure
   allow_failure: false
@@ -51,13 +52,14 @@ dast-tool_zap-basic:
   stage: test
   image:
     name: owasp/zap2docker-weekly
+    entrypoint: [""]
   script:
-    - docker run --user $(id -u):$(id -g) -w /zap -v $(pwd):/zap/wrk:rw --rm owasp/zap2docker-weekly zap-baseline.py -t https://hapi.f5labs.dev:8080/fhir -J dast-tool_zap_baseline_scan-results.json
+    - /zap/zap-baseline.py -t http://hapi.fhir.org/baseR4 -J /zap/wrk/dast-tool_zap_baseline_scan-results.json
   rules: 
     - if: $DAST != "full"
       when: always
   after_script:
-    - docker rmi owasp/zap2docker-stable  # clean up the image to save the disk space
+    - docker rmi owasp/zap2docker-weekly  # clean up the image to save the disk space
   artifacts:
     paths: [dast-tool_zap_baseline_scan-results.json]
     when: always
@@ -69,12 +71,12 @@ dast-tool_zap-full:
   image:
     name: owasp/zap2docker-weekly
   script:
-    - docker run --user $(id -u):$(id -g) -w /zap -v $(pwd):/zap/wrk:rw --rm owasp/zap2docker-weekly zap-full-scan.py -t https://hapi.f5labs.dev:8080/fhir -J dast-tool_zap_full_scan-results.json
+    - /zap/zap-full-scan.py -t http://hapi.fhir.org/baseR4 -J /zap/wrk/dast-tool_zap_full_scan-results.json
   rules: 
     - if: $DAST == "full"
       when: always
   after_script:
-    - docker rmi owasp/zap2docker-stable  # clean up the image to save the disk space
+    - docker rmi owasp/zap2docker-weekly  # clean up the image to save the disk space
   artifacts:
     paths: [dast-tool_zap_full_scan-results.json]
     when: always
