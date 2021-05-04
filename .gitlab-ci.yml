@@ -1,4 +1,4 @@
-image: docker:latest
+image: tmaier/docker-compose:latest
 
 services:
   - docker:dind
