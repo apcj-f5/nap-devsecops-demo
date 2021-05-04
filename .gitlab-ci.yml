@@ -17,8 +17,8 @@ unit-test:
     when: always
     reports:
       junit:
-        - surefire-reports/TEST-*.xml
-        - failsafe-reports/TEST-*.xml
+        - target/surefire-reports/TEST-*.xml
+        - target/failsafe-reports/TEST-*.xml
   allow_failure: false
 
 build-container:
