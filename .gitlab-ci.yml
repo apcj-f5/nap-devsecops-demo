@@ -13,12 +13,12 @@ stages:
 build-code:
   stage: build
   script:
-   - echo "This is a build step"
+   - docker compose build
 
 unit-test-code:
   stage: test
   script:
-    - echo "This is a build step"
+    - echo "This is the test step"
 
 functional-test:
   stage: staging
