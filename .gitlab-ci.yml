@@ -1,17 +1,16 @@
-image: tmaier/docker-compose:latest
-
 services:
   - docker:dind
 
 stages:
-  - test
   - build
+  - test
   - deploy
 
 unit-test:
-  stage: test
+  stage: build
+  image: 
+    name: maven:3.6.3-jdk-11-slim
   script:
-    - docker pull maven:3.6.3-jdk-11-slim
     - docker run --user $(id -u):$(id -g) -w /src -v $(pwd):/src -t maven:3.6.3-jdk-11-slim mvn verify
   artifacts:
     paths: [target/failsafe-reports/TEST-*.xml]
@@ -25,21 +24,25 @@ unit-test:
 
 build-container:
   stage: build
+  image:
+    name: tmaier/docker-compose:latest
   script:
    - docker-compose up -d --build
   allow_failure: false
 
 functional-test:
-  stage: deploy
+  stage: test
+  image:
+    name: postman/newman
   script:
-    - docker pull postman/newman
     - docker run --user $(id -u):$(id -g) -v $(pwd)/test:/etc/newman -t postman/newman run postman_collection.json -e postman_environment.json --insecure
   allow_failure: false
 
 dast-tool_zap-basic:
-  stage: deploy
+  stage: test
+  image:
+    name: owasp/zap2docker-weekly
   script:
-    - docker pull owasp/zap2docker-stable
     - docker run --user $(id -u):$(id -g) -w /zap -v $(pwd):/zap/wrk:rw --rm owasp/zap2docker-weekly zap-baseline.py -t https://hapi.f5labs.dev:8080/fhir -J dast-tool_zap_baseline_scan-results.json
   rules: 
     - if: $DAST != "full"
@@ -53,9 +56,10 @@ dast-tool_zap-basic:
   allow_failure: false
 
 dast-tool_zap-full:
-  stage: deploy
+  stage: test
+  image:
+    name: owasp/zap2docker-weekly
   script:
-    - docker pull owasp/zap2docker-stable
     - docker run --user $(id -u):$(id -g) -w /zap -v $(pwd):/zap/wrk:rw --rm owasp/zap2docker-weekly zap-full-scan.py -t https://hapi.f5labs.dev:8080/fhir -J dast-tool_zap_full_scan-results.json
   rules: 
     - if: $DAST == "full"
