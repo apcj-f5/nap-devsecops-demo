@@ -50,8 +50,6 @@ functional-test:
 
 dast-tool_zap-basic:
   stage: test
-  services:
-    - docker:dind
   script:
     - docker pull owasp/zap2docker-weekly
     - docker run --user $(id -u):$(id -g) -w /zap -v $(pwd):/zap/wrk:rw --rm owasp/zap2docker-weekly zap-baseline.py -t http://hapi.fhir.org/baseR4 -J dast-tool_zap_baseline_scan-results.json
@@ -66,8 +64,6 @@ dast-tool_zap-basic:
 
 dast-tool_zap-full:
   stage: test
-  services:
-    - docker:dind
   script:
     - owasp/zap2docker-weekly
     - docker run --user $(id -u):$(id -g) -w /zap -v $(pwd):/zap/wrk:rw --rm owasp/zap2docker-weekly zap-full-scan.py -t http://hapi.fhir.org/baseR4 -J dast-tool_zap_full_scan-results.json
