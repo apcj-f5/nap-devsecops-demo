@@ -58,8 +58,6 @@ dast-tool_zap-basic:
   rules: 
     - if: $DAST != "full"
       when: always
-  after_script:
-    - docker rmi owasp/zap2docker-weekly  # clean up the image to save the disk space
   artifacts:
     paths: [dast-tool_zap_baseline_scan-results.json]
     when: always
@@ -75,8 +73,6 @@ dast-tool_zap-full:
   rules: 
     - if: $DAST == "full"
       when: always
-  after_script:
-    - docker rmi owasp/zap2docker-weekly  # clean up the image to save the disk space
   artifacts:
     paths: [dast-tool_zap_full_scan-results.json]
     when: always
