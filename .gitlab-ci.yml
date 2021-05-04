@@ -45,7 +45,7 @@ functional-test:
     name: postman/newman
     entrypoint: [""]
   script:
-    - newman run $WORKDIR/test/postman_collection.json -e $WORKDIR/test/postman_environment.json --insecure
+    - newman run test/postman_collection.json -e test/postman_environment.json --insecure
   allow_failure: false
 
 dast-tool_zap-basic:
