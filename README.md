@@ -1,6 +1,6 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
-[![Pipeline](https://img.shields.io/gitlab/pipeline/shainsingh/hapi-fhir/master)](https://gitlabs.com/shainsingh/hapi-fhir/-/pipelines)
-[]
+[![Pipeline](https://img.shields.io/gitlab/pipeline/shainsingh/hapi-fhir/master)](https://gitlab.com/shainsingh/hapi-fhir/-/pipelines)
+
 
 # HAPI-FHIR Starter Project
 
