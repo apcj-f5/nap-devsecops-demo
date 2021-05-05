@@ -1,0 +1,20 @@
+services:
+  - docker:dind
+
+variables:
+  APP_NAME: hapi
+push-to-registry:
+  stage: package
+  image:
+    name: amazon/aws-cli
+    entrypoint: [""]
+  before_script:
+   - amazon-linux-extras install docker
+   - aws --version
+   - docker --version
+  script:
+   - docker build -t $APP_REGISTRY/$APP_NAME:$CI_PIPELINE_IID .
+   - docker images
+   - aws ecr get-login-password | docker login --username AWS --password-stdin $APP_REGISTRY
+   - docker push $APP_REGISTRY/$APP_NAME:$CI_PIPELINE_IID
+  allow_failure: false
