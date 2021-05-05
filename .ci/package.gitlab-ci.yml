@@ -3,6 +3,7 @@ services:
 
 variables:
   APP_NAME: hapi
+  DOCKER_HOST: tcp://docker:2375
 push-to-registry:
   stage: package
   image:
