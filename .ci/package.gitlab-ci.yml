@@ -14,8 +14,8 @@ push-to-registry:
    - aws --version
    - docker --version
   script:
-   - docker build -t $APP_REGISTRY/$APP_NAME
+   - docker build -t $APP_REGISTRY/$APP_NAME:$CI_COMMIT_TAG .
    - docker images
    - docker login --username AWS --password $APP_REGISTRY_PWD
-   - docker push $APP_REGISTRY/$APP_NAME:latest
+   - docker push $APP_REGISTRY/$APP_NAME:$CI_COMMIT_TAG
   allow_failure: false
