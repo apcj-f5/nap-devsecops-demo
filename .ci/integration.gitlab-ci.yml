@@ -2,7 +2,7 @@ services:
   - docker:dind
 
 functional-test:
-  stage: test
+  stage: integration
   image:
     name: postman/newman
     entrypoint: [""]

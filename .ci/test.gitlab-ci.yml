@@ -2,7 +2,7 @@ services:
   - docker:dind
 
 unit-test:
-  stage: build
+  stage: test
   image:
     name: maven:3.6.3-jdk-11-slim
   only:
