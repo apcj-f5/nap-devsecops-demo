@@ -9,7 +9,7 @@ deploy-container:
     IMAGE_TAG: $CONTAINER_REGISRY/$CI_IMAGE:$CI_COMMIT_REF_SLUG
   script:
    - docker login $CONTAINER_REGISTRY -u $CONTAINER_REGISTRY_ID -p $CONTAINER_REGISTRY_PWD
-   - docker-compose up -d --build 
-   - docker tag hapi-fhir_hapi-fhir-jpaserver:latest $CONTAINER_REGISTRY/hapi-fhir_jpaserver:latest
-   - docker push $CONTAINER_REGISTRY/hapi-fhir_jpaserver:latest
+   - docker-build -t hapi-fhir_jpaserver .
+   - docker tag hapi-fhir-jpaserver:latest $IMAGE_TAG
+   - docker push $IMAGE_TAG
   allow_failure: false
