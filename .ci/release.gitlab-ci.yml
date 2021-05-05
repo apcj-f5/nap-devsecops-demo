@@ -13,7 +13,7 @@ dast-tool_zap-basic:
     - if: $DAST != "full"
       when: always
   artifacts:
-    paths: [dast-tool_zap_baseline_scan-results.json]
+    paths: [/zap/wrk/dast-tool_zap_baseline_scan-results.json]
     when: always
     expire_in: one week
   allow_failure: false
@@ -30,7 +30,7 @@ dast-tool_zap-full:
     - if: $DAST == "full"
       when: always
   artifacts:
-    paths: [dast-tool_zap_full_scan-results.json]
+    paths: [/zap/wrk/dast-tool_zap_full_scan-results.json]
     when: always
     expire_in: one week
   allow_failure: false
