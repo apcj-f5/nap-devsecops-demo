@@ -10,5 +10,5 @@ deploy-container:
   script:
    - docker login $CONTAINER_REGISTRY -u $CONTAINER_REGISTRY_ID -p $CONTAINER_REGISTRY_PWD
    - docker-compose up -d --build 
-   - docker push 
+   - docker push 634994138577.dkr.ecr.ap-southeast-2.amazonaws.com/hapi-fhir:latest
   allow_failure: false
