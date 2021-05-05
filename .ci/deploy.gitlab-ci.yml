@@ -4,7 +4,7 @@ services:
 deploy-container:
   stage: deploy
   image:
-    name: tmaier/docker-compose:latest
+    name: docker:latest
   variables:
     IMAGE_TAG: $CONTAINER_REGISRY/$CI_IMAGE
   script:
