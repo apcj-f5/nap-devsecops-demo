@@ -8,12 +8,12 @@ dast-tool_zap-basic:
   before_script:
     - mkdir /zap/wrk
   script:
-    - zap-baseline.py -t http://hapi.fhir.org/baseR4 -J dast-tool_zap_baseline_scan-results.json
+    - zap-baseline.py -t http://hapi.fhir.org/baseR4 -J /zap/wrk/dast-tool_zap_baseline_scan-results.json
   rules:
     - if: $DAST != "full"
       when: always
   artifacts:
-    paths: [wrk/dast-tool_zap_baseline_scan-results.json]
+    paths: [/zap/wrk/dast-tool_zap_baseline_scan-results.json]
     when: always
     expire_in: one week
   allow_failure: false
@@ -25,12 +25,12 @@ dast-tool_zap-full:
   before_script:
     - mkdir /zap/wrk
   script:
-    - zap-full-scan.py -t http://hapi.fhir.org/baseR4 -J dast-tool_zap_full_scan-results.json
+    - zap-full-scan.py -t http://hapi.fhir.org/baseR4 -J /zap/wrk/dast-tool_zap_full_scan-results.json
   rules:
     - if: $DAST == "full"
       when: always
   artifacts:
-    paths: [wrk/dast-tool_zap_full_scan-results.json]
+    paths: [/zap/wrk/dast-tool_zap_full_scan-results.json]
     when: always
     expire_in: one week
   allow_failure: false
