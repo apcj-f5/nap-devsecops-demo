@@ -28,9 +28,8 @@ dast-tool_zap-full:
     - mkdir /zap/wrk
   script:
     - zap-full-scan.py -t http://hapi.fhir.org/baseR4 -J dast-tool_zap_full_scan-results.json
-    - ls -la /zap/; ls -la /zap/wrk/
   after_script:
-    - mv zap.out dast-tool_zap_full_scan-results.json
+    - mv /zap/wrk/dast-tool_zap_full_scan-results.json /builds/shainsingh/hapi-fhir/
   rules:
   rules:
     - if: $DAST == "full"
