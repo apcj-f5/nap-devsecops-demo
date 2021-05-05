@@ -9,6 +9,9 @@ dast-tool_zap-basic:
     - mkdir /zap/wrk
   script:
     - zap-baseline.py -t http://hapi.fhir.org/baseR4 -J dast-tool_zap_baseline_scan-results.json
+  after_script:
+    - mv /zap/wrk/dast-tool_zap_baseline_scan-results.json /zap/wrk
+    - ls -la
   rules:
     - if: $DAST != "full"
       when: always
