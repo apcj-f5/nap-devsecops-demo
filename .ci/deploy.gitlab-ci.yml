@@ -5,12 +5,6 @@ deploy-container:
   stage: deploy
   image:
     name: tmaier/docker-compose:latest
-  only:
-    changes:
-      - Dockerfile
-      - docker-compose.yml
-      - pom.xml
-      - src/*
   variables:
     IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
   script:
