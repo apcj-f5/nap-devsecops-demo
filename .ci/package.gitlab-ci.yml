@@ -2,7 +2,7 @@ services:
   - docker:dind
 
 variables:
-  APP_NAME: hapi
+  APP_NAME: hapi-fhir_jpaserver
   DOCKER_HOST: tcp://docker:2375
 push-to-registry:
   stage: package
@@ -14,8 +14,8 @@ push-to-registry:
    - aws --version
    - docker --version
   script:
-   - docker build -t $APP_REGISTRY/$APP_NAME:$CI_PIPELINE_IID .
+   - docker build -t $APP_REGISTRY/$APP_NAME:$CI_COMMIT_TAG
    - docker images
-   - aws ecr get-login-password | docker login --username AWS --password-stdin $APP_REGISTRY
-   - docker push $APP_REGISTRY/$APP_NAME:$CI_PIPELINE_IID
+   - docker login --username AWS --password $APP_REGISTRY_PWD
+   - docker push $APP_REGISTRY/$APP_NAME:$CI_COMMIT_TAG
   allow_failure: false
