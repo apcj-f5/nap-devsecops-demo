@@ -1,11 +1,13 @@
 stages:
   - test
   - build
+  - deploy
   - integration
   - release
 
 include:
   - local: /.ci/test.gitlab-ci.yml
   - local: /.ci/build.gitlab-ci.yml
+  - local: /.ci/deploy.gitlab-ci.yml
   - local: /.ci/integration.gitlab-ci.yml
   - local: /.ci/release.gitlab-ci.yml
