@@ -9,8 +9,7 @@ dast-tool_zap-basic:
     - mkdir /zap/wrk
   script:
     - zap-baseline.py -t http://hapi.fhir.org/baseR4 -J dast-tool_zap_baseline_scan-results.json
-  after_script:
-    - mv zap.out dast-tool_zap_baseline_scan-results.json
+    - mv /zap/wrk/dast-tool_zap_baseline-results.json /zap/
   rules:
     - if: $DAST != "full"
       when: always
@@ -18,7 +17,7 @@ dast-tool_zap-basic:
     paths: [dast-tool_zap_baseline_scan-results.json]
     when: always
     expire_in: one week
-  allow_failure: false
+  allow_failure: true
 
 dast-tool_zap-full:
   stage: release
@@ -28,8 +27,7 @@ dast-tool_zap-full:
     - mkdir /zap/wrk
   script:
     - zap-full-scan.py -t http://hapi.fhir.org/baseR4 -J dast-tool_zap_full_scan-results.json
-  after_script:
-    - mv zap.out dast-tool_zap_full_scan-results.json
+    - mv /zap/wrk/dast-tool_zap_full_scan-results.json /zap/
   rules:
   rules:
     - if: $DAST == "full"
@@ -38,4 +36,4 @@ dast-tool_zap-full:
     paths: [dast-tool_zap_full_scan-results.json]
     when: always
     expire_in: one week
-  allow_failure: false
+  allow_failure: true
