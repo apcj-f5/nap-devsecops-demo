@@ -17,5 +17,5 @@ unit-test:
     expire_in: one week
     reports:
       junit:
-        - target/failsafe-reports/TEST-*.xml
+        - [target/failsafe-reports/TEST-*.xml]
   allow_failure: false
