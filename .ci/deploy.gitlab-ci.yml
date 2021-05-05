@@ -6,7 +6,7 @@ deploy-container:
   image:
     name: tmaier/docker-compose:latest
   variables:
-    IMAGE_TAG: $CONTAINER_REGISRY/$CI_IMAGE:$CI_COMMIT_REF_SLUG
+    IMAGE_TAG: $CONTAINER_REGISRY/$CI_IMAGE
   script:
    - docker login $CONTAINER_REGISTRY -u $CONTAINER_REGISTRY_ID -p $CONTAINER_REGISTRY_PWD
    - docker build -t hapi-fhir_jpaserver .
