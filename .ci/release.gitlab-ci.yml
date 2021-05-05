@@ -5,8 +5,10 @@ dast-tool_zap-basic:
   stage: test
   image:
     name: owasp/zap2docker-weekly
+  before_script:
+    - mkdir /zap/wrk
   script:
-    zap-baseline.py -t http://hapi.fhir.org/baseR4 -J dast-tool_zap_baseline_scan-results.json
+    - zap-baseline.py -t http://hapi.fhir.org/baseR4 -J dast-tool_zap_baseline_scan-results.json
   rules:
     - if: $DAST != "full"
       when: always
@@ -20,6 +22,8 @@ dast-tool_zap-full:
   stage: test
   image:
     name: owasp/zap2docker-weekly
+  before_script:
+    - mkdir /zap/wrk
   script:
     - zap-full-scan.py -t http://hapi.fhir.org/baseR4 -J dast-tool_zap_full_scan-results.json
   rules:
