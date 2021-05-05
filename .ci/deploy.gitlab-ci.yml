@@ -9,5 +9,6 @@ deploy-container:
    - docker login $CONTAINER_REGISTRY -u $CONTAINER_REGISTRY_ID -p $CONTAINER_REGISTRY_PWD
    - docker build -t hapi-fhir_jpaserver .
    - docker tag hapi-fhir_jpaserver:latest $CONTAINER_REGISTRY/hapi-fhir_jpaserver:latest
-   - docker push $CONTAINER_REGISTRY/hapi-fhir_server:latest
+   - docker images
+   - docker push $CONTAINER_REGISTRY/hapi-fhir_server
   allow_failure: false
