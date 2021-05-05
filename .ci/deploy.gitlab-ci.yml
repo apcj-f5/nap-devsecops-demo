@@ -9,6 +9,6 @@ deploy-container:
     IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
   script:
    - docker login $CONTAINER_REGISTRY -u $CONTAINER_REGISTRY_ID -p $CONTAINER_REGISTRY_PWD
-   - docker-compose build -t $IMAGE_TAG
-   - docker push $IMAGE_TAG
+   - docker-compose up --build 
+   - docker push 
   allow_failure: false
