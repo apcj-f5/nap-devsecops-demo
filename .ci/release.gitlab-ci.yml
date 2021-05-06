@@ -33,7 +33,7 @@ dast-tool_zap-full:
   rules:
   rules:
     - if: $DAST == "full"
-      when: on_success
+      when: always
   artifacts:
     paths: [dast-tool_zap_full_scan-results.json]
     when: always
