@@ -13,7 +13,7 @@ dast-tool_zap-basic:
     - mv /zap/wrk/dast-tool_zap_baseline_scan-results.json /builds/shainsingh/hapi-fhir/
   rules:
     - if: $DAST != "full"
-      when: on_success
+      when: always
   artifacts:
     paths: [dast-tool_zap_baseline_scan-results.json]
     when: always
