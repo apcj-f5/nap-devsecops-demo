@@ -1,11 +1,12 @@
 stages:
-  - test
+  - sec-pre_build
   - build
   - package
   - integration
   - release
 
 include:
+  - local: /.ci/sec-Pre_build-ci.yml
   - local: /.ci/test.gitlab-ci.yml
   - local: /.ci/build.gitlab-ci.yml
   - local: /.ci/package.gitlab-ci.yml
