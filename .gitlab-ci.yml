@@ -4,7 +4,7 @@ stages:
   - build
   - package
   - integration
-  - release
+  - sec-release
 
 include:
   - local: /.secops/sec-pre_build.gitlab-ci.yml
@@ -12,4 +12,4 @@ include:
   - local: /.ci/build.gitlab-ci.yml
   - local: /.ci/package.gitlab-ci.yml
   - local: /.ci/integration.gitlab-ci.yml
-  - local: /.ci/release.gitlab-ci.yml
+  - local: /.secops/sec-release.gitlab-ci.yml

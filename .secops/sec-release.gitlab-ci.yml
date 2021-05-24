@@ -1,41 +1,41 @@
 services:
   - docker:dind
 
-dast-tool_zap-basic:
+sec-dast_baseline:
   stage: release
   image:
     name: owasp/zap2docker-weekly
   before_script:
     - mkdir /zap/wrk
   script:
-    - zap-baseline.py -t https://hapi.f5labs.dev/fhir -J dast-tool_zap_baseline_scan-results.json
+    - zap-baseline.py -t https://hapi.f5labs.dev/fhir -J dast_baseline_scan-results.json
   after_script:
-    - mv /zap/wrk/dast-tool_zap_baseline_scan-results.json /builds/shainsingh/hapi-fhir/
+    - mv /zap/wrk/dast_baseline_scan-results.json /builds/shainsingh/hapi-fhir/
   rules:
     - if: $DAST != "full"
       when: always
   artifacts:
-    paths: [dast-tool_zap_baseline_scan-results.json]
+    paths: [dast_baseline_scan-results.json]
     when: always
     expire_in: one week
   allow_failure: true
 
-dast-tool_zap-full:
+sec-dast_full:
   stage: release
   image:
     name: owasp/zap2docker-weekly
   before_script:
     - mkdir /zap/wrk
   script:
-    - zap-full-scan.py -t https://hapi.f5labs.dev/fhir -J dast-tool_zap_full_scan-results.json
+    - zap-full-scan.py -t https://hapi.f5labs.dev/fhir -J dast_full_scan-results.json
   after_script:
-    - mv /zap/wrk/dast-tool_zap_full_scan-results.json /builds/shainsingh/hapi-fhir/
+    - mv /zap/wrk/dast_full_scan-results.json /builds/shainsingh/hapi-fhir/
   rules:
   rules:
     - if: $DAST == "full"
       when: always
   artifacts:
-    paths: [dast-tool_zap_full_scan-results.json]
+    paths: [dast_full_scan-results.json]
     when: always
     expire_in: one week
   allow_failure: true

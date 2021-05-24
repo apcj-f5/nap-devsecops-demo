@@ -3,9 +3,10 @@ services:
 
 sec-source_scan:
   stage: sec-pre_build
+  image:
+    name: shiftleft/scan
   script:
-   - docker pull shiftleft/scan
-   - docker run --rm -e "WORKSPACE=${PWD}" -v ~/.m2:/.m2 -v <source path>:/app shiftleft/scan scan --src /app --type credscan,java,yaml; --out_dir /app/reports
+   - scan --src /app --type credscan,java,yaml; --out_dir /app/reports
   artifacts:
    paths: [/app/reports/*]
    when: always
