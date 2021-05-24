@@ -2,7 +2,7 @@ services:
   - docker:dind
 
 sec-dast_baseline:
-  stage: release
+  stage: sec-release
   image:
     name: owasp/zap2docker-weekly
   before_script:
@@ -21,7 +21,7 @@ sec-dast_baseline:
   allow_failure: true
 
 sec-dast_full:
-  stage: release
+  stage: sec-release
   image:
     name: owasp/zap2docker-weekly
   before_script:
