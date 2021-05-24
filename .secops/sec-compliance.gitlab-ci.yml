@@ -20,3 +20,4 @@ sec-compliance:
   artifacts:
     paths: [sec-compliance-results.json]
     when: always
+  allow_failure: true
