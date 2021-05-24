@@ -7,10 +7,10 @@ build-container:
     name: tmaier/docker-compose:latest
   only:
     changes:
-      - Dockerfile
-      - docker-compose.yml
-      - pom.xml
-      - src/*
+      Dockerfile
+      docker-compose.yml
+      pom.xml
+      src/* 
   script:
    - docker-compose up -d --build 
   allow_failure: false
