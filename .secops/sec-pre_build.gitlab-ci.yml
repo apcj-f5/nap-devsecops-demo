@@ -1,0 +1,14 @@
+services:
+  - docker:dind
+
+sec-source_scan:
+  stage: sec-pre_build
+  script:
+   - docker pull shiftleft/scan
+   - docker run --rm -e "WORKSPACE=${PWD}" -v ~/.m2:/.m2 -v <source path>:/app shiftleft/scan scan --src /app --type credscan,java,yaml; --out_dir /app/reports
+  artifacts:
+   paths: [/app/reports/*]
+   when: always
+   expire_in: one week
+  allow_failure: true
+
