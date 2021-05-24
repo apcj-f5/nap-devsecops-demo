@@ -8,7 +8,7 @@ sec-dast_baseline:
   before_script:
     - mkdir /zap/wrk
   script:
-    - zap-baseline.py -t https://hapi.f5labs.dev/fhir -J dast_baseline_scan-results.json
+    - zap-baseline.py -t https://hapi.f5labs.dev/fhir -I -J dast_baseline_scan-results.json
   after_script:
     - mv /zap/wrk/dast_baseline_scan-results.json /builds/shainsingh/hapi-fhir/
   rules:
@@ -27,7 +27,7 @@ sec-dast_full:
   before_script:
     - mkdir /zap/wrk
   script:
-    - zap-full-scan.py -t https://hapi.f5labs.dev/fhir -J dast_full_scan-results.json
+    - zap-full-scan.py -t https://hapi.f5labs.dev/fhir -I -J dast_full_scan-results.json
   after_script:
     - mv /zap/wrk/dast_full_scan-results.json /builds/shainsingh/hapi-fhir/
   rules:
