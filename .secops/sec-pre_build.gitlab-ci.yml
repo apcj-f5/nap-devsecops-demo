@@ -6,7 +6,7 @@ sec-source_scan:
   image:
     name: shiftleft/scan
   script:
-   - scan --src /app --type credscan,java,yaml; --out_dir /app/reports
+   - scan --src /src --type credscan,java,yaml --out_dir /app/reports
   artifacts:
    paths: [/app/reports/*]
    when: always
