@@ -1,5 +1,6 @@
 stages:
   - sec-pre_build
+  - test
   - build
   - package
   - integration
