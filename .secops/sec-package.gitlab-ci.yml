@@ -3,7 +3,7 @@ services:
 
 sec-os_hardening:
   stage: sec-package
-  image: willhallonline/ansible:2.9-ubuntu
+  image: ansible/galaxy
   before_script:
     - mkdir -p ~/.ssh
     - echo "$DEPLOYMENT_SERVER_SSH_PRIVKEY" | tr -d '\r' > ~/.ssh/id_rsa
