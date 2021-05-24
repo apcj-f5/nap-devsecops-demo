@@ -10,10 +10,10 @@ push-to-registry:
     name: docker:latest
   only:
     changes:
-      Dockerfile
-      docker-compose.yml
-      pom.xml
-      src/*
+      - Dockerfile
+      - docker-compose.yml
+      - pom.xml
+      - src/*
   script:
    - docker build -t $APP_REGISTRY/$APP_NAME:$CI_PIPELINE_IID .
    - docker images
