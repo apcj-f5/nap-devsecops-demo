@@ -12,7 +12,7 @@ sec-dast_baseline:
   after_script:
     - mv /zap/wrk/dast_baseline_scan-results.json /builds/shainsingh/hapi-fhir/
   rules:
-    - if: $DAST != "full"
+    - if: $scan_periodic != "nightly"
       when: always
   artifacts:
     paths: [dast_baseline_scan-results.json]
@@ -31,7 +31,7 @@ sec-dast_full:
   after_script:
     - mv /zap/wrk/dast_full_scan-results.json /builds/shainsingh/hapi-fhir/
   rules:
-    - if: $DAST == "full"
+    - if: $scan_periodic == "nightly"
       when: always
   artifacts:
     paths: [dast_full_scan-results.json]
