@@ -17,6 +17,8 @@ sec-compliance:
     - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
   script:
     - inspec exec https://github.com/dev-sec/linux-baseline -t ssh://root@$DEPLOYMENT_SERVER -i /id_rsa --chef-license accept --reporter json:/opt/sec-compliance-results.json
+  rules:
+    when: always
   artifacts:
     paths: [sec-compliance-results.json]
     when: always

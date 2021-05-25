@@ -31,7 +31,6 @@ sec-dast_full:
   after_script:
     - mv /zap/wrk/dast_full_scan-results.json /builds/shainsingh/hapi-fhir/
   rules:
-  rules:
     - if: $DAST == "full"
       when: always
   artifacts:

@@ -9,6 +9,8 @@ sec-source_scan:
    - set -x SCAN_DEBUG_MODE=debug
   script:
    - scan --src /src --type credscan,java,yaml --out_dir /app/reports
+  rules:
+    when: always
   artifacts:
    paths: [/app/reports/.sastscan.baseline]
    when: always
