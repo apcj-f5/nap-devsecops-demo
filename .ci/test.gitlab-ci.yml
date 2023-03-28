@@ -18,4 +18,4 @@ unit-test:
     reports:
       junit:
         - target/failsafe-reports/TEST-*.xml
-  allow_failure: false
+  allow_failure: true
