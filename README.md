@@ -22,6 +22,3 @@
 
 This repository contains the necessary files for building the [HAPI-FHIR server](https://hapifhir.io)
 and deployed at [https://hapi.f5labs.dev](https://hapi.f5labs.dev)
-
-- [Application code](app/)
-- [Infrastructure as Code](iac/)
