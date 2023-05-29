@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     repoURL: git@github.com:apcj-f5/hapi.f5labs.dev.git
-    targetRevision: argo # to be updated to master before merging PR
+    targetRevision: leonseng/add-argocd # to be updated to master before merging PR
     path: argocd/apps
   destination:
     server: https://kubernetes.default.svc
