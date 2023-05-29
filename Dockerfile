@@ -1,4 +1,4 @@
-FROM maven:3.6.3-jdk-11-slim as build-hapi
+FROM maven:3.8.6-jdk-11-slim as build-hapi
 WORKDIR /tmp/hapi-fhir-jpaserver
 
 COPY pom.xml .
