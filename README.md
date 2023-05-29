@@ -22,3 +22,21 @@
 
 This repository contains the necessary files for building the [HAPI-FHIR server](https://hapifhir.io)
 and deployed at [https://hapi.f5labs.dev](https://hapi.f5labs.dev)
+
+## Getting started
+
+1. Clone or Fork reposistory
+2. Ensure [pre-commit](https://pre-commit.com) is installed
+
+```bash
+
+local-repo-dir# pre-commit install
+local-repo-dir# pre-commit run --all-files
+
+```
+
+3. Any commits now will run the pre-commit hook changes
+
+## Additional information
+
+- Ensure Git commits [are signed](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits)
