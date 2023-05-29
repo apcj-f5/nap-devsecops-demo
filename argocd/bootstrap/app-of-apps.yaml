@@ -9,7 +9,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:apcj-f5/hapi.f5labs.dev.git
+    repoURL: https://github.com/apcj-f5/hapi.f5labs.dev.git
     targetRevision: leonseng/add-argocd # to be updated to master before merging PR
     path: argocd/argo-apps
   destination:

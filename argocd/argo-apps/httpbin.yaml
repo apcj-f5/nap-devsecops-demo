@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:apcj-f5/hapi.f5labs.dev.git
+    repoURL: https://github.com/apcj-f5/hapi.f5labs.dev.git
     targetRevision: leonseng/add-argocd
     path: argocd/manifests/httpbin/
   destination:
