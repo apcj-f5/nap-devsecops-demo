@@ -1,170 +1,140 @@
 {
-	"info": {
-		"_postman_id": "7231b742-af5e-464d-9482-f53003deb077",
-		"name": "hapi_fhir",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "Search all CodeSystems, return their names and urls",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/CodeSystem?_elements=name,url",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"CodeSystem"
-					],
-					"query": [
-						{
-							"key": "_elements",
-							"value": "name,url"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Lookup a SNOMED code (in JSON)",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/CodeSystem/$lookup?system=http://snomed.info/sct&code=263495000&_format=json",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"CodeSystem",
-						"$lookup"
-					],
-					"query": [
-						{
-							"key": "system",
-							"value": "http://snomed.info/sct"
-						},
-						{
-							"key": "code",
-							"value": "263495000"
-						},
-						{
-							"key": "_format",
-							"value": "json"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "SImple translate",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/ConceptMap/102/$translate?code=ACNE&system=http://hl7.org/fhir/v2/0487&target=http:/snomed.info/sct",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"ConceptMap",
-						"102",
-						"$translate"
-					],
-					"query": [
-						{
-							"key": "code",
-							"value": "ACNE"
-						},
-						{
-							"key": "system",
-							"value": "http://hl7.org/fhir/v2/0487"
-						},
-						{
-							"key": "target",
-							"value": "http:/snomed.info/sct"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Search all ConceptMaps (in XML)",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/ConceptMap?_format=xml",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"ConceptMap"
-					],
-					"query": [
-						{
-							"key": "_format",
-							"value": "xml"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Search all ConceptMaps (in JSON)",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/ConceptMap?_format=xml",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"ConceptMap"
-					],
-					"query": [
-						{
-							"key": "_format",
-							"value": "xml"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Read a specific version of a Concept Map (in XML)",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{url}}/ConceptMap/v3-snomed-education-map/_history/1?_format=application/fhir+xml",
-					"host": [
-						"{{url}}"
-					],
-					"path": [
-						"ConceptMap",
-						"v3-snomed-education-map",
-						"_history",
-						"1"
-					],
-					"query": [
-						{
-							"key": "_format",
-							"value": "application/fhir+xml"
-						}
-					]
-				}
-			},
-			"response": []
-		}
-	],
-	"protocolProfileBehavior": {}
+  "info": {
+    "_postman_id": "7231b742-af5e-464d-9482-f53003deb077",
+    "name": "hapi_fhir",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Search all CodeSystems, return their names and urls",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/CodeSystem?_elements=name,url",
+          "host": ["{{url}}"],
+          "path": ["CodeSystem"],
+          "query": [
+            {
+              "key": "_elements",
+              "value": "name,url"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Lookup a SNOMED code (in JSON)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/CodeSystem/$lookup?system=http://snomed.info/sct&code=263495000&_format=json",
+          "host": ["{{url}}"],
+          "path": ["CodeSystem", "$lookup"],
+          "query": [
+            {
+              "key": "system",
+              "value": "http://snomed.info/sct"
+            },
+            {
+              "key": "code",
+              "value": "263495000"
+            },
+            {
+              "key": "_format",
+              "value": "json"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "SImple translate",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/ConceptMap/102/$translate?code=ACNE&system=http://hl7.org/fhir/v2/0487&target=http:/snomed.info/sct",
+          "host": ["{{url}}"],
+          "path": ["ConceptMap", "102", "$translate"],
+          "query": [
+            {
+              "key": "code",
+              "value": "ACNE"
+            },
+            {
+              "key": "system",
+              "value": "http://hl7.org/fhir/v2/0487"
+            },
+            {
+              "key": "target",
+              "value": "http:/snomed.info/sct"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search all ConceptMaps (in XML)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/ConceptMap?_format=xml",
+          "host": ["{{url}}"],
+          "path": ["ConceptMap"],
+          "query": [
+            {
+              "key": "_format",
+              "value": "xml"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search all ConceptMaps (in JSON)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/ConceptMap?_format=xml",
+          "host": ["{{url}}"],
+          "path": ["ConceptMap"],
+          "query": [
+            {
+              "key": "_format",
+              "value": "xml"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Read a specific version of a Concept Map (in XML)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/ConceptMap/v3-snomed-education-map/_history/1?_format=application/fhir+xml",
+          "host": ["{{url}}"],
+          "path": ["ConceptMap", "v3-snomed-education-map", "_history", "1"],
+          "query": [
+            {
+              "key": "_format",
+              "value": "application/fhir+xml"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
 }

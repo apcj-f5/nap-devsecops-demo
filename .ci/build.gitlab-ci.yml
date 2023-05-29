@@ -12,5 +12,5 @@ build-container:
       - pom.xml
       - src/*
   script:
-   - docker-compose up -d --build 
+    - docker-compose up -d --build
   allow_failure: false

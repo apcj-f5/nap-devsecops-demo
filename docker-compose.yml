@@ -11,10 +11,10 @@ services:
     container_name: hapi-fhir-mysql
     restart: always
     environment:
-      MYSQL_DATABASE: 'hapi'
-      MYSQL_USER: 'admin'
-      MYSQL_PASSWORD: 'admin'
-      MYSQL_ROOT_PASSWORD: 'admin'
+      MYSQL_DATABASE: "hapi"
+      MYSQL_USER: "admin"
+      MYSQL_PASSWORD: "admin"
+      MYSQL_ROOT_PASSWORD: "admin"
     volumes:
       - hapi-fhir-mysql:/var/lib/mysql
 volumes:

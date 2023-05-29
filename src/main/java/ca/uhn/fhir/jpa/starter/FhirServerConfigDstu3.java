@@ -39,7 +39,7 @@ public class FhirServerConfigDstu3 extends BaseJavaConfigDstu3 {
 
   @Autowired
   private ConfigurableEnvironment configurableEnvironment;
-  
+
   @Override
   @Bean
   public LocalContainerEntityManagerFactoryBean entityManagerFactory() {

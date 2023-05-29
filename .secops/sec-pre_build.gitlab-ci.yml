@@ -6,12 +6,11 @@ sec-source_scan:
   image:
     name: shiftleft/scan
   before_script:
-   - set -x SCAN_DEBUG_MODE=debug
+    - set -x SCAN_DEBUG_MODE=debug
   script:
-   - scan --src /src --type credscan,java,yaml --out_dir /app/reports
+    - scan --src /src --type credscan,java,yaml --out_dir /app/reports
   artifacts:
-   paths: [/app/reports/.sastscan.baseline]
-   when: always
-   expire_in: one week
+    paths: [/app/reports/.sastscan.baseline]
+    when: always
+    expire_in: one week
   allow_failure: true
-

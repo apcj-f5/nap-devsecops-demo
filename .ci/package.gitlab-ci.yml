@@ -15,8 +15,8 @@ push-to-registry:
       - pom.xml
       - src/*
   script:
-   - docker build -t $APP_REGISTRY/$APP_NAME:$CI_PIPELINE_IID .
-   - docker images
-   - docker login --username $APP_REGISTRY_ID --password $APP_REGISTRY_PWD $APP_REGISTRY
-   - docker push $APP_REGISTRY/$APP_NAME:$CI_PIPELINE_IID
+    - docker build -t $APP_REGISTRY/$APP_NAME:$CI_PIPELINE_IID .
+    - docker images
+    - docker login --username $APP_REGISTRY_ID --password $APP_REGISTRY_PWD $APP_REGISTRY
+    - docker push $APP_REGISTRY/$APP_NAME:$CI_PIPELINE_IID
   allow_failure: false

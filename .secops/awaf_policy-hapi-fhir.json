@@ -1,29 +1,29 @@
 {
-    "policy": {
-        "name": "policy-hapi-fhir",
-        "description": "HAPI Policy for FHIR",
-        "template": {
-            "name": "POLICY_TEMPLATE_API_SECURITY"
-        },
-        "enforcementMode": "blocking",
-        "server-technologies": [
-            {
-                "serverTechnologyName": "MySQL"
-            },
-            {
-                "serverTechnologyName": "Unix/Linux"
-            }
-        ],
-        "signature-settings": {
-            "signatureStaging": false
-        },
-        "policy-builder": {
-            "learnOnlyFromNonBotTraffic": false
-        },
-        "open-api-files": [
-            {
-            "link": "https://gitlab.com/shainsingh/hapi-fhir/-/raw/master/hapi-fhir_swagger.json"
-            }
-        ]
-    }
+  "policy": {
+    "name": "policy-hapi-fhir",
+    "description": "HAPI Policy for FHIR",
+    "template": {
+      "name": "POLICY_TEMPLATE_API_SECURITY"
+    },
+    "enforcementMode": "blocking",
+    "server-technologies": [
+      {
+        "serverTechnologyName": "MySQL"
+      },
+      {
+        "serverTechnologyName": "Unix/Linux"
+      }
+    ],
+    "signature-settings": {
+      "signatureStaging": false
+    },
+    "policy-builder": {
+      "learnOnlyFromNonBotTraffic": false
+    },
+    "open-api-files": [
+      {
+        "link": "https://gitlab.com/shainsingh/hapi-fhir/-/raw/master/hapi-fhir_swagger.json"
+      }
+    ]
+  }
 }
