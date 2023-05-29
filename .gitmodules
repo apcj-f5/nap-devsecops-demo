@@ -1,3 +1,6 @@
-[submodule "hapi-fhir"]
-	path = hapi-fhir
-	url = https://github.com/apcj-f5/hapi-fhir.git
+[submodule "app"]
+	path = app
+	url = https://github.com/apcj-f5/hapi.f5labs.dev-app.git
+[submodule "iac"]
+	path = iac
+	url = https://github.com/apcj-f5/hapi.f5labs.dev-iac.git
