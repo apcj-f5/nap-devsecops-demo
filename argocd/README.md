@@ -19,11 +19,22 @@
 ## ArgoCD
 
 ```
-kubectl apply -k argocd/install
-kubectl apply -f argocd/app-of-apps.yaml
+kubectl apply -k argocd/bootstrap/install
+kubectl apply -f argocd/bootstrap/app-of-apps.yaml
 ```
 
 Web UI password
 ```
 kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 ```
+
+Access ArgoCD Web UI
+1. Get default admin password
+    ```
+    kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+    ```
+1. Port forward argocd-server HTTPS port
+    ```
+    kubectl -n argocd port-forward svc/argocd-server 8443:443
+    ```
+1. Access web UI on [https://localhost:8443](https://localhost:8443)
