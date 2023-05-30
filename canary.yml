@@ -20,5 +20,5 @@ spec:
       containers:
         - image: kennethreitz/httpbin
           name: httpbin
-      securityContext:
-        allowPrivilegeEscalation: false
+          securityContext:
+            allowPrivilegeEscalation: false
