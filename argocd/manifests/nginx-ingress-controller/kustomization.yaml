@@ -3,7 +3,7 @@ namespace: nginx-ingress
 helmCharts:
   - name: nginx-ingress
     repo: https://helm.nginx.com/stable
-    version: 0.16.0
+    version: 0.17.1
     releaseName: nginx-ingress
     namespace: nginx-ingress
     # override with these custom values
