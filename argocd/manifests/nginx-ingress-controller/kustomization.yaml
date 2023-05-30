@@ -1,0 +1,13 @@
+namespace: nginx-ingress
+
+helmCharts:
+  - name: nginx-ingress
+    repo: https://helm.nginx.com/stable
+    version: 0.16.0
+    releaseName: nginx-ingress
+    namespace: nginx-ingress
+    # override with these custom values
+    valuesFile: values.yaml
+
+resources:
+  - nginx-regcred.yaml

@@ -1,0 +1,16 @@
+controller:
+  serviceAccount:
+    imagePullSecretName: regcred
+  image:
+    repository: private-registry.nginx.com/nginx-ic-nap-dos/nginx-plus-ingress
+  nginxplus: true
+  enableCertManager: true
+  enableSnippets: true
+  appprotect:
+    enable: true
+  appprotectdos:
+    enable: true
+  config:
+    name: nginx-config
+  watchNamespaceLabel: ingress=nginx
+  setAsDefaultIngress: true
