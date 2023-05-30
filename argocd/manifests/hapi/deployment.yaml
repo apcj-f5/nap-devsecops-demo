@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: hapi
+  name: hapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hapi
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: hapi
+    spec:
+      containers:
+        - image: hapiproject/hapi:latest
+          name: hapi
+          securityContext:
+            allowPrivilegeEscalation: false
