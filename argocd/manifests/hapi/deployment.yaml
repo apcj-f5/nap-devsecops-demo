@@ -22,3 +22,4 @@ spec:
           name: hapi
           securityContext:
             allowPrivilegeEscalation: false
+            runAsNonRoot: true
