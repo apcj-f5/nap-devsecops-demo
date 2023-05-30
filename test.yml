@@ -20,6 +20,3 @@ spec:
       containers:
         - image: kennethreitz/httpbin
           name: httpbin
-          securityContext:
-            allowPrivilegeEscalation: false
-            runAsNonRoot: true
