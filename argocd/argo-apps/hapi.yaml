@@ -1,21 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx-ingress-controller
+  name: hapi
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
-  annotations:
-    argocd.argoproj.io/sync-wave: "-1"
 spec:
   project: default
   source:
     repoURL: https://github.com/apcj-f5/hapi.f5labs.dev.git
     targetRevision: master
-    path: argocd/manifests/nginx-ingress-controller
+    path: argocd/manifests/hapi/
   destination:
-    namespace: nginx-ingress
     server: https://kubernetes.default.svc
+    namespace: hapi
   syncPolicy:
     automated:
       prune: true
