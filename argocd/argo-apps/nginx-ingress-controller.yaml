@@ -11,7 +11,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/apcj-f5/hapi.f5labs.dev.git
-    targetRevision: argocd-prod
+    targetRevision: master
     path: argocd/manifests/nginx-ingress-controller
   destination:
     namespace: nginx-ingress
