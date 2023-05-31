@@ -1,0 +1,17 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: argocd
+spec:
+  host: argocd.f5labs.dev
+  tls:
+    redirect:
+      enable: true
+  upstreams:
+    - name: argocd-server
+      service: argocd-server
+      port: 80
+  routes:
+    - path: /
+      action:
+        pass: argocd-server
