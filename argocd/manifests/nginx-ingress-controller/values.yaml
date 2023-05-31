@@ -1,4 +1,5 @@
 controller:
+  hostNetwork: true
   serviceAccount:
     imagePullSecretName: regcred
   image:
@@ -14,9 +15,3 @@ controller:
     name: nginx-config
   watchNamespaceLabel: ingress=nginx
   setAsDefaultIngress: true
-  service:
-    type: NodePort
-    httpPort:
-      nodePort: 30080
-    httpsPort:
-      nodePort: 30443
