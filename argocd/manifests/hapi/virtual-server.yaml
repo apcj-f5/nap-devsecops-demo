@@ -5,6 +5,8 @@ metadata:
 spec:
   host: hapi.f5labs.dev
   tls:
+    redirect:
+      enable: true
   upstreams:
     - name: hapi
       service: hapi
