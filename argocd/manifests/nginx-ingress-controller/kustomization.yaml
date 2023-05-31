@@ -13,3 +13,4 @@ helmCharts:
 resources:
   - nginx-regcred.yaml
   - tls.yaml
+  - virtual-server-argocd.yaml
