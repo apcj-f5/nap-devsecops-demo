@@ -1,10 +1,12 @@
 controller:
+  hostNetwork: true
+  strategy:
+    type: Recreate
   serviceAccount:
     imagePullSecretName: regcred
   image:
     repository: private-registry.nginx.com/nginx-ic-nap-dos/nginx-plus-ingress
   nginxplus: true
-  enableCertManager: true
   enableSnippets: true
   appprotect:
     enable: true
@@ -12,7 +14,6 @@ controller:
     enable: true
   config:
     name: nginx-config
-  watchNamespaceLabel: ingress=nginx
   setAsDefaultIngress: true
   service:
     type: NodePort
@@ -20,3 +21,7 @@ controller:
       nodePort: 30080
     httpsPort:
       nodePort: 30443
+  defaultTLS:
+    secret: nginx-ingress/f5labs.dev
+  wildcardTLS:
+    secret: nginx-ingress/f5labs.dev

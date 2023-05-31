@@ -1,0 +1,17 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: hapi
+spec:
+  host: hapi.f5labs.dev
+  tls:
+    redirect:
+      enable: true
+  upstreams:
+    - name: hapi
+      service: hapi
+      port: 8080
+  routes:
+    - path: /
+      action:
+        pass: hapi
