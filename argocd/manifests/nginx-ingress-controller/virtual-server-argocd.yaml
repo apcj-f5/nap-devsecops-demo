@@ -3,7 +3,7 @@ kind: VirtualServer
 metadata:
   name: argocd
 spec:
-  host: argocd.f5labs.dev
+  host: build.f5labs.dev
   tls:
     redirect:
       enable: true
