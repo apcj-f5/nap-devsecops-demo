@@ -14,7 +14,6 @@ controller:
     enable: true
   config:
     name: nginx-config
-  watchNamespaceLabel: ingress=nginx
   setAsDefaultIngress: true
   service:
     type: NodePort
