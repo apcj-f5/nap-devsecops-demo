@@ -1,6 +1,7 @@
 controller:
   hostNetwork: true
-  strategy: Recreate
+  strategy:
+    type: Recreate
   serviceAccount:
     imagePullSecretName: regcred
   image:
