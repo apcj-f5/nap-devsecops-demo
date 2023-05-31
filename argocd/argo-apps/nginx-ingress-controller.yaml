@@ -12,10 +12,10 @@ spec:
   sources:
     - repoURL: https://github.com/apcj-f5/hapi.f5labs.dev.git
       targetRevision: master
-      path: argocd/manifests/nginx-ingress-controller
+      path: argocd/manifests/post-nic
     - repoURL: https://github.com/apcj-f5/hapi.f5labs.dev.git
       targetRevision: master
-      path: argocd/manifests/post-nic
+      path: argocd/manifests/nginx-ingress-controller
   destination:
     namespace: nginx-ingress
     server: https://kubernetes.default.svc
