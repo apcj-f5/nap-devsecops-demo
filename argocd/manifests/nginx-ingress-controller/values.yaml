@@ -21,3 +21,7 @@ controller:
       nodePort: 30080
     httpsPort:
       nodePort: 30443
+  defaultTLS:
+    secret: nginx-ingress/f5labs.dev
+  wildcardTLS:
+    secret: nginx-ingress/f5labs.dev
