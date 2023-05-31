@@ -9,10 +9,13 @@ metadata:
     argocd.argoproj.io/sync-wave: "-1"
 spec:
   project: default
-  source:
-    repoURL: https://github.com/apcj-f5/hapi.f5labs.dev.git
-    targetRevision: master
-    path: argocd/manifests/nginx-ingress-controller
+  sources:
+    - repoURL: https://github.com/apcj-f5/hapi.f5labs.dev.git
+      targetRevision: master
+      path: argocd/manifests/nginx-ingress-controller
+    - repoURL: https://github.com/apcj-f5/hapi.f5labs.dev.git
+      targetRevision: master
+      path: argocd/manifests/post-nic
   destination:
     namespace: nginx-ingress
     server: https://kubernetes.default.svc
