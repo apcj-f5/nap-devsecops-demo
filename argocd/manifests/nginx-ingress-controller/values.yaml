@@ -1,5 +1,4 @@
 controller:
-  hostNetwork: true
   serviceAccount:
     imagePullSecretName: regcred
   image:
