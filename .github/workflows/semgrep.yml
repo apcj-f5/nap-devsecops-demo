@@ -27,6 +27,8 @@ jobs:
       actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
     name: "SAST"
     runs-on: ubuntu-latest
+    container:
+      image: returntocorp/semgrep
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@128a63446a954579617e875aaab7d2978154e969 # v2.4.0
@@ -36,22 +38,14 @@ jobs:
           allowed-endpoints: >
             api.github.com:443 github.com:443 metrics.semgrep.dev:443 semgrep.dev:443 fail-open.prod.semgrep.dev:443
 
-      # Checkout project source
+      # Fetch project source with Github Actions Checkout
       - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
-      # Scan code using project's configuration on https://semgrep.dev/manage
-      - uses: returntocorp/semgrep-action@7120226e55a1ddb7624bbf600148b716c82f2745
-        with:
-          publishToken: ${{ secrets.SEMGREP_APP_TOKEN }}
-          publishDeployment: ${{ secrets.SEMGREP_DEPLOYMENT_ID }}
-          generateSarif: "1"
-      # Upload SARIF file generated in previous step
-      # - name: "Upload artifact"
-      # uses: actions/upload-artifact@0b7f8abb1508181956e8e162db84b466c27e18ce # v3.1.2
-      # with:
-      # name: SARIF file
-      # path: semgrep.sarif
-      # retention-days: 5
-      - name: Upload Semgrep SARIF to Github code-scanning
+      # Run the "semgrep ci" command on the command line of the docker image
+      - run: semgrep ci --sarif --output=semgrep.sarif
+        env:
+          # Connect to Semgrep Cloud Platform through your SEMGREP_APP TOKEN
+          SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
+      - name: Upload SARIF file for Github Advanced Security Dashboard
         uses: github/codeql-action/upload-sarif@0225834cc549ee0ca93cb085b92954821a145866 # v2.3.5
         with:
           sarif_file: semgrep.sarif
