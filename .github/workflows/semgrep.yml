@@ -36,17 +36,14 @@ jobs:
           disable-sudo: true
           egress-policy: block
           allowed-endpoints: >
-            api.github.com:443 github.com:443 metrics.semgrep.dev:443 semgrep.dev:443 fail-open.prod.semgrep.dev:443
+            api.github.com:443 github.com:443 metrics.semgrep.dev:443 semgrep.dev:443
 
       # Fetch project source with Github Actions Checkout
       - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
-      # Run the "semgrep ci" command on the command line of the docker image
-      - run: |
-          semgrep login
-          semgrep ci --sarif --output=semgrep.sarif
-        env:
-          # Connect to Semgrep Cloud Platform through your SEMGREP_APP TOKEN
-          SEMGREP_APP_TOKEN: ${{ secrets.SEMGREP_APP_TOKEN }}
+      - uses: returntocorp/semgrep-action@7120226e55a1ddb7624bbf600148b716c82f2745
+        with:
+          publishToken: ${{ secrets.SEMGREP_APP_TOKEN }}
+          generateSarif: "1"
       - name: Upload SARIF file for Github Advanced Security Dashboard
         uses: github/codeql-action/upload-sarif@0225834cc549ee0ca93cb085b92954821a145866 # v2.3.5
         with:
