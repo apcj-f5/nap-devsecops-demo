@@ -6,6 +6,7 @@ helmCharts:
     version: 0.17.1
     releaseName: nginx-ingress
     namespace: nginx-ingress
+    includeCRDs: true
     # override with these custom values
     valuesFile: values.yaml
 
