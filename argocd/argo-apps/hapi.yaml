@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/apcj-f5/hapi.f5labs.dev.git
-    targetRevision: master
+    targetRevision: deploy
     path: argocd/manifests/hapi/
   destination:
     server: https://kubernetes.default.svc
