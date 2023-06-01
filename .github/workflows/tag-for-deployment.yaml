@@ -20,6 +20,8 @@ jobs:
           ${GITHUB_WORKSPACE}/.github/scripts/check-workflows.sh
 
       - name: Tag Commit
-        run: git tag deploy && git push origin --tags
+        run: |
+          git tag --force deploy
+          git push --force origin --tags
         env:
           GITHUB_TOKEN: ${{ secrets.GH_API_TOKEN }}
