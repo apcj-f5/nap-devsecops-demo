@@ -1,0 +1,24 @@
+name: Tag commit for deployment
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  check_semgrep_workflow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run Script
+        run: |
+          chmod +x check_completion.sh
+          ./check_completion.sh
+
+      - name: Tag Commit
+        run: git tag deploy && git push origin --tags
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
