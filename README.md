@@ -14,11 +14,7 @@
 
 ---
 
-<br>
-
 **Maintainers:** ![@shsingh](https://avatars.githubusercontent.com/u/412800?s=15&v=4) ![@leonseng](https://avatars.githubusercontent.com/u/26860216?s=20&v=4)
-
-<br>
 
 This repository contains the necessary files for building the [HAPI-FHIR server](https://hapifhir.io)
 and deployed at [https://hapi.f5labs.dev](https://hapi.f5labs.dev)
