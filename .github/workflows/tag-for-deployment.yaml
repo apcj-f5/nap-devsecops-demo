@@ -16,9 +16,10 @@ jobs:
       - name: Run Script
         run: |
           chmod +x ${GITHUB_WORKSPACE}/.github/scripts/check-workflows.sh
+          export GITHUB_PAT=${{ secrets.GH_API_TOKEN }}
           ${GITHUB_WORKSPACE}/.github/scripts/check-workflows.sh
 
       - name: Tag Commit
         run: git tag deploy && git push origin --tags
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_API_TOKEN }}

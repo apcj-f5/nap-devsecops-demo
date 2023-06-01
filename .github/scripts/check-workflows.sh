@@ -27,7 +27,7 @@ check_workflow_completion() {
     echo "$(date): Checking status..."
     response=$(curl --fail -s -L \
       -H "Accept: application/vnd.github+json" \
-      -H "Authorization: Bearer ${{ secrets.GH_API_TOKEN }}" \
+      -H "Authorization: Bearer $GITHUB_PAT" \
       -H "X-GitHub-Api-Version: 2022-11-28" \
       "https://api.github.com/repos/apcj-f5/hapi.f5labs.dev/actions/runs?head_sha=$GITHUB_SHA")
 
