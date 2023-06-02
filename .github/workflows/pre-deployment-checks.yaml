@@ -18,6 +18,8 @@ jobs:
           egress-policy: audit
       - name: Run Script
         run: |
+          pwd
+          ls -la
           export GITHUB_PAT=${{ secrets.GH_API_TOKEN }}
           ${GITHUB_WORKSPACE}/.github/scripts/check-workflow.sh "Semgrep"
 
