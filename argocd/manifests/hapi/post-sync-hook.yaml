@@ -1,0 +1,23 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: test-
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    metadata:
+      labels:
+        name: unit-test
+    spec:
+      containers:
+        - name: unit-test
+          args:
+            - curl
+            - "-vvv"
+            - "-s"
+            - "httpbin.org/headers"
+          image: curlimages/curl
+      restartPolicy: Never
+  backoffLimit: 0
