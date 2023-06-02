@@ -21,6 +21,5 @@ spec:
           image: curlimages/curl
           securityContext:
             allowPrivilegeEscalation: false
-            runAsNonRoot: true
       restartPolicy: Never
   backoffLimit: 0
