@@ -1,4 +1,4 @@
-name: Tag commit for deployment
+name: Pre-deployment checks
 
 on:
   push:
