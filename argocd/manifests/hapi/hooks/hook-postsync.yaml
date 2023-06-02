@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  generateName: sync-success-
+  generateName: sync-completed-
   annotations:
     argocd.argoproj.io/hook: PostSync
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
@@ -9,10 +9,10 @@ spec:
   template:
     metadata:
       labels:
-        name: sync-success
+        name: sync-completed
     spec:
       containers:
-        - name: sync-success
+        - name: sync-completed
           command: [/github-scripts/set_commit_status.sh]
           args:
             - success
