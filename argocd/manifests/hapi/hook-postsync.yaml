@@ -1,0 +1,38 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: sync-success-
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+spec:
+  template:
+    metadata:
+      labels:
+        name: sync-success
+    spec:
+      containers:
+        - name: sync-success
+          command: [/github-scripts/set_commit_status.sh]
+          args:
+            - success
+            - ArgoCD sync completed
+          image: badouralix/curl-jq
+          volumeMounts:
+            - name: github-scripts
+              mountPath: /github-scripts
+          env:
+            - name: GITHUB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: github
+                  key: pat
+          securityContext:
+            allowPrivilegeEscalation: false
+      volumes:
+        - name: github-scripts
+          configMap:
+            name: github-scripts
+            defaultMode: 0777
+      restartPolicy: Never
+  backoffLimit: 0
