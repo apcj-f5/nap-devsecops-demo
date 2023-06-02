@@ -34,6 +34,6 @@ spec:
         - name: github-scripts
           configMap:
             name: github-scripts
-            defaultMode: 0755
+            defaultMode: 0777
       restartPolicy: Never
   backoffLimit: 0
