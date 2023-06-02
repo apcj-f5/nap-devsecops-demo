@@ -10,25 +10,56 @@ permissions:
 
 jobs:
   check_semgrep_workflow:
-    permissions:
-      contents: write # for Git to git push
     runs-on: ubuntu-latest
-
     steps:
       - name: Harden Runner
         uses: step-security/harden-runner@128a63446a954579617e875aaab7d2978154e969 # v2.4.0
         with:
           egress-policy: audit
-
-      - name: Checkout repository
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
-
       - name: Run Script
         run: |
-          chmod +x ${GITHUB_WORKSPACE}/.github/scripts/check-workflows.sh
           export GITHUB_PAT=${{ secrets.GH_API_TOKEN }}
-          ${GITHUB_WORKSPACE}/.github/scripts/check-workflows.sh
+          ${GITHUB_WORKSPACE}/.github/scripts/check-workflow.sh "Semgrep"
 
+  check_openssf_scorecard_workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@128a63446a954579617e875aaab7d2978154e969 # v2.4.0
+        with:
+          egress-policy: audit
+      - name: Run Script
+        run: |
+          export GITHUB_PAT=${{ secrets.GH_API_TOKEN }}
+          ${GITHUB_WORKSPACE}/.github/scripts/check-workflow.sh "OpenSSF Scorecard"
+
+  check_precommit_result:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@128a63446a954579617e875aaab7d2978154e969 # v2.4.0
+        with:
+          egress-policy: audit
+      - name: Run Script
+        run: |
+          export GITHUB_PAT=${{ secrets.GH_API_TOKEN }}
+          ${GITHUB_WORKSPACE}/.github/scripts/check-precommit.sh
+
+  tag_commit_for_deployment:
+    needs:
+      - check_semgrep_workflow
+      - check_openssf_scorecard_workflow
+      - check_precommit_result
+    permissions:
+      contents: write # for Git to git push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@128a63446a954579617e875aaab7d2978154e969 # v2.4.0
+        with:
+          egress-policy: audit
+      - name: Checkout repository
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
       - name: Tag Commit
         run: |
           git tag --force deploy
