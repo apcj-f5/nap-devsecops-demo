@@ -29,10 +29,11 @@ spec:
                   key: pat
           securityContext:
             allowPrivilegeEscalation: false
+            runAsNonRoot: true
       volumes:
         - name: github-scripts
           configMap:
             name: github-scripts
-            defaultMode: 0777
+            defaultMode: 0755
       restartPolicy: Never
   backoffLimit: 0
