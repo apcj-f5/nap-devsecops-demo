@@ -1,11 +1,13 @@
 name: Post deployment tests
 on:
   push:
-    branches:
-      - master
-      # paths-ignore:
-      # - ".github/**"
-      # - "*.md"
+    # branches:
+    # - master
+    # paths-ignore:
+    # - ".github/**"
+    # - "*.md"
+    tags:
+      - deploy
 permissions:
   contents: read
 jobs:
