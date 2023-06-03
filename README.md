@@ -1,4 +1,4 @@
-# Demonstration of security in CI/CD pipelines using NGINX App Protect
+# Security in CI/CD pipelines with NGINX App Protect
 
 ---
 
