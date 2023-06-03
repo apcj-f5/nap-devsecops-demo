@@ -1,0 +1,43 @@
+name: Tag commit for deployment
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - ".github/**"
+permissions:
+  contents: read
+jobs:
+  pre_deployment_checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@128a63446a954579617e875aaab7d2978154e969 # v2.4.0
+        with:
+          egress-policy: audit
+      - name: Checkout repository
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+      - name: Run Script
+        run: |
+          export GITHUB_PAT=${{ secrets.GH_API_TOKEN }}
+          ${GITHUB_WORKSPACE}/.github/scripts/check-workflow.sh "Semgrep"
+          ${GITHUB_WORKSPACE}/.github/scripts/check-workflow.sh "OpenSSF Scorecard"
+          ${GITHUB_WORKSPACE}/.github/scripts/check-precommit.sh
+  add_deploy_tag_to_commit:
+    needs: [pre_deployment_checks]
+    permissions:
+      contents: write # for Git to git push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@128a63446a954579617e875aaab7d2978154e969 # v2.4.0
+        with:
+          egress-policy: audit
+      - name: Checkout repository
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+      - name: Tag Commit
+        run: |
+          git tag --force deploy
+          git push --force origin --tags
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_API_TOKEN }}

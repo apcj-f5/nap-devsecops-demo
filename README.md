@@ -3,6 +3,7 @@
 ---
 
 ![License](https://img.shields.io/github/license/apcj-f5/hapi.f5labs.dev)
+[![GitHub branch checks state](https://img.shields.io/github/checks-status/apcj-f5/hapi.f5labs.dev/master?label=build%20checks)](https://github.com/apcj-f5/hapi.f5labs.dev/actions)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/apcj-f5/hapi.f5labs.dev)](https://github.com/apcj-f5/hapi.f5labs.dev/pulse/monthly)
 [![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/apcj-f5/hapi.f5labs.dev)](https://libraries.io/github/apcj-f5/hapi.f5labs.dev)
@@ -14,14 +15,12 @@
 
 ---
 
-<br>
-
 **Maintainers:** ![@shsingh](https://avatars.githubusercontent.com/u/412800?s=15&v=4) ![@leonseng](https://avatars.githubusercontent.com/u/26860216?s=20&v=4)
-
-<br>
 
 This repository contains the necessary files for building the [HAPI-FHIR server](https://hapifhir.io)
 and deployed at [https://hapi.f5labs.dev](https://hapi.f5labs.dev)
+
+---
 
 ## Getting started
 
