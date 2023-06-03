@@ -1,4 +1,4 @@
-# Demonstration of DevSecOps using NGINX App Protect for Health Records (FHIR) API
+# Demonstration of DevSecOps using NGINX App Protect
 
 ---
 
