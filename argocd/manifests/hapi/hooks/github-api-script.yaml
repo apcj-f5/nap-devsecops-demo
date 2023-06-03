@@ -5,7 +5,7 @@ metadata:
   namespace: hapi
 data:
   set_commit_status.sh: |
-    #!/usr/bin/env sh
+    #!/usr/bin/env bash
     set -e
 
     COMMIT_STATE=$1
