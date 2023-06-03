@@ -3,6 +3,7 @@
 ---
 
 ![License](https://img.shields.io/github/license/apcj-f5/hapi.f5labs.dev)
+![GitHub branch checks state](https://img.shields.io/github/checks-status/apcj-f5/hapi.f5labs.dev/master?label=build%20checks)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/m/apcj-f5/hapi.f5labs.dev)](https://github.com/apcj-f5/hapi.f5labs.dev/pulse/monthly)
 [![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/apcj-f5/hapi.f5labs.dev)](https://libraries.io/github/apcj-f5/hapi.f5labs.dev)
