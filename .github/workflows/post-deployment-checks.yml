@@ -1,4 +1,4 @@
-name: Tag commit for deployment
+name: Post deployment tests
 on:
   push:
     branches:
@@ -9,7 +9,7 @@ on:
 permissions:
   contents: read
 jobs:
-  pre_deployment_checks:
+  post_deployment_checks:
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
@@ -21,13 +21,11 @@ jobs:
       - name: Run Script
         run: |
           export GITHUB_PAT=${{ secrets.GH_API_TOKEN }}
-          ${GITHUB_WORKSPACE}/.github/scripts/check-workflow.sh "Semgrep"
-          ${GITHUB_WORKSPACE}/.github/scripts/check-workflow.sh "OpenSSF Scorecard"
-          ${GITHUB_WORKSPACE}/.github/scripts/check-precommit.sh
-  add_deploy_tag_to_commit:
-    needs: [pre_deployment_checks]
+          ${GITHUB_WORKSPACE}/.github/scripts/check-argocd.sh
+  functional_tests:
+    needs: [post_deployment_checks]
     permissions:
-      contents: write # for Git to git push
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
@@ -36,9 +34,8 @@ jobs:
           egress-policy: audit
       - name: Checkout repository
         uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
-      - name: Tag Commit
+      - name: Echo
         run: |
-          git tag --force deploy
-          git push --force origin --tags
+          echo "This runs functional tests"
         env:
           GITHUB_TOKEN: ${{ secrets.GH_API_TOKEN }}
