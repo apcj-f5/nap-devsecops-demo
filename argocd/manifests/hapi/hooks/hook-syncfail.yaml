@@ -29,7 +29,7 @@ spec:
                   key: pat
           securityContext:
             allowPrivilegeEscalation: false
-            runAsNonRoot: true
+            runAsNonRoot: false # image runs as root :(
       volumes:
         - name: github-scripts
           configMap:
