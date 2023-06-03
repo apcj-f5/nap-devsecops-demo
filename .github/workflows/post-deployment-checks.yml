@@ -3,9 +3,9 @@ on:
   push:
     branches:
       - master
-    paths-ignore:
-      - ".github/**"
-      - "*.md"
+      # paths-ignore:
+      # - ".github/**"
+      # - "*.md"
 permissions:
   contents: read
 jobs:
