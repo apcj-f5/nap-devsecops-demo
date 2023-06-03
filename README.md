@@ -24,7 +24,7 @@ and deployed at [https://hapi.f5labs.dev](https://hapi.f5labs.dev)
 
 ## Getting started
 
-1. Clone or Fork reposistory
+1. Clone or Fork repository
 2. Ensure [pre-commit](https://pre-commit.com) is installed
 
 ```bash
