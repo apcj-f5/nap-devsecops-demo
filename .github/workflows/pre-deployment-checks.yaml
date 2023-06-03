@@ -1,15 +1,12 @@
 name: Tag commit for deployment
-
 on:
   push:
     branches:
       - master
     paths-ignore:
-      - '.github/**'
-
+      - ".github/**"
 permissions:
   contents: read
-
 jobs:
   pre_deployment_checks:
     runs-on: ubuntu-latest
@@ -26,7 +23,6 @@ jobs:
           ${GITHUB_WORKSPACE}/.github/scripts/check-workflow.sh "Semgrep"
           ${GITHUB_WORKSPACE}/.github/scripts/check-workflow.sh "OpenSSF Scorecard"
           ${GITHUB_WORKSPACE}/.github/scripts/check-precommit.sh
-
   add_deploy_tag_to_commit:
     needs: [pre_deployment_checks]
     permissions:
