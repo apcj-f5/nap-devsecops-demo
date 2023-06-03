@@ -1,4 +1,4 @@
-# Demonstration of DevSecOps using NGINX App Protect
+# Demonstration of security in CI/CD pipelines using NGINX App Protect
 
 ---
 
