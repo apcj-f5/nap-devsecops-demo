@@ -16,7 +16,7 @@ data:
       cat <<EOF
     {
       "state": "$COMMIT_STATE",
-      "target_url": "https://example.com/build/status",
+      "target_url": "https://github.com/apcj-f5/hapi.f5labs.dev/actions",
       "description": "$COMMIT_STATUS_DESCRIPTION",
       "context": "ArgoCD"
     }
