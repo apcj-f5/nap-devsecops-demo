@@ -41,4 +41,4 @@ jobs:
           git tag --force deploy
           git push --force origin --tags
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_API_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
