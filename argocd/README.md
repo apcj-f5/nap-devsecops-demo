@@ -18,14 +18,8 @@
 ## ArgoCD
 
 ```
-kubectl apply -k argocd/bootstrap/install
-kubectl apply -f argocd/bootstrap/app-of-apps.yaml
-```
-
-Web UI password
-
-```
-kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+kubectl apply -k bootstrap/install
+kubectl apply -f bootstrap/app-of-apps.yaml
 ```
 
 Access ArgoCD Web UI
