@@ -5,3 +5,4 @@ metadata:
   name: argocd-cm
 data:
   kustomize.buildOptions: --enable-helm
+  users.anonymous.enabled: "true"
