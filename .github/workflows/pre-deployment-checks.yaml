@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
       - name: Run Script
         run: |
-          export GITHUB_PAT=${{ secrets.GH_API_TOKEN }}
+          export GITHUB_PAT=${{ secrets.GITHUB_TOKEN }}
           ${GITHUB_WORKSPACE}/.github/scripts/check-workflow.sh "Semgrep"
           ${GITHUB_WORKSPACE}/.github/scripts/check-workflow.sh "OpenSSF Scorecard"
           ${GITHUB_WORKSPACE}/.github/scripts/check-precommit.sh
