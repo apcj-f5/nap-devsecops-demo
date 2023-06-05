@@ -4,6 +4,8 @@ metadata:
   name: hapi
 spec:
   host: hapi.f5labs.dev
+  policies:
+    - name: waf-policy
   tls:
     redirect:
       enable: true
