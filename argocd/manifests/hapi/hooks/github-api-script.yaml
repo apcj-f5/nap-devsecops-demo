@@ -1,9 +1,45 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: github-scripts
-  namespace: hapi
+  name: postsync-scripts
 data:
+  newman_run.sh: |
+    #!/usr/bin/env sh
+    set -e
+
+    newman run https://gitlab.com/shainsingh/hapi-fhir/-/raw/master/test/postman_collection.json \
+      --environment https://gitlab.com/shainsingh/hapi-fhir/-/raw/master/test/postman_environment.json \
+      --bail
+
+    # Store newman exit status into /tmp/newman/return_code, to be read by another container
+    echo $? > /tmp/newman/return_code
+
+  check_newman_run.sh: |
+    #!/usr/bin/env sh
+    set -e
+
+    # first, check if /tmp/newman/return_code has been created by newman container for up to 5 mins
+    file_path="/tmp/newman/return_code"
+    elapsed_time=0
+    interval=5  # Time interval to check for files (in seconds)
+
+    while [ $elapsed_time -lt 300 ]; do
+      if [ -f "$file_path" ]; then
+        value=$(cat "$file_path")
+        if [ "$value" -eq 1 ]; then
+          echo "Newman run succeeded. Setting commit status to 'success'"
+          /scripts/set_commit_status.sh success "Newman test passed."
+        fi
+      fi
+
+      # Wait for the specified interval
+      sleep $interval
+      elapsed_time=$(expr $elapsed_time + $interval)
+    done
+
+    echo "Newman run failed. Setting commit status to 'failure'"
+    /scripts/set_commit_status.sh failure "Newman test failed."
+
   set_commit_status.sh: |
     #!/usr/bin/env sh
     set -e

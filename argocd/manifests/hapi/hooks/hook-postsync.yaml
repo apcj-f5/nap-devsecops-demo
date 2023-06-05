@@ -12,15 +12,32 @@ spec:
         name: sync-completed
     spec:
       containers:
+        # executes newman test and record result in shared dir /tmp/newman/return_code
+        - name: newman
+          command: [/scripts/newman_run.sh]
+          image: postman/newman
+          volumeMounts:
+            - name: postsync-scripts
+              mountPath: /scripts/newman_run.sh
+              subPath: newman_run.sh
+            - name: shared-data
+              mountPath: /tmp/newman/
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: false # image runs as root :(
+        # waits for newman test results in /tmp/newman/return_code and updates commit status
         - name: sync-completed
-          command: [/github-scripts/set_commit_status.sh]
-          args:
-            - success
-            - ArgoCD sync completed
+          command: [/scripts/check_newman_run.sh]
           image: badouralix/curl-jq
           volumeMounts:
-            - name: github-scripts
-              mountPath: /github-scripts
+            - name: postsync-scripts
+              mountPath: /scripts/check_newman_run.sh
+              subPath: check_newman_run.sh
+            - name: postsync-scripts
+              mountPath: /scripts/set_commit_status.sh
+              subPath: set_commit_status.sh
+            - name: shared-data
+              mountPath: /tmp/newman/
           env:
             - name: GITHUB_TOKEN
               valueFrom:
@@ -31,9 +48,11 @@ spec:
             allowPrivilegeEscalation: false
             runAsNonRoot: false # image runs as root :(
       volumes:
-        - name: github-scripts
+        - name: postsync-scripts
           configMap:
-            name: github-scripts
+            name: postsync-scripts
             defaultMode: 0755
+        - name: shared-data
+          emptyDir: {}
       restartPolicy: Never
   backoffLimit: 0
