@@ -4,7 +4,7 @@ metadata:
   name: alarm-bots
 spec:
   policy:
-    name: attack_signatures_non-blocking_and_bots_blocking
+    name: sigs-disabled-bots-alarmed
     template:
       name: POLICY_TEMPLATE_NGINX_BASE
     applicationLanguage: utf-8
