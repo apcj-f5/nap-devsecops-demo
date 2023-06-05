@@ -26,7 +26,7 @@ spec:
             allowPrivilegeEscalation: false
             runAsNonRoot: false # image runs as root :(
         # waits for newman test results in /tmp/newman/return_code and updates commit status
-        - name: sync-completed
+        - name: notify-newman-results
           command: [/scripts/check_newman_run.sh]
           image: badouralix/curl-jq
           volumeMounts:

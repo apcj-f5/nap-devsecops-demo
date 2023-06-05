@@ -18,18 +18,23 @@ data:
     #!/usr/bin/env sh
     set -e
 
-    # first, check if /tmp/newman/return_code has been created by newman container for up to 5 mins
+    # first, check if /tmp/newman/return_code has been created by newman container for a period
     file_path="/tmp/newman/return_code"
     elapsed_time=0
     interval=5  # Time interval to check for files (in seconds)
 
-    while [ $elapsed_time -lt 300 ]; do
+    while [ $elapsed_time -lt 60 ]; do
       if [ -f "$file_path" ]; then
         value=$(cat "$file_path")
-        if [ "$value" -eq 1 ]; then
+        echo "Newman return code is $value."
+
+        if [ "$value" -eq 0 ]; then
           echo "Newman run succeeded. Setting commit status to 'success'"
           /scripts/set_commit_status.sh success "Newman test passed."
+          exit 0
         fi
+
+        break
       fi
 
       # Wait for the specified interval
@@ -39,6 +44,7 @@ data:
 
     echo "Newman run failed. Setting commit status to 'failure'"
     /scripts/set_commit_status.sh failure "Newman test failed."
+    exit 1
 
   set_commit_status.sh: |
     #!/usr/bin/env sh
