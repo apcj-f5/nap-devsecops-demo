@@ -7,6 +7,6 @@ spec:
     enable: true
     apPolicy: alarm-bots
     securityLogs:
-    - enable: true
-      apLogConf: logconf
-      logDest: stderr
+      - enable: true
+        apLogConf: logconf
+        logDest: stderr
