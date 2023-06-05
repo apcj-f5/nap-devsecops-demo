@@ -6,6 +6,7 @@ spec:
   host: hapi.f5labs.dev
   policies:
     - name: waf-policy
+  dos: dos-protected
   tls:
     redirect:
       enable: true
