@@ -5,6 +5,6 @@ metadata:
 spec:
   mitigation_mode: "standard"
   signatures: "on"
-  bad_actors: "on"
+  bad_actors: "off"
   automation_tools_detection: "on"
   tls_fingerprint: "on"
