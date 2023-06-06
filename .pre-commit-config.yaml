@@ -4,7 +4,7 @@ repos:
     hooks:
       - id: check-case-conflict
       - id: check-added-large-files
-        args: ["--maxkb=2048"]
+        args: ["--maxkb=5120"]
       - id: check-executables-have-shebangs
       - id: check-merge-conflict
       - id: check-symlinks
