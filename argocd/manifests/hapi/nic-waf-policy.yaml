@@ -5,7 +5,7 @@ metadata:
 spec:
   waf:
     enable: true
-    apPolicy: alarm-bots
+    apPolicy: "nap-waf-ingress-policy"
     securityLogs:
       - enable: true
         apLogConf: logconf
