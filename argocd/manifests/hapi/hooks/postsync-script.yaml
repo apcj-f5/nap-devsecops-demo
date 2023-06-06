@@ -5,8 +5,6 @@ metadata:
 data:
   newman_run.sh: |
     #!/usr/bin/env sh
-    set -e
-
     newman run https://raw.githubusercontent.com/apcj-f5/hapi.f5labs.dev/master/tests/hapi/hapi-newman-tests-collection.json \
       --environment https://raw.githubusercontent.com/apcj-f5/hapi.f5labs.dev/master/tests/hapi/hapi-newman-tests-environment.json \
       --bail
