@@ -11,5 +11,5 @@ export const options = {
 };
 
 export default function main() {
-  let response = http.get("https://hapi.f5labs.dev/fhir");
+  let response = http.get("https://hapi.f5labs.dev/");
 }
