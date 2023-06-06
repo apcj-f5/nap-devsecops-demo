@@ -26,12 +26,8 @@
         "header": [],
         "url": {
           "raw": "{{url}}/CodeSystem?_elements=name,url",
-          "host": [
-            "{{url}}"
-          ],
-          "path": [
-            "CodeSystem"
-          ],
+          "host": ["{{url}}"],
+          "path": ["CodeSystem"],
           "query": [
             {
               "key": "_elements",
@@ -49,13 +45,8 @@
         "header": [],
         "url": {
           "raw": "{{url}}/CodeSystem/$lookup?system=http://snomed.info/sct&code=263495000&_format=json",
-          "host": [
-            "{{url}}"
-          ],
-          "path": [
-            "CodeSystem",
-            "$lookup"
-          ],
+          "host": ["{{url}}"],
+          "path": ["CodeSystem", "$lookup"],
           "query": [
             {
               "key": "system",
@@ -81,14 +72,8 @@
         "header": [],
         "url": {
           "raw": "{{url}}/ConceptMap/102/$translate?code=ACNE&system=http://hl7.org/fhir/v2/0487&target=http:/snomed.info/sct",
-          "host": [
-            "{{url}}"
-          ],
-          "path": [
-            "ConceptMap",
-            "102",
-            "$translate"
-          ],
+          "host": ["{{url}}"],
+          "path": ["ConceptMap", "102", "$translate"],
           "query": [
             {
               "key": "code",
@@ -114,12 +99,8 @@
         "header": [],
         "url": {
           "raw": "{{url}}/ConceptMap?_format=xml",
-          "host": [
-            "{{url}}"
-          ],
-          "path": [
-            "ConceptMap"
-          ],
+          "host": ["{{url}}"],
+          "path": ["ConceptMap"],
           "query": [
             {
               "key": "_format",
@@ -137,12 +118,8 @@
         "header": [],
         "url": {
           "raw": "{{url}}/ConceptMap?_format=xml",
-          "host": [
-            "{{url}}"
-          ],
-          "path": [
-            "ConceptMap"
-          ],
+          "host": ["{{url}}"],
+          "path": ["ConceptMap"],
           "query": [
             {
               "key": "_format",
@@ -160,15 +137,8 @@
         "header": [],
         "url": {
           "raw": "{{url}}/ConceptMap/v3-snomed-education-map/_history/1?_format=application/fhir+xml",
-          "host": [
-            "{{url}}"
-          ],
-          "path": [
-            "ConceptMap",
-            "v3-snomed-education-map",
-            "_history",
-            "1"
-          ],
+          "host": ["{{url}}"],
+          "path": ["ConceptMap", "v3-snomed-education-map", "_history", "1"],
           "query": [
             {
               "key": "_format",
@@ -185,18 +155,14 @@
       "listen": "prerequest",
       "script": {
         "type": "text/javascript",
-        "exec": [
-          ""
-        ]
+        "exec": [""]
       }
     },
     {
       "listen": "test",
       "script": {
         "type": "text/javascript",
-        "exec": [
-          ""
-        ]
+        "exec": [""]
       }
     }
   ]
