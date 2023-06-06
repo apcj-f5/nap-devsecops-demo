@@ -183,11 +183,11 @@ spec:
       mitigations:
         classes:
           - name: trusted-bot
-            action: block
+            action: ignore
           - name: untrusted-bot
-            action: block
+            action: ignore
           - name: malicious-bot
-            action: block
+            action: ignore
           - name: browser
             action: ignore
           - name: suspicious-browser
