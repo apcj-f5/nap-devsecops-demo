@@ -13,14 +13,14 @@ spec:
     spec:
       containers:
         - name: sync-failed
-          command: [/github-scripts/set_commit_status.sh]
+          command: [/scripts/set_commit_status.sh]
           args:
             - failure
             - ArgoCD sync failed
           image: badouralix/curl-jq
           volumeMounts:
-            - name: github-scripts
-              mountPath: /github-scripts
+            - name: postsync-scripts
+              mountPath: /scripts
           env:
             - name: GITHUB_TOKEN
               valueFrom:
@@ -31,9 +31,9 @@ spec:
             allowPrivilegeEscalation: false
             runAsNonRoot: false # image runs as root :(
       volumes:
-        - name: github-scripts
+        - name: postsync-scripts
           configMap:
-            name: github-scripts
+            name: postsync-scripts
             defaultMode: 0755
       restartPolicy: Never
   backoffLimit: 0
