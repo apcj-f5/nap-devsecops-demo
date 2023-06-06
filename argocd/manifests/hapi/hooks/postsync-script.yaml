@@ -41,7 +41,6 @@ data:
 
     echo "Newman run failed. Setting commit status to 'failure'"
     /scripts/set_commit_status.sh failure "Newman test failed."
-    exit 1
   set_commit_status.sh: |
     #!/usr/bin/env sh
     set -e
