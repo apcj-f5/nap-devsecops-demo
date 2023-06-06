@@ -7,13 +7,12 @@ data:
     #!/usr/bin/env sh
     set -e
 
-    newman run https://gitlab.com/shainsingh/hapi-fhir/-/raw/master/test/postman_collection.json \
-      --environment https://gitlab.com/shainsingh/hapi-fhir/-/raw/master/test/postman_environment.json \
+    newman run https://raw.githubusercontent.com/apcj-f5/hapi.f5labs.dev/master/tests/hapi/hapi-newman-tests-collection.json \
+      --environment https://raw.githubusercontent.com/apcj-f5/hapi.f5labs.dev/master/tests/hapi/hapi-newman-tests-environment.json \
       --bail
 
     # Store newman exit status into /tmp/newman/return_code, to be read by another container
     echo $? > /tmp/newman/return_code
-
   check_newman_run.sh: |
     #!/usr/bin/env sh
     set -e
@@ -45,7 +44,6 @@ data:
     echo "Newman run failed. Setting commit status to 'failure'"
     /scripts/set_commit_status.sh failure "Newman test failed."
     exit 1
-
   set_commit_status.sh: |
     #!/usr/bin/env sh
     set -e
