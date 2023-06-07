@@ -17,8 +17,37 @@
 
 **Maintainers:** [![@shsingh](https://avatars.githubusercontent.com/u/412800?s=25&v=4)](https://github.com/shsingh) [![@leonseng](https://avatars.githubusercontent.com/u/26860216?s=25&v=4)](https://github.com/leonseng)
 
-This repository contains the necessary files for building the [HAPI-FHIR server](https://hapifhir.io)
-and is deployed at [https://hapi.f5labs.dev](https://hapi.f5labs.dev)
+This repository hosts files that demonstrate using F5 security solutions (NGINX App Protect, NGINX App Protect DoS,
+F5 Distributed Cloud) for post-deployment security in application CI/CD pipelines.
+
+Integrating security into post-deployment processes as part of Continuous Delivery/Continuous Deployment
+ensure that applications at runtime have proper controls, and can also be checked for compliance.
+
+## Repository Information
+
+This repository aims to follow security recommended practices for opensource software and contains the following:
+
+- [OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/en/projects/7409) for projects
+- [Scorecard for validation of OpenSSF Best Practices](https://api.securityscorecards.dev/projects/github.com/apcj-f5/hapi.f5labs.dev)
+- Github organisation [apcj-f5](https://github.com/apcj-f5) uses the [Allstar application](https://github.com/ossf/allstar) with the
+  following [configuration files](https://github.com/apcj-f5/.allstar)
+
+## Reference Implementation
+
+The reference implementation uses the [HAPI FHIR](https://fhir.io) application. The application provides
+an example API gateway for digital health use cases. Source code for the application is in the [app](https://github.com/apcj-f5/hapi.f5labs.dev-app/tree/87ddc741dd1b5ee074d60733bf9eae7527917866)
+directory.
+
+- Website for the live implementation is at [https://hapi.f5labs.dev](https://hapi.f5labs.dev)
+- Build information from ArgoCD for the deployment is at [https://build.f5labs.dev](https://build.f5labs.dev)
+
+![Reference Implementation](docs/images/Reference%20Implementation.png)
+
+### Pipeline details
+
+- SAST using [Semgrep](https://semgrep.dev) with the following [workflow run details](https://github.com/apcj-f5/hapi.f5labs.dev/actions?query=workflow%3ASemgrep)
+- Dependency Checking [workflow run details](https://github.com/apcj-f5/hapi.f5labs.dev/actions?query=workflow%3A%22Dependency%20Review%22) and using [Renovate](https://github.com/apcj-f5/hapi.f5labs.dev/blob/master/renovate.json) for updating dependencies
+- Post deployment functional testing using [newman](argocd/manifests/hapi/hooks/hook-postsync.yaml) to check WAF blocking policy effectiveness and false positives
 
 ---
 
