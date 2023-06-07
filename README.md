@@ -28,7 +28,7 @@ ensure that applications at runtime have proper controls, and can also be checke
 This repository aims to follow security recommended practices for opensource software and contains the following:
 
 - [OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/en/projects/7409) for projects
-- [Scorecard for validation of OpenSSF Best Practices](https://api.securityscorecards.dev/projects/github.com/apcj-f5/hapi.f5labs.dev)
+- [Scorecard](https://api.securityscorecards.dev/projects/github.com/apcj-f5/hapi.f5labs.dev) for validation of OpenSSF Best Practices
 - Github organisation [apcj-f5](https://github.com/apcj-f5) uses the [Allstar application](https://github.com/ossf/allstar) with the
   following [configuration files](https://github.com/apcj-f5/.allstar)
 
