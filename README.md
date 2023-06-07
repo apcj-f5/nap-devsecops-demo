@@ -41,7 +41,7 @@ directory.
 - Website for the live implementation is at [https://hapi.f5labs.dev](https://hapi.f5labs.dev)
 - Build information from ArgoCD for the deployment is at [https://build.f5labs.dev](https://build.f5labs.dev)
 
-![Reference Implementation](docs/images/Reference%20Implementation.png)
+![Reference Implementation](docs/images/Reference%20Implementation%20-%20hapi.f5labs.dev.png)
 
 ### Pipeline details
 
