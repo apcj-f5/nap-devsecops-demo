@@ -8,9 +8,15 @@ jobs:
         uses: step-security/harden-runner@128a63446a954579617e875aaab7d2978154e969 # v2.4.0
         with:
           egress-policy: audit
+      - name: Set commit to pending status
+        uses: ouzi-dev/commit-status-updater@v2
       - name: Checkout repository
         uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
       - uses: matt-ball/newman-action@master
         with:
           collection: tests/hapi/hapi-newman-tests-collection.json
           environment: tests/hapi/hapi-newman-tests-environment.json
+      - if: always()
+        uses: ouzi-dev/commit-status-updater@v2
+        with:
+          status: "${{ job.status }}"
