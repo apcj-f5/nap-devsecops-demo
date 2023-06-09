@@ -10,7 +10,7 @@ data:
     echo "Get post deployment workflow ID (Newman tests)"
 
     WORKFLOW_ID=$(curl --fail -s -L \
-      https://api.github.com/repos/apcj-f5/hapi.f5labs.dev/actions/workflows \
+      https://api.github.com/repos/apcj-f5/nap-devsecops-demo/actions/workflows \
       | jq -r '.workflows[] | select(.name=="Newman tests") | .id')
 
     echo "Trigger post deployment Github workflow (ID=$WORKFLOW_ID)"
@@ -20,7 +20,7 @@ data:
       -H "Authorization: Bearer $GITHUB_TOKEN" \
       -H "X-GitHub-Api-Version: 2022-11-28" \
       -d '{"ref": "deploy"}' \
-      https://api.github.com/repos/apcj-f5/hapi.f5labs.dev/actions/workflows/$WORKFLOW_ID/dispatches
+      https://api.github.com/repos/apcj-f5/nap-devsecops-demo/actions/workflows/$WORKFLOW_ID/dispatches
   set_commit_status.sh: |
     #!/usr/bin/env sh
     set -e
@@ -45,7 +45,7 @@ data:
       -H "Accept: application/vnd.github+json" \
       -H "Authorization: Bearer $GITHUB_TOKEN" \
       -H "X-GitHub-Api-Version: 2022-11-28" \
-      https://api.github.com/repos/apcj-f5/hapi.f5labs.dev/commits/deploy \
+      https://api.github.com/repos/apcj-f5/nap-devsecops-demo/commits/deploy \
       | jq -r .sha)
 
     echo "Set commit status for commit $COMMIT_SHA to $COMMIT_STATE"
@@ -54,4 +54,4 @@ data:
       -H "Authorization: Bearer $GITHUB_TOKEN" \
       -H "X-GitHub-Api-Version: 2022-11-28" \
       -d "$(generate_post_data)" \
-      https://api.github.com/repos/apcj-f5/hapi.f5labs.dev/statuses/$COMMIT_SHA
+      https://api.github.com/repos/apcj-f5/nap-devsecops-demo/statuses/$COMMIT_SHA

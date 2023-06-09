@@ -28,7 +28,7 @@ while true; do
     -H "Accept: application/vnd.github+json" \
     -H "Authorization: Bearer $GITHUB_PAT" \
     -H "X-GitHub-Api-Version: 2022-11-28" \
-    "https://api.github.com/repos/apcj-f5/hapi.f5labs.dev/actions/runs?head_sha=$GITHUB_SHA")
+    "https://api.github.com/repos/apcj-f5/nap-devsecops-demo/actions/runs?head_sha=$GITHUB_SHA")
 
   status=$(echo $response | jq -r --arg workflow "$workflow_name" '.workflow_runs[] | select(.name == $workflow) | .status')
 

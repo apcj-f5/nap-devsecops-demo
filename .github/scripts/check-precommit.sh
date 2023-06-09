@@ -26,7 +26,7 @@ while true; do
     -H "Accept: application/vnd.github+json" \
     -H "Authorization: Bearer $GITHUB_PAT" \
     -H "X-GitHub-Api-Version: 2022-11-28" \
-    "https://api.github.com/repos/apcj-f5/hapi.f5labs.dev/commits/$GITHUB_SHA/status")
+    "https://api.github.com/repos/apcj-f5/nap-devsecops-demo/commits/$GITHUB_SHA/status")
 
   state=$(echo $response | jq -r '.statuses[] | select(.context == "pre-commit.ci - push") | .state')
 
