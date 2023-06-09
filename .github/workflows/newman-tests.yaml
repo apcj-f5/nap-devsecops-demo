@@ -1,5 +1,7 @@
 name: Newman tests
 on: workflow_dispatch
+permissions:
+  contents: read
 jobs:
   run-newman-tests:
     permissions:
