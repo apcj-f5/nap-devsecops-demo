@@ -35,13 +35,13 @@ This repository aims to follow security recommended practices for opensource sof
 ## Reference Implementation
 
 The reference implementation uses the [HAPI FHIR](https://hapifhir.io) application. The application provides
-an example API gateway for digital health use cases. Source code for the application is in the [app](https://github.com/apcj-f5/nap-devsecops-demo-app/tree/87ddc741dd1b5ee074d60733bf9eae7527917866)
+an example API gateway for digital health use cases. Source code for the application is in the [apps](apps/)
 directory.
 
 - Website for the live implementation is at [https://nap-devsecops-demo](https://nap-devsecops-demo)
 - Build information from ArgoCD for the deployment is at [https://build.f5labs.dev](https://build.f5labs.dev)
 
-![Reference Implementation](docs/images/Reference%20Implementation%20-%20nap-devsecops-demo.png)
+![Reference Implementation](docs/images/Reference%20Implementation%20-%20hapi.f5labs.dev.png)
 
 ### Pipeline details
 
