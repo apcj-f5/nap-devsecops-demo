@@ -34,7 +34,7 @@ This repository aims to follow security recommended practices for opensource sof
 
 ## Reference Implementation
 
-The reference implementation uses the [HAPI FHIR](https://fhir.io) application. The application provides
+The reference implementation uses the [HAPI FHIR](https://hapifhir.io) application. The application provides
 an example API gateway for digital health use cases. Source code for the application is in the [app](https://github.com/apcj-f5/hapi.f5labs.dev-app/tree/87ddc741dd1b5ee074d60733bf9eae7527917866)
 directory.
 
