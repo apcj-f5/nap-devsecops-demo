@@ -12,32 +12,21 @@ spec:
         name: sync-completed
     spec:
       containers:
-        # executes newman test and record result in shared dir /tmp/newman/return_code
-        - name: newman
-          command: [/scripts/newman_run.sh]
-          image: postman/newman
-          volumeMounts:
-            - name: postsync-scripts
-              mountPath: /scripts/newman_run.sh
-              subPath: newman_run.sh
-            - name: shared-data
-              mountPath: /tmp/newman/
-          securityContext:
-            allowPrivilegeEscalation: false
-            runAsNonRoot: false # image runs as root :(
-        # waits for newman test results in /tmp/newman/return_code and updates commit status
+        # trigger post deployment check via Github Action
         - name: notify-newman-results
-          command: [/scripts/check_newman_run.sh]
+          command: [sh]
+          args:
+            - "-c"
+            - "/scripts/set_commit_status.sh success 'ArgoCD sync successful'
+              && /scripts/trigger_post_deployment_workflow.sh"
           image: badouralix/curl-jq
           volumeMounts:
             - name: postsync-scripts
-              mountPath: /scripts/check_newman_run.sh
-              subPath: check_newman_run.sh
+              mountPath: /scripts/trigger_post_deployment_workflow.sh
+              subPath: trigger_post_deployment_workflow.sh
             - name: postsync-scripts
               mountPath: /scripts/set_commit_status.sh
               subPath: set_commit_status.sh
-            - name: shared-data
-              mountPath: /tmp/newman/
           env:
             - name: GITHUB_TOKEN
               valueFrom:
