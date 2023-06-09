@@ -3,44 +3,33 @@ kind: ConfigMap
 metadata:
   name: postsync-scripts
 data:
-  newman_run.sh: |
-    #!/usr/bin/env sh
-    newman run https://raw.githubusercontent.com/apcj-f5/hapi.f5labs.dev/master/tests/hapi/hapi-newman-tests-collection.json \
-      --environment https://raw.githubusercontent.com/apcj-f5/hapi.f5labs.dev/master/tests/hapi/hapi-newman-tests-environment.json \
-      --bail
-
-    # Store newman exit status into /tmp/newman/return_code, to be read by another container
-    echo $? > /tmp/newman/return_code
-  check_newman_run.sh: |
+  trigger_post_deployment_workflow.sh: |
     #!/usr/bin/env sh
     set -e
 
-    # first, check if /tmp/newman/return_code has been created by newman container for a period
-    file_path="/tmp/newman/return_code"
-    elapsed_time=0
-    interval=5  # Time interval to check for files (in seconds)
+    echo "Get post deployment workflow ID (Newman tests)"
 
-    while [ $elapsed_time -lt 60 ]; do
-      if [ -f "$file_path" ]; then
-        value=$(cat "$file_path")
-        echo "Newman return code is $value."
+    WORKFLOW_ID=$(curl -svvv -L \
+      https://api.github.com/repos/leonseng/hapi.f5labs.dev/actions/workflows \
+      | jq -r '.workflows[] | select(.name=="Newman tests") | .id')
 
-        if [ "$value" -eq 0 ]; then
-          echo "Newman run succeeded. Setting commit status to 'success'"
-          /scripts/set_commit_status.sh success "Newman test passed."
-          exit 0
-        fi
+    echo "Trigger post deployment Github workflow"
 
-        break
-      fi
+    generate_post_data()
+    {
+      cat <<EOF
+    {
+      "ref": "deploy"
+    }
+    EOF
+    }
 
-      # Wait for the specified interval
-      sleep $interval
-      elapsed_time=$(expr $elapsed_time + $interval)
-    done
-
-    echo "Newman run failed. Setting commit status to 'failure'"
-    /scripts/set_commit_status.sh failure "Newman test failed."
+    curl -svvv -L -X POST \
+      -H "Accept: application/vnd.github+json" \
+      -H "Authorization: Bearer $GITHUB_TOKEN" \
+      -H "X-GitHub-Api-Version: 2022-11-28" \
+      -d "$(generate_post_data)" \
+      https://api.github.com/repos/apcj-f5/hapi.f5labs.dev/actions/workflows/$WORKFLOW_ID/dispatches
   set_commit_status.sh: |
     #!/usr/bin/env sh
     set -e
