@@ -1,6 +1,6 @@
 # CONTRIBUTING
 
-Send bugs and enhancements via [Github Issues](https://github.com/apcj-f5/hapi.f5labs.dev/issues)
+Send bugs and enhancements via [Github Issues](https://github.com/apcj-f5/nap-devsecops-demo/issues)
 
 ## MAINTAINERS
 

@@ -10,10 +10,10 @@ metadata:
 spec:
   project: default
   sources:
-    - repoURL: https://github.com/apcj-f5/hapi.f5labs.dev.git
+    - repoURL: https://github.com/apcj-f5/nap-devsecops-demo.git
       targetRevision: deploy
       path: argocd/manifests/post-nic
-    - repoURL: https://github.com/apcj-f5/hapi.f5labs.dev.git
+    - repoURL: https://github.com/apcj-f5/nap-devsecops-demo.git
       targetRevision: deploy
       path: argocd/manifests/nginx-ingress-controller
   destination:
