@@ -10,7 +10,7 @@ spec:
     applicationLanguage: utf-8
     enforcementMode: blocking
     open-api-files:
-      link: "https://raw.githubusercontent.com/apcj-f5/hapi.f5labs.dev/master/tests/hapi/hapi-swagger.json"
+      - link: "https://raw.githubusercontent.com/apcj-f5/hapi.f5labs.dev/master/tests/hapi/hapi-swagger.json"
     blocking-settings:
       violations:
         - name: VIOL_ASM_COOKIE_MODIFIED
