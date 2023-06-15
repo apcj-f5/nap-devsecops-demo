@@ -33,6 +33,8 @@ spec:
         app: accounts-db
         tier: db
     spec:
+  securityContext:
+    runAsNonRoot: true #:
       serviceAccountName: default
       containers:
         - name: accounts-db
