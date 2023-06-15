@@ -33,6 +33,8 @@ spec:
       serviceAccountName: default
       containers:
         - name: postgres
+      securityContext:
+        allowPrivilegeEscalation: false
           image: gcr.io/bank-of-anthos-ci/ledger-db:v0.5.10
           ports:
             - containerPort: 5432
