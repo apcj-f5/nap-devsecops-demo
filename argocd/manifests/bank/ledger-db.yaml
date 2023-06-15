@@ -28,6 +28,8 @@ spec:
       labels:
         app: ledger-db
     spec:
+  securityContext:
+    runAsNonRoot: true #:
       serviceAccountName: default
       containers:
         - name: postgres
