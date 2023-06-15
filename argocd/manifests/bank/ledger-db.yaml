@@ -83,7 +83,7 @@ spec:
   selector:
     app: ledger-db
   ports:
-  - name: tcp
-    port: 5432
-    targetPort: 5432
+    - name: tcp
+      port: 5432
+      targetPort: 5432
 # [END gke_boa_kubernetes_manifests_ledger_db_service_ledger_db]
