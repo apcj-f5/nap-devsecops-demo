@@ -33,13 +33,13 @@ spec:
         app: accounts-db
         tier: db
     spec:
-      securityContext:
-        runAsNonRoot: false
+      # securityContext:
+      # runAsNonRoot: false
       serviceAccountName: default
       containers:
         - name: accounts-db
-          securityContext:
-            allowPrivilegeEscalation: true
+          # securityContext:
+          # allowPrivilegeEscalation: true
           image: gcr.io/bank-of-anthos-ci/accounts-db:v0.5.10
           envFrom:
             - configMapRef:

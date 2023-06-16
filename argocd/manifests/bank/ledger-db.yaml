@@ -28,13 +28,13 @@ spec:
       labels:
         app: ledger-db
     spec:
-      securityContext:
-        runAsNonRoot: false
+      # securityContext:
+      # runAsNonRoot: false
       serviceAccountName: default
       containers:
         - name: postgres
-          securityContext:
-            allowPrivilegeEscalation: true
+          # securityContext:
+          # allowPrivilegeEscalation: true
           image: gcr.io/bank-of-anthos-ci/ledger-db:v0.5.10
           ports:
             - containerPort: 5432
