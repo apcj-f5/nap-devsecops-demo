@@ -21,6 +21,5 @@ spec:
         - image: dolevf/dvga
           name: gql
           securityContext:
-
 # allowPrivilegeEscalation: false
 # runAsNonRoot: true
