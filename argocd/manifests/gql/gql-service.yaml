@@ -3,17 +3,17 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: dvgql
-    app.kubernetes.io/instance: dvgql
-  name: dvgql
-  namespace: dvgql
+    app: gql
+    app.kubernetes.io/instance: gql
+  name: gql
+  namespace: gql
 spec:
   ports:
     - port: 5013
       protocol: TCP
       targetPort: 5013
   selector:
-    app: dvgql
+    app: gql
   type: ClusterIP
 status:
   loadBalancer: {}
