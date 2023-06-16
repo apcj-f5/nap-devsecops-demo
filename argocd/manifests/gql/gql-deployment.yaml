@@ -3,23 +3,24 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: dvgql
-  name: dvgql
+    app: gql
+  name: gql
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: dvgql
+      app: gql
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: dvgql
+        app: gql
     spec:
       containers:
         - image: dolevf/dvga
-          name: dvgql
+          name: gql
           securityContext:
-            allowPrivilegeEscalation: false
-            runAsNonRoot: true
+
+# allowPrivilegeEscalation: false
+# runAsNonRoot: true

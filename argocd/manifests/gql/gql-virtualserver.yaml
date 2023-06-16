@@ -1,7 +1,7 @@
 apiVersion: k8s.nginx.org/v1
 kind: VirtualServer
 metadata:
-  name: dvgql
+  name: gql
 spec:
   host: gql.f5labs.dev
   # policies:
@@ -11,10 +11,10 @@ spec:
     redirect:
       enable: true
   upstreams:
-    - name: dvgql
-      service: dvgql
+    - name: gql
+      service: gql
       port: 5013
   routes:
     - path: /
       action:
-        pass: dvgql
+        pass: gql
