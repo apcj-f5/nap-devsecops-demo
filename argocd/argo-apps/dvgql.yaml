@@ -15,7 +15,7 @@ spec:
       recurse: true
   destination:
     server: https://kubernetes.default.svc
-    namespace: hapi
+    namespace: dvgql
   syncPolicy:
     automated:
       prune: true
