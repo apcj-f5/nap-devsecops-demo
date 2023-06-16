@@ -142,11 +142,13 @@ kind: Service
 metadata:
   name: frontend
 spec:
-  type: LoadBalancer
-  selector:
-    app: frontend
   ports:
     - name: http
       port: 80
       targetPort: 8080
+  selector:
+    app: bank
+  type: ClusterIP
+status:
+  loadBalancer: {}
 # [END gke_boa_kubernetes_manifests_frontend_service_frontend]
