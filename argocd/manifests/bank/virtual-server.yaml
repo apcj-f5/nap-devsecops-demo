@@ -11,10 +11,10 @@ spec:
     redirect:
       enable: true
   upstreams:
-    - name: bank
+    - name: frontend
       service: frontend
       port: 8080
   routes:
     - path: /
       action:
-        pass: bank
+        pass: frontend
