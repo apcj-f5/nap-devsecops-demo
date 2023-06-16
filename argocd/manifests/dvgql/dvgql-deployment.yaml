@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dvgql
+  name: dvgql
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dvgql
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: dvgql
+    spec:
+      containers:
+        - image: dolevf/dvga
+          name: dvgql
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: true

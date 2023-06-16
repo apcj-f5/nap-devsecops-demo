@@ -1,0 +1,20 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: dvgql
+spec:
+  host: gql.f5labs.dev
+  # policies:
+  # - name: waf-policy
+  # dos: dos-protected
+  tls:
+    redirect:
+      enable: true
+  upstreams:
+    - name: dvgql
+      service: dvgql
+      port: 5013
+  routes:
+    - path: /
+      action:
+        pass: dvgql

@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: dvgql
+    app.kubernetes.io/instance: dvgql
+  name: dvgql
+  namespace: dvgql
+spec:
+  ports:
+    - port: 5013
+      protocol: TCP
+      targetPort: 5013
+  selector:
+    app: dvgql
+  type: ClusterIP
+status:
+  loadBalancer: {}
