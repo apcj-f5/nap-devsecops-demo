@@ -18,7 +18,7 @@ spec:
         app: gql
     spec:
       containers:
-        - image: dolevf/dvga
+        - image: shsingh/dvgql
           name: gql
           securityContext:
 # allowPrivilegeEscalation: false
