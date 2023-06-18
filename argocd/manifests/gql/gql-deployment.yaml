@@ -18,7 +18,7 @@ spec:
         app: gql
     spec:
       containers:
-        - image: shsingh/dvgql
+        - image: shsingh/dvgql@latest
           name: gql
           securityContext:
 # allowPrivilegeEscalation: false
