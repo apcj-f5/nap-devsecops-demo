@@ -4,6 +4,3 @@
 [submodule "apps/bank"]
 	path = apps/bank
 	url = https://github.com/apcj-f5/bank.f5labs.dev-app.git
-[submodule "apps/gql"]
-	path = apps/gql
-	url = https://github.com/apcj-f5/gql.f5labs.dev-app.git
