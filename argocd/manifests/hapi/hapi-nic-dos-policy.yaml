@@ -10,5 +10,5 @@ spec:
   apDosPolicy: "nap-dos-ingress-policy"
   dosSecurityLog:
     enable: true
-    apDosLogConf: "nap-dos-log-policy"
+    apDosLogConf: "hapi-dos-log-policy"
     dosLogDest: stderr

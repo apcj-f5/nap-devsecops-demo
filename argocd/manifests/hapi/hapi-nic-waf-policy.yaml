@@ -8,5 +8,5 @@ spec:
     apPolicy: "hapi-waf-ingress-policy"
     securityLogs:
       - enable: true
-        apLogConf: nap-waf-log-policy
+        apLogConf: "hapi-waf-log-policy"
         logDest: stderr
