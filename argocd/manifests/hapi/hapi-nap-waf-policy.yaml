@@ -1,10 +1,10 @@
 apiVersion: appprotect.f5.com/v1beta1
 kind: APPolicy
 metadata:
-  name: "nap-waf-ingress-policy"
+  name: "hapi-waf-policy"
 spec:
   policy:
-    name: sigs-disabled-bots-alarmed
+    name: sigs-disabled-bots-ignored
     template:
       name: POLICY_TEMPLATE_NGINX_BASE
     applicationLanguage: utf-8

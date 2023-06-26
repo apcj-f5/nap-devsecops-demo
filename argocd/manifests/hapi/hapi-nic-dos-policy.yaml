@@ -1,7 +1,7 @@
 apiVersion: appprotectdos.f5.com/v1beta1
 kind: DosProtectedResource
 metadata:
-  name: dos-protected
+  name: "hapi-nic-dos-policy"
 spec:
   enable: true
   name: "hapi.f5labs.dev"
@@ -10,5 +10,5 @@ spec:
   apDosPolicy: "nap-dos-ingress-policy"
   dosSecurityLog:
     enable: true
-    apDosLogConf: "doslogconf"
+    apDosLogConf: "nap-dos-log-policy"
     dosLogDest: stderr
