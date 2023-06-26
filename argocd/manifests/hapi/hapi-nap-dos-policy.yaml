@@ -1,7 +1,7 @@
 apiVersion: appprotectdos.f5.com/v1beta1
 kind: APDosPolicy
 metadata:
-  name: "nap-dos-ingress-policy"
+  name: "hapi-dos-policy"
 spec:
   mitigation_mode: "standard"
   signatures: "on"

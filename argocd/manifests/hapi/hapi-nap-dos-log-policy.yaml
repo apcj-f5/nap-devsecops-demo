@@ -1,7 +1,7 @@
 apiVersion: appprotectdos.f5.com/v1beta1
 kind: APDosLogConf
 metadata:
-  name: doslogconf
+  name: "hapi-dos-log-policy"
 spec:
   filter:
     traffic-mitigation-stats: all
