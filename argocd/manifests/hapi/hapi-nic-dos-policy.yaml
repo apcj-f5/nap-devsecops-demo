@@ -7,8 +7,8 @@ spec:
   name: "hapi.f5labs.dev"
   apDosMonitor:
     uri: "hapi.f5labs.dev"
-  apDosPolicy: "nap-dos-ingress-policy"
+  apDosPolicy: "hapi-dos-policy"
   dosSecurityLog:
     enable: true
-    apDosLogConf: "nap-dos-log-policy"
+    apDosLogConf: "hapi-dos-log-policy"
     dosLogDest: stderr
