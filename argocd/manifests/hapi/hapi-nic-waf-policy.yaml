@@ -5,7 +5,7 @@ metadata:
 spec:
   waf:
     enable: true
-    apPolicy: "hapi-waf-ingress-policy"
+    apPolicy: "hapi-waf-policy"
     securityLogs:
       - enable: true
         apLogConf: "hapi-waf-log-policy"
