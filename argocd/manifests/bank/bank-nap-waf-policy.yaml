@@ -30,7 +30,7 @@ spec:
       - name: Server Side Code Injection Signatures
         alarm: false
         block: true
-      - name: Generic Detection Signatures (High Accuracy)
+      - name: Medium Accuracy Signatures
         alarm: false
         block: true
     bot-defense:
@@ -43,10 +43,10 @@ spec:
           - name: untrusted-bot
             action: ignore
           - name: malicious-bot
-            action: ignore
+            action: block
           - name: browser
             action: ignore
           - name: suspicious-browser
-            action: ignore
+            action: block
           - name: unknown
-            action: ignore
+            action: block
