@@ -11,168 +11,15 @@ spec:
     enforcementMode: blocking
     blocking-settings:
       violations:
-        - name: VIOL_ASM_COOKIE_MODIFIED
-          alarm: false
-          block: false
-        - name: VIOL_BLACKLISTED_IP
-          alarm: false
-          block: false
-        - name: VIOL_COOKIE_EXPIRED
-          alarm: false
-          block: false
-        - name: VIOL_COOKIE_LENGTH
-          alarm: false
-          block: false
-        - name: VIOL_COOKIE_MALFORMED
-          alarm: false
-          block: false
-        - name: VIOL_CSRF
-          alarm: false
-          block: false
-        - name: VIOL_DATA_GUARD
-          alarm: false
-          block: false
-        - name: VIOL_ENCODING
-          alarm: false
-          block: false
-        - name: VIOL_EVASION
-          alarm: false
-          block: false
-        - name: VIOL_FILETYPE
-          alarm: false
-          block: false
-        - name: VIOL_FILE_UPLOAD
-          alarm: false
-          block: false
-        - name: VIOL_FILE_UPLOAD_IN_BODY
-          alarm: false
-          block: false
-        - name: VIOL_GRPC_FORMAT
-          alarm: false
-          block: false
-        - name: VIOL_GRPC_MALFORMED
-          alarm: false
-          block: false
-        - name: VIOL_METHOD
-          alarm: false
-          block: false
-        - name: VIOL_HEADER_LENGTH
-          alarm: false
-          block: false
-        - name: VIOL_HEADER_METACHAR
-          alarm: false
-          block: false
-        - name: VIOL_HEADER_REPEATED
-          alarm: false
-          block: false
-        - name: VIOL_HTTP_PROTOCOL
-          alarm: false
-          block: false
-        - name: VIOL_HTTP_RESPONSE_STATUS
-          alarm: false
-          block: false
-        - name: VIOL_JSON_FORMAT
-          alarm: false
-          block: false
-        - name: VIOL_JSON_MALFORMED
-          alarm: false
-          block: false
-        - name: VIOL_JSON_SCHEMA
-          alarm: false
-          block: false
-        - name: VIOL_MANDATORY_HEADER
-          alarm: false
-          block: false
-        - name: VIOL_MANDATORY_PARAMETER
-          alarm: false
-          block: false
-        - name: VIOL_MANDATORY_REQUEST_BODY
-          alarm: false
-          block: false
-        - name: VIOL_METHOD
-          alarm: false
-          block: false
-        - name: VIOL_PARAMETER
-          alarm: false
-          block: false
-        - name: VIOL_PARAMETER_ARRAY_VALUE
-          alarm: false
-          block: false
-        - name: VIOL_PARAMETER_DATA_TYPE
-          alarm: false
-          block: false
-        - name: VIOL_PARAMETER_EMPTY_VALUE
-          alarm: false
-          block: false
-        - name: VIOL_PARAMETER_LOCATION
-          alarm: false
-          block: false
-        - name: VIOL_PARAMETER_MULTIPART_NULL_VALUE
-          alarm: false
-          block: false
-        - name: VIOL_PARAMETER_NAME_METACHAR
-          alarm: false
-          block: false
-        - name: VIOL_PARAMETER_NUMERIC_VALUE
-          alarm: false
-          block: false
-        - name: VIOL_PARAMETER_REPEATED
-          alarm: false
-          block: false
-        - name: VIOL_PARAMETER_STATIC_VALUE
-          alarm: false
-          block: false
-        - name: VIOL_PARAMETER_VALUE_BASE64
-          alarm: false
-          block: false
-        - name: VIOL_PARAMETER_VALUE_LENGTH
-          alarm: false
-          block: false
-        - name: VIOL_PARAMETER_VALUE_METACHAR
-          alarm: false
-          block: false
-        - name: VIOL_PARAMETER_VALUE_REGEXP
-          alarm: false
-          block: false
-        - name: VIOL_POST_DATA_LENGTH
-          alarm: false
-          block: false
-        - name: VIOL_QUERY_STRING_LENGTH
-          alarm: false
-          block: false
         - name: VIOL_RATING_THREAT
           alarm: false
           block: true
         - name: VIOL_RATING_NEED_EXAMINATION
           alarm: true
           block: false
-        - name: VIOL_REQUEST_MAX_LENGTH
-          alarm: false
-          block: false
-        - name: VIOL_REQUEST_LENGTH
-          alarm: false
-          block: false
         - name: VIOL_THREAT_CAMPAIGN
           alarm: false
           block: true
-        - name: VIOL_URL
-          alarm: false
-          block: false
-        - name: VIOL_URL_CONTENT_TYPE
-          alarm: false
-          block: false
-        - name: VIOL_URL_LENGTH
-          alarm: false
-          block: false
-        - name: VIOL_URL_METACHAR
-          alarm: false
-          block: false
-        - name: VIOL_XML_FORMAT
-          alarm: false
-          block: false
-        - name: VIOL_XML_MALFORMED
-          alarm: false
-          block: false
     signature-sets:
       - name: High Accuracy Signatures
         alarm: false
@@ -183,7 +30,7 @@ spec:
       - name: Server Side Code Injection Signatures
         alarm: false
         block: true
-      - name: Generic DFetection Sgiantures (High Accuracy)
+      - name: Generic Detection Signatures (High Accuracy)
         alarm: false
         block: true
     bot-defense:
