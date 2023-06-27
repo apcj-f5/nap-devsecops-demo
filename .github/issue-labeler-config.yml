@@ -1,6 +1,8 @@
 security:
-  - "OWASP ZAP"
+  - "OWASP ZAP|code scanning alert"
 enhancement:
-  - "add"
+  - "add|refactor"
 bug:
   - "fix"
+dependencies:
+  - "Renovate"
