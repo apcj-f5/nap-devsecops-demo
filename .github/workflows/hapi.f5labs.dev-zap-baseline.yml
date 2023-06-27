@@ -25,12 +25,3 @@ jobs:
           docker_name: "owasp/zap2docker-stable"
           target: "https://hapi.f5labs.dev"
           issue_title: "hapi.f5labs.dev - OWASP ZAP Baseline Scan"
-  label_issue:
-    runs-on: ubuntu-latest
-    needs: zap-baseline
-    steps:
-      - env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE_URL: ${{ github.event.issue.html_url }}
-        run: |
-          gh issue edit $ISSUE_URL --add-label "security"
