@@ -8,7 +8,7 @@
 #
 # See https://semgrep.dev/docs
 
-name: Semgrep
+name: "SecOps - Code Scanning"
 on:
   push:
     branches: ["master"]
