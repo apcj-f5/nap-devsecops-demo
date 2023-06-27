@@ -1,4 +1,4 @@
-name: Newman tests
+name: hapi.f5labs.dev - Newman tests
 on: workflow_dispatch
 permissions:
   contents: read
