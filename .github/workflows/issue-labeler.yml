@@ -1,7 +1,9 @@
 name: "Issue Labeler"
 on:
   issues:
-    types: [open, edited]
+    types: [opened, edited]
+  pull_request:
+    types: [opened, edited]
 permissions:
   issues: write
   contents: read
@@ -16,3 +18,4 @@ jobs:
       - uses: github/issue-labeler@v3.1 #May not be the latest version
         with:
           configuration-path: .github/issue-labeler-config.yml
+          token: "${{ secrets.GITHUB_TOKEN }}"
