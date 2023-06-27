@@ -17,12 +17,16 @@ jobs:
         uses: step-security/harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845 # v2.4.1
         with:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: master
       - name: ZAP Scan
         uses: zaproxy/action-api-scan@v0.1.1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           docker_name: "owasp/zap2docker-stable"
           format: openapi
-          target: "https://raw.githubusercontent.com/apcj-f5/nap-devsecops-demo/master/tests/hapi/hapi-swagger.json"
+          target: tests/hapi/hapi-swagger.json
           issue_title: "hapi.f5labs.dev - OWASP ZAP API Scan"
           fail_action: "true"
