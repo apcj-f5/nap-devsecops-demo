@@ -25,3 +25,4 @@ jobs:
           docker_name: "owasp/zap2docker-stable"
           target: "https://hapi.f5labs.dev"
           issue_title: "hapi.f5labs.dev - OWASP ZAP Baseline Scan"
+          fail_action: 'true'
