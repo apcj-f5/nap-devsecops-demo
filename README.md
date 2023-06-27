@@ -1,7 +1,5 @@
 # Security in CI/CD pipelines with NGINX App Protect
 
----
-
 ![License](https://img.shields.io/github/license/apcj-f5/nap-devsecops-demo)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![GitHub branch checks state](https://img.shields.io/github/checks-status/apcj-f5/nap-devsecops-demo/master?label=build%20checks)](https://github.com/apcj-f5/nap-devsecops-demo/actions)
@@ -12,6 +10,8 @@
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/apcj-f5/nap-devsecops-demo/master.svg)](https://results.pre-commit.ci/latest/github/apcj-f5/nap-devsecops-demo/master)
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/apcj-f5/nap-devsecops-demo/badge)](https://api.securityscorecards.dev/projects/github.com/apcj-f5/nap-devsecops-demo)
 [![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/7409/badge)](https://bestpractices.coreinfrastructure.org/projects/7409)
+
+---
 
 [![hapi.f5labs.dev - ZAP Baseline Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/hapi.f5labs.dev-zap-baseline.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/hapi.f5labs.dev-zap-baseline.yml)
 [![hapi.f5labs.dev - ZAP API Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/hapi.f5labs.dev-zap-api.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/hapi.f5labs.dev-zap-api.yml)
