@@ -13,6 +13,6 @@ jobs:
         uses: step-security/harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845 # v2.4.1
         with:
           egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
-      - uses: github/issue-labeler@v2.5 #May not be the latest version
+      - uses: github/issue-labeler@v3.1 #May not be the latest version
         with:
           configuration-path: .github/issue-labeler-config.yml
