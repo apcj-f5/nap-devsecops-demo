@@ -1,4 +1,4 @@
-name: hapi.f5labs.dev - ZAP Baseline
+name: "hapi.f5labs.dev - ZAP Baseline"
 on:
   schedule:
     - cron: "20 7 * * 2"
@@ -24,7 +24,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           docker_name: 'owasp/zap2docker-stable'
           target: 'https://hapi.f5labs.dev'
-          allow_issue_writing: 'true'
           issue_title: "hapi.f5labs.dev - OWASP ZAP Baseline Scan"
       - name: Label issue
         - env:
