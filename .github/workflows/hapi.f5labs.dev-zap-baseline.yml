@@ -21,9 +21,9 @@ jobs:
         uses: zaproxy/action-baseline@v0.7.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          docker_name: 'owasp/zap2docker-stable'
-          target: 'https://hapi.f5labs.dev'
-          issue_title: 'hapi.f5labs.dev - OWASP ZAP Baseline Scan'
+          docker_name: "owasp/zap2docker-stable"
+          target: "https://hapi.f5labs.dev"
+          issue_title: "hapi.f5labs.dev - OWASP ZAP Baseline Scan"
   label_issue:
     runs-on: ubuntu-latest
     steps:
