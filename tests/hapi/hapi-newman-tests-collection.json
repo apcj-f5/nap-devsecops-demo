@@ -1,9 +1,9 @@
 {
   "info": {
-    "_postman_id": "94cbcffd-bed7-4ad5-ad1c-bc38dd1a6019",
+    "_postman_id": "5120bfe7-4e4e-460d-861b-b5cf4f227031",
     "name": "hapi_fhir",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "19335510"
+    "_exporter_id": "1538919"
   },
   "item": [
     {
@@ -39,7 +39,20 @@
       "response": []
     },
     {
-      "name": "Lookup a SNOMED code (in JSON)",
+      "name": "Lookup a SNOMED code",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"isJson\", function () {",
+              "  pm.response.json();",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
       "request": {
         "method": "GET",
         "header": [],
@@ -67,6 +80,19 @@
     },
     {
       "name": "SImple translate",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"isJson\", function () {",
+              "  pm.response.json();",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
       "request": {
         "method": "GET",
         "header": [],
@@ -93,18 +119,36 @@
       "response": []
     },
     {
-      "name": "Search all ConceptMaps (in XML)",
+      "name": "Search all ConceptMaps",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"isJson\", function () {",
+              "  pm.response.json();",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
       "request": {
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{url}}/ConceptMap?_format=xml",
+          "raw": "{{url}}/ConceptMap?_format=json",
           "host": ["{{url}}"],
           "path": ["ConceptMap"],
           "query": [
             {
+              "key": "",
+              "value": "",
+              "disabled": true
+            },
+            {
               "key": "_format",
-              "value": "xml"
+              "value": "json"
             }
           ]
         }
@@ -112,37 +156,31 @@
       "response": []
     },
     {
-      "name": "Search all ConceptMaps (in JSON)",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "{{url}}/ConceptMap?_format=xml",
-          "host": ["{{url}}"],
-          "path": ["ConceptMap"],
-          "query": [
-            {
-              "key": "_format",
-              "value": "xml"
-            }
-          ]
+      "name": "Read a specific version of a Concept Map",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"isJson\", function () {",
+              "  pm.response.json();",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
         }
-      },
-      "response": []
-    },
-    {
-      "name": "Read a specific version of a Concept Map (in XML)",
+      ],
       "request": {
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "{{url}}/ConceptMap/v3-snomed-education-map/_history/1?_format=application/fhir+xml",
+          "raw": "{{url}}/ConceptMap/v3-snomed-education-map/_history/1?_format=json",
           "host": ["{{url}}"],
           "path": ["ConceptMap", "v3-snomed-education-map", "_history", "1"],
           "query": [
             {
               "key": "_format",
-              "value": "application/fhir+xml"
+              "value": "json"
             }
           ]
         }
