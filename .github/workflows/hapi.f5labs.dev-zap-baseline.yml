@@ -1,8 +1,7 @@
 name: "hapi.f5labs.dev - ZAP Baseline"
 on:
   schedule:
-    - cron: "20 7 * * 2"
-  workflow_disptach:
+    - cron: "15 00 * * *"
 
 # Declare default permissions as read only.
 permissions: read-all
