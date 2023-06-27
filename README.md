@@ -13,6 +13,8 @@
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/apcj-f5/nap-devsecops-demo/badge)](https://api.securityscorecards.dev/projects/github.com/apcj-f5/nap-devsecops-demo)
 [![OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/projects/7409/badge)](https://bestpractices.coreinfrastructure.org/projects/7409)
 
+[![hapi.f5labs.dev - ZAP Baseline](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/hapi.f5labs.dev-zap-baseline.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/hapi.f5labs.dev-zap-baseline.yml)
+
 ---
 
 **Maintainers:** [![@shsingh](https://avatars.githubusercontent.com/u/412800?s=25&v=4)](https://github.com/shsingh) [![@leonseng](https://avatars.githubusercontent.com/u/26860216?s=25&v=4)](https://github.com/leonseng)
