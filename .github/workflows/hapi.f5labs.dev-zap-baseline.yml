@@ -27,6 +27,7 @@ jobs:
           issue_title: "hapi.f5labs.dev - OWASP ZAP Baseline Scan"
   label_issue:
     runs-on: ubuntu-latest
+    needs: zap-baseline
     steps:
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
