@@ -196,3 +196,6 @@ spec:
             action: ignore
           - name: unknown
             action: ignore
+        signatures:
+          - name: newman
+            action: ignore
