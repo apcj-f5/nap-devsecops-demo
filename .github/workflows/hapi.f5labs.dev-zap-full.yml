@@ -25,3 +25,4 @@ jobs:
           target: "https://hapi.f5labs.dev"
           issue_title: "hapi.f5labs.dev - OWASP ZAP Full Scan"
           fail_action: "true"
+          cmd_options: "-I"
