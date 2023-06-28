@@ -155,8 +155,8 @@ spec:
           alarm: false
           block: false
         - name: VIOL_THREAT_CAMPAIGN
-          alarm: true
-          block: false
+          alarm: false
+          block: true
         - name: VIOL_URL
           alarm: false
           block: false
@@ -187,12 +187,12 @@ spec:
           - name: trusted-bot
             action: ignore
           - name: untrusted-bot
-            action: ignore
+            action: block
           - name: malicious-bot
-            action: ignore
+            action: block
           - name: browser
             action: ignore
           - name: suspicious-browser
-            action: ignore
+            action: block
           - name: unknown
-            action: ignore
+            action: block
