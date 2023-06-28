@@ -5,8 +5,8 @@ metadata:
 spec:
   host: hapi.f5labs.dev
   policies:
-    - name: "hapi-nic-waf-policy"
-  dos: "hapi-nic-dos-policy"
+    - name: "hapi-ingress-waf-policy"
+  dos: "hapi-ingress-dos-policy"
   tls:
     redirect:
       enable: true
