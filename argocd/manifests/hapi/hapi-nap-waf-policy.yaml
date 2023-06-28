@@ -4,7 +4,7 @@ metadata:
   name: "hapi-waf-policy"
 spec:
   policy:
-    name: sigs-disabled-bots-ignored
+    name: "hapi-waf-policy"
     template:
       name: POLICY_TEMPLATE_NGINX_BASE
     applicationLanguage: utf-8
