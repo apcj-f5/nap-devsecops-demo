@@ -1,7 +1,7 @@
 apiVersion: appprotectdos.f5.com/v1beta1
 kind: DosProtectedResource
 metadata:
-  name: "hapi-nic-dos-policy"
+  name: "hapi-ingress-dos-policy"
 spec:
   enable: true
   name: "hapi.f5labs.dev"
