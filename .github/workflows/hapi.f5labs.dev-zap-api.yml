@@ -30,3 +30,4 @@ jobs:
           target: tests/hapi/hapi-swagger.json
           issue_title: "hapi.f5labs.dev - OWASP ZAP API Scan"
           fail_action: "true"
+          cmd_options: "-I -S"
