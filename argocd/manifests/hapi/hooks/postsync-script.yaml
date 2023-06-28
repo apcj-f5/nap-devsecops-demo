@@ -7,11 +7,11 @@ data:
     #!/usr/bin/env sh
     set -e
 
-    echo "Get post deployment workflow ID (Newman tests)"
+    echo "Get post deployment workflow ID (hapi.f5labs.dev - Functional Testing)"
 
     WORKFLOW_ID=$(curl --fail -s -L \
       https://api.github.com/repos/apcj-f5/nap-devsecops-demo/actions/workflows \
-      | jq -r '.workflows[] | select(.name=="Newman tests") | .id')
+      | jq -r '.workflows[] | select(.name=="hapi.f5labs.dev - Functional Testing") | .id')
 
     echo "Trigger post deployment Github workflow (ID=$WORKFLOW_ID)"
 
