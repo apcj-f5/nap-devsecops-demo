@@ -1,12 +1,12 @@
 apiVersion: k8s.nginx.org/v1
 kind: Policy
 metadata:
-  name: waf-policy
+  name: "bank-ingress-waf-policy"
 spec:
   waf:
     enable: true
-    apPolicy: "nap-waf-ingress-policy"
+    apPolicy: "bank-waf-policy"
     securityLogs:
       - enable: true
-        apLogConf: logconf
+        apLogConf: "bank-waf-log-policy"
         logDest: stderr

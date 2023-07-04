@@ -1,0 +1,39 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: sync-failed-
+  annotations:
+    argocd.argoproj.io/hook: SyncFail
+    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
+spec:
+  template:
+    metadata:
+      labels:
+        name: sync-failed
+    spec:
+      containers:
+        - name: sync-failed
+          command: [/scripts/set_commit_status.sh]
+          args:
+            - failure
+            - ArgoCD sync failed
+          image: badouralix/curl-jq
+          volumeMounts:
+            - name: postsync-scripts
+              mountPath: /scripts
+          env:
+            - name: GITHUB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: github
+                  key: pat
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: false # image runs as root :(
+      volumes:
+        - name: postsync-scripts
+          configMap:
+            name: postsync-scripts
+            defaultMode: 0755
+      restartPolicy: Never
+  backoffLimit: 0

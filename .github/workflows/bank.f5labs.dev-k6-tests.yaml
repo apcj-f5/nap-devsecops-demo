@@ -1,0 +1,38 @@
+name: "bank.f5labs.dev - Functional Testing"
+on: workflow_dispatch
+permissions:
+  contents: read
+jobs:
+  run-k6-tests:
+    permissions:
+      statuses: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845 # v2.4.1
+        with:
+          disable-sudo: true
+          egress-policy: block
+          allowed-endpoints: api.github.com:443 github.com:443 bank.f5labs.dev:443
+      - name: Set commit status as pending
+        uses: myrotvorets/set-commit-status-action@59b262d3c3a285a392585af8aa71795298aa3ec3 # master
+        with:
+          sha: ${{ github.sha }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: pending
+          context: ${{ github.workflow }}
+      - name: Checkout repository
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      - name: Run k6 baseline test
+        uses: grafana/k6-action@v0.3.0
+        with:
+          filename: tests/bank/baseline.js
+          flags: --vus 50 --duration 10s
+      - name: Set final commit status
+        uses: myrotvorets/set-commit-status-action@59b262d3c3a285a392585af8aa71795298aa3ec3 # master
+        if: always()
+        with:
+          sha: ${{ github.sha }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          status: ${{ job.status }}
+          context: ${{ github.workflow }}

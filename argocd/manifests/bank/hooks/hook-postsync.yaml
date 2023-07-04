@@ -1,0 +1,47 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: sync-completed-
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: BeforeHookCreation
+spec:
+  template:
+    metadata:
+      labels:
+        name: sync-completed
+    spec:
+      containers:
+        # trigger post deployment check via Github Action
+        - name: notify-newman-results
+          command: [sh]
+          args:
+            - "-c"
+            - "/scripts/set_commit_status.sh success 'ArgoCD sync successful'
+              && /scripts/trigger_post_deployment_workflow.sh"
+          image: badouralix/curl-jq
+          volumeMounts:
+            - name: postsync-scripts
+              mountPath: /scripts/trigger_post_deployment_workflow.sh
+              subPath: trigger_post_deployment_workflow.sh
+            - name: postsync-scripts
+              mountPath: /scripts/set_commit_status.sh
+              subPath: set_commit_status.sh
+          env:
+            - name: GITHUB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: github
+                  key: pat
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: false # image runs as root :(
+      volumes:
+        - name: postsync-scripts
+          configMap:
+            name: postsync-scripts
+            defaultMode: 0755
+        - name: shared-data
+          emptyDir: {}
+      restartPolicy: Never
+  backoffLimit: 0
