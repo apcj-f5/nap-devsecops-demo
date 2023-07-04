@@ -15,11 +15,14 @@ const BASE_URL = "https://bank.f5labs.dev";
 const USERNAME = "alice";
 const PASSWORD = "bankofanthos";
 
+// export default function main() {
+// const res = http.post(`${BASE_URL}/login/`, {
+// username: USERNAME,
+// password: PASSWORD,
+// });
+
 export default function main() {
-  const res = http.post(`${BASE_URL}/login/`, {
-    username: USERNAME,
-    password: PASSWORD,
-  });
+  const res = http.get(`${BASE_URL}/`, {});
 
   check(res, { "status is 200": (r) => r && r.status === 200 });
 }
