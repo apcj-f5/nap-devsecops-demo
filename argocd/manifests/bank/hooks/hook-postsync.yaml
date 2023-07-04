@@ -13,12 +13,11 @@ spec:
     spec:
       containers:
         # trigger post deployment check via Github Action
-        - name: notify-newman-results
+        - name: notify-k6-results
           command: [sh]
           args:
             - "-c"
-            - "/scripts/set_commit_status.sh success 'ArgoCD sync successful'
-              && /scripts/trigger_post_deployment_workflow.sh"
+            - "/scripts/set_commit_status.sh success 'ArgoCD sync successful' && /scripts/trigger_post_deployment_workflow.sh"
           image: badouralix/curl-jq
           volumeMounts:
             - name: postsync-scripts
