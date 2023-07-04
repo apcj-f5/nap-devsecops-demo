@@ -26,7 +26,7 @@ jobs:
       - name: Run k6 baseline test
         uses: grafana/k6-action@v0.3.0
         with:
-          filename: tests/bank/baseline.js
+          filename: tests/bank/bank-k6-tests-baseline.js
           flags: --vus 50 --duration 10s
       - name: Set final commit status
         uses: myrotvorets/set-commit-status-action@59b262d3c3a285a392585af8aa71795298aa3ec3 # master
