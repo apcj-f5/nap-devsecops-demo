@@ -12,6 +12,8 @@ controller:
     enable: true
   appprotectdos:
     enable: true
+    maxDaemons: 1
+    memory: 80
   config:
     name: nginx-config
   setAsDefaultIngress: true
