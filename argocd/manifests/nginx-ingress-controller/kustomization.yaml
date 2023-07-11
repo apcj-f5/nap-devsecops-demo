@@ -6,8 +6,7 @@ helmCharts:
     releaseName: nginx-ingress
     namespace: nginx-ingress
     includeCRDs: true
-    # override with these custom values
-    valuesFile: nginx-ingress-values.yaml
+    valuesFile: values.yaml
 resources:
-  - nginx-regcred-secret.yaml
-  - tls-secret.yaml
+  - nginx-regcred.yaml
+  - tls.yaml
