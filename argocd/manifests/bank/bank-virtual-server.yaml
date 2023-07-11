@@ -4,9 +4,9 @@ metadata:
   name: bank
 spec:
   host: bank.f5labs.dev
-  # policies:
-  # - name: waf-policy
-  # dos: dos-protected
+  policies:
+    - name: "bank-ingress-waf-policy"
+  dos: "bank-ingress-dos-policy"
   tls:
     redirect:
       enable: true
