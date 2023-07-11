@@ -16,6 +16,9 @@ spec:
     - repoURL: https://github.com/apcj-f5/nap-devsecops-demo.git
       targetRevision: deploy
       path: argocd/manifests/nginx-ingress-controller
+    - repoURL: https://github.com/apcj-f5/nap-devsecops-demo.git
+      targetRevision: deploy
+      path: argocd/manifests/dos-arbitrator
   destination:
     namespace: nginx-ingress
     server: https://kubernetes.default.svc
