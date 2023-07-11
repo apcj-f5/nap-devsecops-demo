@@ -2,8 +2,8 @@ namespace: nginx-ingress
 helmCharts:
   - name: dos-arbitrator
     repo: https://helm.nginx.com/stable
-    version: 1.1.1
+    version: 0.1.1
     releaseName: nginx-appprotect-dos-arbitrator
     namespace: nginx-ingress
-    includeCRDs: true
-    valuesFile: dos-arbitrator-values.yaml
+    # includeCRDs: true
+    valuesFile: values.yaml
