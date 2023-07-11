@@ -5,8 +5,7 @@ metadata:
 spec:
   host: hapi.f5labs.dev
   policies:
-    - name: "hapi-ingress-waf-policy"
-  dos: "hapi-ingress-dos-policy"
+    - name: "hapi-ingress-policy"
   tls:
     redirect:
       enable: true
@@ -16,5 +15,6 @@ spec:
       port: 8080
   routes:
     - path: /
+      dos: "hapi-dos-protected-resource"
       action:
         pass: hapi

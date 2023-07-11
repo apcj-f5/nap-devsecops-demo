@@ -1,7 +1,7 @@
 apiVersion: k8s.nginx.org/v1
 kind: Policy
 metadata:
-  name: "bank-ingress-waf-policy"
+  name: "bank-ingress-policy"
 spec:
   waf:
     enable: true

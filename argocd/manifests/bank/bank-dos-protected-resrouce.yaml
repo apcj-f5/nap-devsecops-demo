@@ -1,12 +1,14 @@
 apiVersion: appprotectdos.f5.com/v1beta1
 kind: DosProtectedResource
 metadata:
-  name: "bank-ingress-dos-policy"
+  name: "bank-dos-protected-resource"
 spec:
   enable: true
   name: "bank.f5labs.dev"
   apDosMonitor:
     uri: "bank.f5labs.dev"
+    protocol: "http1"
+    timeout: 5
   apDosPolicy: "bank-dos-policy"
   dosSecurityLog:
     enable: true
