@@ -1,6 +1,6 @@
 namespace: nginx-ingress
 helmCharts:
-  - name: dos-arbitrator
+  - name: nginx-appprotect-dos-arbitrator
     repo: https://helm.nginx.com/stable
     version: 0.1.1
     releaseName: nginx-appprotect-dos-arbitrator
