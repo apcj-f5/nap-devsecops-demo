@@ -5,8 +5,7 @@ metadata:
 spec:
   host: bank.f5labs.dev
   policies:
-    - name: "bank-ingress-waf-policy"
-  dos: "bank-ingress-dos-policy"
+    - name: "bank-ingress-policy"
   tls:
     redirect:
       enable: true
@@ -16,5 +15,6 @@ spec:
       port: 8080
   routes:
     - path: /
+      dos: "bank-dos-protected-resource"
       action:
         pass: frontend

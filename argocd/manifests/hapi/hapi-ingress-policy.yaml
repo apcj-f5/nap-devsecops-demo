@@ -1,7 +1,7 @@
 apiVersion: k8s.nginx.org/v1
 kind: Policy
 metadata:
-  name: "hapi-ingress-waf-policy"
+  name: "hapi-ingress-policy"
 spec:
   waf:
     enable: true
