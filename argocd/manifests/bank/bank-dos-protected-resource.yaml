@@ -13,4 +13,5 @@ spec:
   dosSecurityLog:
     enable: true
     apDosLogConf: "bank-dos-log-policy"
+    dosLogDest: stderr
     dosAccessLogDest: stderr
