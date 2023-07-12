@@ -156,7 +156,7 @@ spec:
           block: false
         - name: VIOL_THREAT_CAMPAIGN
           alarm: false
-          block: true
+          block: false
         - name: VIOL_URL
           alarm: false
           block: false
@@ -176,7 +176,58 @@ spec:
           alarm: false
           block: false
     signature-sets:
-      - name: High Accuracy Signatures
+      - name: "XML External Entities (XXE) Signatures"
+        alarm: false
+        block: false
+      - name: "CVE Signatures"
+        alarm: false
+        block: false
+      - name: "Vulnerability Scan Signatures"
+        alarm: false
+        block: false
+      - name: "Denial of Service Signatures"
+        alarm: false
+        block: false
+      - name: "Buffer Overflow Signatures"
+        alarm: false
+        block: false
+      - name: "Authentication/Authorization Attack Signatures"
+        alarm: false
+        block: false
+      - name: "High Accuracy Signatures"
+        alarm: false
+        block: false
+      - name: "SQL Injection Signatures"
+        alarm: false
+        block: false
+      - name: "Cross Site Scripting Signatures"
+        alarm: false
+        block: false
+      - name: "OS Command Injection Signatures"
+        alarm: false
+        block: false
+      - name: "Path Traversal Signatures"
+        alarm: false
+        block: false
+      - name: "XPath Injection Signatures"
+        alarm: false
+        block: false
+      - name: "Command Execution Signatures"
+        alarm: false
+        block: false
+      - name: "Server Side Code Injection Signatures"
+        alarm: false
+        block: false
+      - name: "Information Leakage Signatures"
+        alarm: false
+        block: false
+      - name: "Directory Indexing Signatures"
+        alarm: false
+        block: false
+      - name: "Remote File Include Signatures"
+        alarm: false
+        block: false
+      - name: "Predictable Resource Location Signatures"
         alarm: false
         block: false
     bot-defense:
@@ -187,12 +238,12 @@ spec:
           - name: trusted-bot
             action: ignore
           - name: untrusted-bot
-            action: block
+            action: ignore
           - name: malicious-bot
-            action: block
+            action: ignore
           - name: browser
             action: ignore
           - name: suspicious-browser
-            action: block
+            action: ignore
           - name: unknown
-            action: block
+            action: ignore
