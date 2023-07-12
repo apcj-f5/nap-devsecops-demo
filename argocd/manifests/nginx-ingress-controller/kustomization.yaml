@@ -10,4 +10,7 @@ helmCharts:
 resources:
   - nginx-regcred.yaml
   - tls.yaml
-  - configmap.yaml
+configMapGenerator:
+  - name: nginx-config
+    files:
+      - configmap.yaml
