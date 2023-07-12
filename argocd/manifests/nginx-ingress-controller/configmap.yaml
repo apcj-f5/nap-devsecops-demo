@@ -1,7 +1,7 @@
 kind: ConfigMap
 apiVersion: v1
 metadata:
-  name: nginx-configmap
+  name: nginx-config
   namespace: nginx-ingress
 data:
   worker-rlimit-nofile: "65535"
