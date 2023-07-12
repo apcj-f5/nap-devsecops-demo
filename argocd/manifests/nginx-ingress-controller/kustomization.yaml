@@ -10,7 +10,5 @@ helmCharts:
 resources:
   - nginx-regcred.yaml
   - tls.yaml
-configMapGenerator:
-  - name: nginx-config
-    files:
-      - configmap.yaml
+patches:
+  - path: configmap.yaml

@@ -1,3 +1,4 @@
+$patch: merge
 kind: ConfigMap
 apiVersion: v1
 metadata:
