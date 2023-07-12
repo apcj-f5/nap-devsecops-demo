@@ -8,6 +8,7 @@ controller:
     repository: private-registry.nginx.com/nginx-ic-nap-dos/nginx-plus-ingress
   nginxplus: true
   enableSnippets: true
+  enableLatencyMetrics: true
   appprotect:
     enable: true
   appprotectdos:
@@ -15,7 +16,7 @@ controller:
     maxDaemons: 1
     maxWorkers: 8
     memory: 80
-    debug: true
+    debug: false
   config:
     name: nginx-config
   setAsDefaultIngress: true
@@ -29,4 +30,3 @@ controller:
     secret: nginx-ingress/f5labs.dev
   wildcardTLS:
     secret: nginx-ingress/f5labs.dev
-  enableLatencyMetrics: true
