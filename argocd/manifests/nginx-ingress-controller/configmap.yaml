@@ -10,4 +10,4 @@ data:
   hsts: "true"
   ssl-protocols: "TLSv1.2"
   http2: "true"
-  proxy-protocol: "true"
+  proxy-protocol: "false"
