@@ -13,9 +13,9 @@ controller:
     enable: true
   appprotectdos:
     enable: true
-    maxDaemons: 1
-    maxWorkers: 8
-    memory: 80
+    maxDaemons: 4
+    # maxWorkers: 8
+    # memory: 80
     debug: false
   config:
     name: nginx-config
