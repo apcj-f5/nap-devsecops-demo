@@ -10,7 +10,8 @@ spec:
     protocol: "http1"
     timeout: 5
   apDosPolicy: "hapi-dos-policy"
+  dosAccessLogDest: stderr
   dosSecurityLog:
     enable: true
     apDosLogConf: "hapi-dos-log-policy"
-    dosAccessLogDest: stderr
+    dosLogDest: stderr
