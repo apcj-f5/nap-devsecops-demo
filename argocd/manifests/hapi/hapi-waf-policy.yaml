@@ -195,4 +195,4 @@ spec:
           - name: suspicious-browser
             action: block
           - name: unknown
-            action: block
+            action: ignore
