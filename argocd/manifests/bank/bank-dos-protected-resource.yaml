@@ -10,8 +10,8 @@ spec:
     protocol: "http1"
     timeout: 5
   apDosPolicy: "bank-dos-policy"
+  dosAccessLogDest: stderr
   dosSecurityLog:
     enable: true
     apDosLogConf: "bank-dos-log-policy"
     dosLogDest: stderr
-    dosAccessLogDest: stderr
