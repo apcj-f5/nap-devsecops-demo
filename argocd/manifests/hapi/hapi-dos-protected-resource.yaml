@@ -13,4 +13,4 @@ spec:
   dosSecurityLog:
     enable: true
     apDosLogConf: "hapi-dos-log-policy"
-    dosLogDest: stderr
+    dosAccessLogDest: stderr
