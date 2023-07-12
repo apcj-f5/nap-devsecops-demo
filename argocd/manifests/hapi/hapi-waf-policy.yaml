@@ -181,7 +181,7 @@ spec:
         block: false
     bot-defense:
       settings:
-        isEnabled: true
+        isEnabled: false
       mitigations:
         classes:
           - name: trusted-bot
