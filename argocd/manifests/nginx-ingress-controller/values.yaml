@@ -13,8 +13,9 @@ controller:
   appprotectdos:
     enable: true
     maxDaemons: 1
-    maxWorkers: 4
+    maxWorkers: 8
     memory: 80
+    debug: true
   config:
     name: nginx-config
   setAsDefaultIngress: true
@@ -28,3 +29,4 @@ controller:
     secret: nginx-ingress/f5labs.dev
   wildcardTLS:
     secret: nginx-ingress/f5labs.dev
+  enableLatencyMetrics: true
