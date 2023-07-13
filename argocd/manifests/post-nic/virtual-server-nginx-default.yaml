@@ -8,5 +8,3 @@ spec:
   tls:
     redirect:
       enable: true
-  routes:
-    - path: /
