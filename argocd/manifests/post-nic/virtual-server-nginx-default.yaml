@@ -1,10 +1,18 @@
 apiVersion: k8s.nginx.org/v1
 kind: VirtualServer
 metadata:
-  name: nginx
+  name: nginx-ingress
   namespace: nginx-ingress
 spec:
   host: scanme.f5labs.dev
   tls:
     redirect:
       enable: true
+  upstreams:
+    - name: nginx-ingress-controller
+      service: nginx-ingress-controller
+      port: 80
+  routes:
+    - path: /
+      action:
+        pass: nginx-ingress-controller
