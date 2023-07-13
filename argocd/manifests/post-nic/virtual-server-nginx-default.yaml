@@ -1,0 +1,12 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: nginx
+  namespace: nginx-ingress
+spec:
+  host: scanme.f5labs.dev
+  tls:
+    redirect:
+      enable: true
+  routes:
+    - path: /

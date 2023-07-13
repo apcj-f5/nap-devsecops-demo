@@ -9,13 +9,15 @@ controller:
   nginxplus: true
   enableSnippets: true
   enableLatencyMetrics: true
+  nginxStatus:
+    allowCidrs: "all"
   appprotect:
     enable: true
   appprotectdos:
     enable: true
     maxDaemons: 4
-    # maxWorkers: 8
-    # memory: 80
+    maxWorkers: 8
+    memory: 80
     debug: false
   config:
     name: nginx-config
