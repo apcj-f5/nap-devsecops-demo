@@ -9,6 +9,10 @@ controller:
   nginxplus: true
   enableSnippets: true
   enableLatencyMetrics: true
+  serviceInsight:
+    create: true
+    port: 9114
+    secret: nginx-ingress/f5labs.dev
   nginxStatus:
     allowCidrs: 0.0.0.0
   appprotect:
