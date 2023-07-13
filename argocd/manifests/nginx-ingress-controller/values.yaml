@@ -10,7 +10,7 @@ controller:
   enableSnippets: true
   enableLatencyMetrics: true
   nginxStatus:
-    allowCidrs: "all"
+    allowCidrs: 0.0.0.0
   appprotect:
     enable: true
   appprotectdos:
