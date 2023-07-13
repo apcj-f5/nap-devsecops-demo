@@ -7,7 +7,7 @@ metadata:
 data:
   worker-rlimit-nofile: "65535"
   worker-processes: "auto"
-  worker-connection: "65535"
+  worker-connections: "65535"
   hsts: "true"
   ssl-protocols: "TLSv1.2"
   http2: "true"
