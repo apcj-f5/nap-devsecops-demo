@@ -5,7 +5,7 @@ metadata:
 spec:
   host: bank.f5labs.dev
   policies:
-    - name: "bank-waf-default-blocking-policy"
+    - name: "bank-ingress-policy"
   tls:
     redirect:
       enable: true
