@@ -10,6 +10,6 @@ spec:
     applicationLanguage: utf-8
     enforcementMode: blocking
     response-pages:
-      - responseActionType: default
+      - responsePageType: default
         # responseContent: "The request URL was rejected. Please consult with your administrator. Your support ID is: <%TS.request.ID()%>"
         responseHeader: "HTTP/1.1 403 Forbidden\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nConnection: close"
