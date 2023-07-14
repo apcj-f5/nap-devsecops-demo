@@ -1,7 +1,7 @@
 apiVersion: appprotect.f5.com/v1beta1
 kind: APPolicy
 metadata:
-  name: "bank-waf-policy"
+  name: "bank-waf-default-blocking-policy"
 spec:
   policy:
     name: "bank-waf-policy"
