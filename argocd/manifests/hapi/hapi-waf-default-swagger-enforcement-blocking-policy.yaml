@@ -1,0 +1,13 @@
+apiVersion: appprotect.f5.com/v1beta1
+kind: APPolicy
+metadata:
+  name: "hapi-waf-default-swagger-enforcement-blocking-policy"
+spec:
+  policy:
+    name: "hapi-waf-default-swagger-enforcement-blocking-policy"
+    template:
+      name: POLICY_TEMPLATE_NGINX_BASE
+    applicationLanguage: utf-8
+    enforcementMode: blocking
+    open-api-files:
+      - link: "https://raw.githubusercontent.com/apcj-f5/nap-devsecops-demo/master/tests/hapi/hapi-swagger.json"
