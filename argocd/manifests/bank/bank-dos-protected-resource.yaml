@@ -5,10 +5,10 @@ metadata:
 spec:
   enable: true
   name: "bank.f5labs.dev"
-  apDosMonitor:
-    uri: "bank.f5labs.dev"
-    protocol: "http1"
-    timeout: 5
+  # apDosMonitor:
+  # uri: "bank.f5labs.dev"
+  # protocol: "http1"
+  # timeout: 5
   apDosPolicy: "bank-dos-policy"
   dosAccessLogDest: stderr
   dosSecurityLog:
