@@ -9,9 +9,8 @@ metadata:
   namespace: nginx-ingress
 spec:
   ports:
-    - port: 38080
+    - port: 8080
       protocol: TCP
-      targetPort: 38080
   selector:
     app: nginx-ingress
   type: NodePort
