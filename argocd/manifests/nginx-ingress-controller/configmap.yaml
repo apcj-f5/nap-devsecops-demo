@@ -1,6 +1,5 @@
-$patch: merge
-kind: ConfigMap
 apiVersion: v1
+kind: ConfigMap
 metadata:
   name: nginx-config
   namespace: nginx-ingress
