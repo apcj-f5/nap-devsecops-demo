@@ -5,5 +5,5 @@ helmCharts:
     version: 0.1.0
     releaseName: nginx-appprotect-dos-arbitrator
     namespace: nginx-ingress
-    # includeCRDs: true
+    includeCRDs: true
     valuesFile: values.yaml

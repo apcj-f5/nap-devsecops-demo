@@ -13,9 +13,9 @@ controller:
     create: true
     port: 9114
     secret: nginx-ingress/f5labs.dev
-    scheme: https
+    scheme: http
   nginxStatus:
-    allowCidrs: "127.0.0.1, ::1, 0.0.0.0/0"
+    allowCidrs: "0.0.0.0/0"
   appprotect:
     enable: true
   appprotectdos:
