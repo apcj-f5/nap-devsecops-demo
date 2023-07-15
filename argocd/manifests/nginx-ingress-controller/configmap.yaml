@@ -8,7 +8,7 @@ data:
   worker-rlimit-nofile: "65535"
   worker-processes: "auto"
   worker-connections: "65535"
-  hsts: "true"
+  hsts: "false"
   ssl-protocols: "TLSv1.2"
   http2: "true"
   proxy-protocol: "false"
