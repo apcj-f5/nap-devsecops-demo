@@ -38,12 +38,12 @@ jobs:
 
       # Fetch project source with Github Actions Checkout
       - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
-      - uses: returntocorp/semgrep-action@316a1751c53ffb6689b8726910e8204ffb591b4f
+      - uses: returntocorp/semgrep-action@5f527831fb11fa698f72b1181080d95a04755a2a
         with:
           publishToken: ${{ secrets.SEMGREP_APP_TOKEN }}
           generateSarif: "1"
       - name: Upload SARIF file for Github Advanced Security Dashboard
-        uses: github/codeql-action/upload-sarif@46ed16ded91731b2df79a2893d3aea8e9f03b5c4 # v2.20.3
+        uses: github/codeql-action/upload-sarif@489225d82a57396c6f426a40e66d461b16b3461d # v2.20.4
         with:
           sarif_file: semgrep.sarif
         if: always()

@@ -1,11 +1,11 @@
 apiVersion: appprotect.f5.com/v1beta1
 kind: APPolicy
 metadata:
-  name: "bank-waf-policy"
+  name: "bank-waf-default-transparent-policy"
 spec:
   policy:
-    name: "bank-waf-policy"
+    name: "bank-waf-default-transparent-policy"
     template:
       name: POLICY_TEMPLATE_NGINX_BASE
     applicationLanguage: utf-8
-    enforcementMode: blocking
+    enforcementMode: transparent
