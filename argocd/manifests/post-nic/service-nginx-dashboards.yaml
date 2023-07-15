@@ -9,7 +9,7 @@ metadata:
   namespace: nginx-ingress
 spec:
   ports:
-    - port: 8080
+    - port: 38080
       protocol: TCP
       targetPort: 38080
   selector:
