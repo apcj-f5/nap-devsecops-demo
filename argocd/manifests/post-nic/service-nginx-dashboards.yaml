@@ -11,7 +11,7 @@ spec:
   ports:
     - port: 38080
       protocol: TCP
-      targetPort: 8080
+      targetPort: 38080
   selector:
     app: nginx-ingress
   type: NodePort
