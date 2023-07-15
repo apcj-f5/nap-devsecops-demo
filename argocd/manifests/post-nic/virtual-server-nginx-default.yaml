@@ -1,7 +1,7 @@
 apiVersion: k8s.nginx.org/v1
 kind: VirtualServer
 metadata:
-  name: nginx-ingress-dashboards
+  name: nginx-dashboards
   namespace: nginx-ingress
 spec:
   host: apps.f5labs.dev
@@ -9,10 +9,10 @@ spec:
     redirect:
       enable: true
   upstreams:
-    - name: nginx-ingress-controller
-      service: nginx-ingress-controller
+    - name: nginx-dashboards
+      service: nginx-dashboards
       port: 8080
   routes:
     - path: /
       action:
-        pass: nginx-ingress-controller
+        pass: nginx-dashboards
