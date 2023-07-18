@@ -1,0 +1,28 @@
+name: "bank.f5labs.dev - ZAP Full Scan"
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "15 00 * * 6"
+# Declare default permissions as read only.
+permissions: read-all
+jobs:
+  zap-baseline:
+    name: "ZAP Full Scan"
+    runs-on: ubuntu-latest
+    permissions:
+      # Needed to write to Issues.
+      issues: write
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845 # v2.4.1
+        with:
+          egress-policy: audit # TODO: change to 'egress-policy: block' after couple of runs
+      - name: ZAP Scan
+        uses: zaproxy/action-full-scan@v0.5.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          docker_name: "owasp/zap2docker-stable"
+          target: "https://bank.f5labs.dev"
+          issue_title: "bank.f5labs.dev - OWASP ZAP Full Scan"
+          fail_action: "true"
+          cmd_options: "-I"

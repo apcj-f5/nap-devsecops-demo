@@ -17,41 +17,61 @@
 [![hapi.f5labs.dev - ZAP API Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/hapi.f5labs.dev-zap-api.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+API+Scan"+in:title)
 [![hapi.f5labs.dev - ZAP Full Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/hapi.f5labs.dev-zap-full.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+Full+Scan"+in:title)
 
+[![bank.f5labs.dev - ZAP Baseline Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/bank.f5labs.dev-zap-baseline.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+Baseline+Scan"+in:title)
+[![bank.f5labs.dev - ZAP Full Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/bank.f5labs.dev-zap-full.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+Full+Scan"+in:title)
+
 ---
 
-**Maintainers:** [![@shsingh](https://avatars.githubusercontent.com/u/412800?s=25&v=4)](https://github.com/shsingh) [![@leonseng](https://avatars.githubusercontent.com/u/26860216?s=25&v=4)](https://github.com/leonseng)
+**Maintainers:**
+[![@shsingh](https://avatars.githubusercontent.com/u/412800?s=25&v=4)](https://github.com/shsingh)
+[![@leonseng](https://avatars.githubusercontent.com/u/26860216?s=25&v=4)](https://github.com/leonseng)
 
-This repository hosts files that demonstrate using F5 security solutions (NGINX App Protect, NGINX App Protect DoS,
-F5 Distributed Cloud) for post-deployment security in application CI/CD pipelines.
+This repository hosts files that demonstrate using F5 security solutions (NGINX
+App Protect, NGINX App Protect DoS, F5 Distributed Cloud) for post-deployment
+security in application CI/CD pipelines.
 
-Integrating security into post-deployment processes as part of Continuous Delivery/Continuous Deployment
-ensure that applications at runtime have proper controls, and can also be checked for compliance.
+Integrating security into post-deployment processes as part of Continuous
+Delivery/Continuous Deployment ensure that applications at runtime have proper
+controls, and can also be checked for compliance.
 
 ## Repository Information
 
-This repository aims to follow security recommended practices for opensource software and contains the following:
+This repository aims to follow security recommended practices for opensource
+software and contains the following:
 
-- [OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/en/projects/7409) for projects
-- [Scorecard](https://api.securityscorecards.dev/projects/github.com/apcj-f5/nap-devsecops-demo) for validation of OpenSSF Best Practices
-- Github organisation [apcj-f5](https://github.com/apcj-f5) uses the [Allstar application](https://github.com/ossf/allstar) with the
-  following [configuration files](https://github.com/apcj-f5/.allstar)
+- [OpenSSF Best Practices](https://bestpractices.coreinfrastructure.org/en/projects/7409)
+  for projects
+- [Scorecard](https://api.securityscorecards.dev/projects/github.com/apcj-f5/nap-devsecops-demo)
+  for validation of OpenSSF Best Practices
+- Github organisation [apcj-f5](https://github.com/apcj-f5) uses the
+  [Allstar application](https://github.com/ossf/allstar) with the following
+  [configuration files](https://github.com/apcj-f5/.allstar)
 
 ## Reference Implementation
 
-The reference implementation uses the [HAPI FHIR](https://hapifhir.io) application. The application provides
-an example API gateway for digital health use cases. Source code for the application is in the [apps](apps/)
-directory.
+The reference implementation uses the [HAPI FHIR](https://hapifhir.io)
+application. The application provides an example API gateway for digital health
+use cases. Source code for the application is in the [apps](apps/) directory.
 
-- Website for the live implementation is at [https://nap-devsecops-demo](https://nap-devsecops-demo)
-- Build information from ArgoCD for the deployment is at [https://build.f5labs.dev](https://build.f5labs.dev)
+- Website for the live implementation is at
+  [https://nap-devsecops-demo](https://nap-devsecops-demo)
+- Build information from ArgoCD for the deployment is at
+  [https://build.f5labs.dev](https://build.f5labs.dev)
 
 ![Reference Implementation](docs/images/Reference%20Implementation%20-%20hapi.f5labs.dev.png)
 
 ### Pipeline details
 
-- SAST using [Semgrep](https://semgrep.dev) with the following [workflow run details](https://github.com/apcj-f5/nap-devsecops-demo/actions?query=workflow%3ASemgrep)
-- Dependency Checking [workflow run details](https://github.com/apcj-f5/nap-devsecops-demo/actions?query=workflow%3A%22Dependency%20Review%22) and using [Renovate](https://github.com/apcj-f5/nap-devsecops-demo/blob/master/renovate.json) for updating dependencies
-- Post deployment functional testing using [newman](argocd/manifests/hapi/hooks/hook-postsync.yaml) to check WAF blocking policy effectiveness and false positives
+- SAST using [Semgrep](https://semgrep.dev) with the following
+  [workflow run details](https://github.com/apcj-f5/nap-devsecops-demo/actions?query=workflow%3ASemgrep)
+- Dependency Checking
+  [workflow run details](https://github.com/apcj-f5/nap-devsecops-demo/actions?query=workflow%3A%22Dependency%20Review%22)
+  and using
+  [Renovate](https://github.com/apcj-f5/nap-devsecops-demo/blob/master/renovate.json)
+  for updating dependencies
+- Post deployment functional testing using
+  [newman](argocd/manifests/hapi/hooks/hook-postsync.yaml) to check WAF blocking
+  policy effectiveness and false positives
 
 ---
 
@@ -61,14 +81,13 @@ directory.
 2. Ensure [pre-commit](https://pre-commit.com) is installed
 
 ```bash
-
 local-repo-dir# pre-commit install
 local-repo-dir# pre-commit run --all-files
-
 ```
 
 3. Any commits now will run the pre-commit hook changes
 
 ## Additional information
 
-- Ensure Git commits [are signed](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits)
+- Ensure Git commits
+  [are signed](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits)
