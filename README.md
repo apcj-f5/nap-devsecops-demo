@@ -20,6 +20,9 @@
 [![bank.f5labs.dev - ZAP Baseline Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/bank.f5labs.dev-zap-baseline.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+Baseline+Scan"+in:title)
 [![bank.f5labs.dev - ZAP Full Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/bank.f5labs.dev-zap-full.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+Full+Scan"+in:title)
 
+[![gql.f5labs.dev - ZAP Baseline Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/gql.f5labs.dev-zap-baseline.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+Baseline+Scan"+in:title)
+[![gql.f5labs.dev - ZAP Full Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/gql.f5labs.dev-zap-full.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+Full+Scan"+in:title)
+
 ---
 
 **Maintainers:**
