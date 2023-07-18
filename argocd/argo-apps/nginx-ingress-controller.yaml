@@ -12,12 +12,13 @@ spec:
   sources:
     - repoURL: https://github.com/apcj-f5/nap-devsecops-demo.git
       targetRevision: deploy
+      path: argocd/manifests/nginx-ingress-controller
+    - repoURL: https://github.com/apcj-f5/nap-devsecops-demo.git
+      targetRevision: deploy
       path: argocd/manifests/post-nic
     - repoURL: https://github.com/apcj-f5/nap-devsecops-demo.git
       targetRevision: deploy
-      path: argocd/manifests/nginx-ingress-controller
-      directory:
-        recurse: true
+      path: argocd/manifests/dos-arbitrator
   destination:
     namespace: nginx-ingress
     server: https://kubernetes.default.svc

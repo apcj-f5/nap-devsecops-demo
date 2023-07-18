@@ -10,5 +10,5 @@ helmCharts:
 resources:
   - nginx-regcred.yaml
   - tls.yaml
-patchesStrategicMerge:
-  - configmap.yaml
+patches:
+  - path: configmap.yaml
