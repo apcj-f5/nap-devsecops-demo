@@ -76,11 +76,7 @@
       "colorPostfix": false,
       "colorPrefix": false,
       "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#299c46"
-      ],
+      "colors": ["#d44a3a", "rgba(237, 129, 40, 0.89)", "#299c46"],
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -217,11 +213,7 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": true,
-      "colors": [
-        "#299c46",
-        "#FADE2A",
-        "#d44a3a"
-      ],
+      "colors": ["#299c46", "#FADE2A", "#d44a3a"],
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -358,11 +350,7 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": true,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -499,11 +487,7 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": true,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -640,11 +624,7 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": true,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -781,11 +761,7 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -923,11 +899,7 @@
       "colorBackground": false,
       "colorPostfix": false,
       "colorValue": false,
-      "colors": [
-        "#d44a3a",
-        "rgba(237, 129, 40, 0.89)",
-        "#5794F2"
-      ],
+      "colors": ["#d44a3a", "rgba(237, 129, 40, 0.89)", "#5794F2"],
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -1064,11 +1036,7 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": true,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -1205,11 +1173,7 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": true,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -1346,11 +1310,7 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": true,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -1488,11 +1448,7 @@
       "colorBackground": false,
       "colorPrefix": false,
       "colorValue": true,
-      "colors": [
-        "#299c46",
-        "rgba(237, 129, 40, 0.89)",
-        "#d44a3a"
-      ],
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -3231,9 +3187,7 @@
   "refresh": "10s",
   "schemaVersion": 22,
   "style": "dark",
-  "tags": [
-    "practo-managed"
-  ],
+  "tags": ["practo-managed"],
   "templating": {
     "list": [
       {
@@ -3328,17 +3282,7 @@
       "2h",
       "1d"
     ],
-    "time_options": [
-      "5m",
-      "15m",
-      "1h",
-      "6h",
-      "12h",
-      "24h",
-      "2d",
-      "7d",
-      "30d"
-    ]
+    "time_options": ["5m", "15m", "1h", "6h", "12h", "24h", "2d", "7d", "30d"]
   },
   "timezone": "",
   "title": "WeaveNet (Cluster)",
