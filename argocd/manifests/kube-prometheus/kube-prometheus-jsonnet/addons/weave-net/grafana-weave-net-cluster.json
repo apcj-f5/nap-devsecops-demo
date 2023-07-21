@@ -77,6 +77,7 @@
       "colorPrefix": false,
       "colorValue": false,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "colors": ["#d44a3a", "rgba(237, 129, 40, 0.89)", "#299c46"],
 =======
       "colors": [
@@ -85,6 +86,9 @@
         "#299c46"
       ],
 >>>>>>> 0e4b75b (add kube-prometheus jsonnet)
+=======
+      "colors": ["#d44a3a", "rgba(237, 129, 40, 0.89)", "#299c46"],
+>>>>>>> 9f8b894 (run linter)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -222,6 +226,7 @@
       "colorBackground": false,
       "colorValue": true,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "colors": ["#299c46", "#FADE2A", "#d44a3a"],
 =======
       "colors": [
@@ -230,6 +235,9 @@
         "#d44a3a"
       ],
 >>>>>>> 0e4b75b (add kube-prometheus jsonnet)
+=======
+      "colors": ["#299c46", "#FADE2A", "#d44a3a"],
+>>>>>>> 9f8b894 (run linter)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -367,6 +375,7 @@
       "colorBackground": false,
       "colorValue": true,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
 =======
       "colors": [
@@ -375,6 +384,9 @@
         "#d44a3a"
       ],
 >>>>>>> 0e4b75b (add kube-prometheus jsonnet)
+=======
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+>>>>>>> 9f8b894 (run linter)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -512,6 +524,7 @@
       "colorBackground": false,
       "colorValue": true,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
 =======
       "colors": [
@@ -520,6 +533,9 @@
         "#d44a3a"
       ],
 >>>>>>> 0e4b75b (add kube-prometheus jsonnet)
+=======
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+>>>>>>> 9f8b894 (run linter)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -657,6 +673,7 @@
       "colorBackground": false,
       "colorValue": true,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
 =======
       "colors": [
@@ -665,6 +682,9 @@
         "#d44a3a"
       ],
 >>>>>>> 0e4b75b (add kube-prometheus jsonnet)
+=======
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+>>>>>>> 9f8b894 (run linter)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -802,6 +822,7 @@
       "colorBackground": false,
       "colorValue": false,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
 =======
       "colors": [
@@ -810,6 +831,9 @@
         "#d44a3a"
       ],
 >>>>>>> 0e4b75b (add kube-prometheus jsonnet)
+=======
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+>>>>>>> 9f8b894 (run linter)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -948,6 +972,7 @@
       "colorPostfix": false,
       "colorValue": false,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "colors": ["#d44a3a", "rgba(237, 129, 40, 0.89)", "#5794F2"],
 =======
       "colors": [
@@ -956,6 +981,9 @@
         "#5794F2"
       ],
 >>>>>>> 0e4b75b (add kube-prometheus jsonnet)
+=======
+      "colors": ["#d44a3a", "rgba(237, 129, 40, 0.89)", "#5794F2"],
+>>>>>>> 9f8b894 (run linter)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -1093,6 +1121,7 @@
       "colorBackground": false,
       "colorValue": true,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
 =======
       "colors": [
@@ -1101,6 +1130,9 @@
         "#d44a3a"
       ],
 >>>>>>> 0e4b75b (add kube-prometheus jsonnet)
+=======
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+>>>>>>> 9f8b894 (run linter)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -1238,6 +1270,7 @@
       "colorBackground": false,
       "colorValue": true,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
 =======
       "colors": [
@@ -1246,6 +1279,9 @@
         "#d44a3a"
       ],
 >>>>>>> 0e4b75b (add kube-prometheus jsonnet)
+=======
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+>>>>>>> 9f8b894 (run linter)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -1383,6 +1419,7 @@
       "colorBackground": false,
       "colorValue": true,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
 =======
       "colors": [
@@ -1391,6 +1428,9 @@
         "#d44a3a"
       ],
 >>>>>>> 0e4b75b (add kube-prometheus jsonnet)
+=======
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+>>>>>>> 9f8b894 (run linter)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -1529,6 +1569,7 @@
       "colorPrefix": false,
       "colorValue": true,
 <<<<<<< HEAD
+<<<<<<< HEAD
       "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
 =======
       "colors": [
@@ -1537,6 +1578,9 @@
         "#d44a3a"
       ],
 >>>>>>> 0e4b75b (add kube-prometheus jsonnet)
+=======
+      "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+>>>>>>> 9f8b894 (run linter)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -3276,12 +3320,16 @@
   "schemaVersion": 22,
   "style": "dark",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "tags": ["practo-managed"],
 =======
   "tags": [
     "practo-managed"
   ],
 >>>>>>> 0e4b75b (add kube-prometheus jsonnet)
+=======
+  "tags": ["practo-managed"],
+>>>>>>> 9f8b894 (run linter)
   "templating": {
     "list": [
       {
@@ -3377,6 +3425,7 @@
       "1d"
     ],
 <<<<<<< HEAD
+<<<<<<< HEAD
     "time_options": ["5m", "15m", "1h", "6h", "12h", "24h", "2d", "7d", "30d"]
 =======
     "time_options": [
@@ -3391,6 +3440,9 @@
       "30d"
     ]
 >>>>>>> 0e4b75b (add kube-prometheus jsonnet)
+=======
+    "time_options": ["5m", "15m", "1h", "6h", "12h", "24h", "2d", "7d", "30d"]
+>>>>>>> 9f8b894 (run linter)
   },
   "timezone": "",
   "title": "WeaveNet (Cluster)",
