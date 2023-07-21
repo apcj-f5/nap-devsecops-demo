@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 local kp = (import 'kube-prometheus-jsonnet/main.libsonnet') + {
+=======
+<<<<<<< HEAD
+local kp = (import 'kube-prometheus/main.libsonnet') + {
+=======
+local kp = (import 'kube-prometheus-jsonnet/main.libsonnet') + {
+>>>>>>> 0e4b75b (add kube-prometheus jsonnet)
+>>>>>>> 1433205 (add kube-prometheus jsonnet)
   values+:: {
     common+: {
       namespace: 'kube-prometheus',
