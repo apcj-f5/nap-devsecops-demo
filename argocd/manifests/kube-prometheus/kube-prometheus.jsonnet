@@ -1,4 +1,4 @@
-local kp = (import 'main.libsonnet') + {
+local kp = (import 'kube-prometheus-jsonnet/main.libsonnet') + {
   values+:: {
     common+: {
       namespace: 'kube-prometheus',
