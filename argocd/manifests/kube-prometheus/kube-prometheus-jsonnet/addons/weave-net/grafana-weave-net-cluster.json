@@ -76,7 +76,15 @@
       "colorPostfix": false,
       "colorPrefix": false,
       "colorValue": false,
+<<<<<<< HEAD
       "colors": ["#d44a3a", "rgba(237, 129, 40, 0.89)", "#299c46"],
+=======
+      "colors": [
+        "#d44a3a",
+        "rgba(237, 129, 40, 0.89)",
+        "#299c46"
+      ],
+>>>>>>> 0e4b75b (add kube-prometheus jsonnet)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -213,7 +221,15 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": true,
+<<<<<<< HEAD
       "colors": ["#299c46", "#FADE2A", "#d44a3a"],
+=======
+      "colors": [
+        "#299c46",
+        "#FADE2A",
+        "#d44a3a"
+      ],
+>>>>>>> 0e4b75b (add kube-prometheus jsonnet)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -350,7 +366,15 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": true,
+<<<<<<< HEAD
       "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+=======
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+>>>>>>> 0e4b75b (add kube-prometheus jsonnet)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -487,7 +511,15 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": true,
+<<<<<<< HEAD
       "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+=======
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+>>>>>>> 0e4b75b (add kube-prometheus jsonnet)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -624,7 +656,15 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": true,
+<<<<<<< HEAD
       "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+=======
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+>>>>>>> 0e4b75b (add kube-prometheus jsonnet)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -761,7 +801,15 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": false,
+<<<<<<< HEAD
       "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+=======
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+>>>>>>> 0e4b75b (add kube-prometheus jsonnet)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -899,7 +947,15 @@
       "colorBackground": false,
       "colorPostfix": false,
       "colorValue": false,
+<<<<<<< HEAD
       "colors": ["#d44a3a", "rgba(237, 129, 40, 0.89)", "#5794F2"],
+=======
+      "colors": [
+        "#d44a3a",
+        "rgba(237, 129, 40, 0.89)",
+        "#5794F2"
+      ],
+>>>>>>> 0e4b75b (add kube-prometheus jsonnet)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -1036,7 +1092,15 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": true,
+<<<<<<< HEAD
       "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+=======
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+>>>>>>> 0e4b75b (add kube-prometheus jsonnet)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -1173,7 +1237,15 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": true,
+<<<<<<< HEAD
       "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+=======
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+>>>>>>> 0e4b75b (add kube-prometheus jsonnet)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -1310,7 +1382,15 @@
       "cacheTimeout": null,
       "colorBackground": false,
       "colorValue": true,
+<<<<<<< HEAD
       "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+=======
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+>>>>>>> 0e4b75b (add kube-prometheus jsonnet)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -1448,7 +1528,15 @@
       "colorBackground": false,
       "colorPrefix": false,
       "colorValue": true,
+<<<<<<< HEAD
       "colors": ["#299c46", "rgba(237, 129, 40, 0.89)", "#d44a3a"],
+=======
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+>>>>>>> 0e4b75b (add kube-prometheus jsonnet)
       "dashLength": 10,
       "dashes": false,
       "datasource": "$datasource",
@@ -3187,7 +3275,13 @@
   "refresh": "10s",
   "schemaVersion": 22,
   "style": "dark",
+<<<<<<< HEAD
   "tags": ["practo-managed"],
+=======
+  "tags": [
+    "practo-managed"
+  ],
+>>>>>>> 0e4b75b (add kube-prometheus jsonnet)
   "templating": {
     "list": [
       {
@@ -3282,7 +3376,21 @@
       "2h",
       "1d"
     ],
+<<<<<<< HEAD
     "time_options": ["5m", "15m", "1h", "6h", "12h", "24h", "2d", "7d", "30d"]
+=======
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+>>>>>>> 0e4b75b (add kube-prometheus jsonnet)
   },
   "timezone": "",
   "title": "WeaveNet (Cluster)",
