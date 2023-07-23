@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kube-prometheus
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: kube-prometheus
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    directory:
+      jsonnet:
+        libs:
+          - vendored
+      recurse: true
+    path: argocd/manifests/kube-prometheus/
+    repoURL: https://github.com/apcj-f5/nap-devsecops-demo.git
+    targetRevision: deploy
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true
