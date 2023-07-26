@@ -9,13 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@55d479fb1c5bcad5a4f9099a5d9f37c8857b2845 # v2.4.1
+        uses: step-security/harden-runner@cba0d00b1fc9a034e1e642ea0f1103c282990604 # v2.5.0
         with:
           disable-sudo: true
           egress-policy: block
           allowed-endpoints: api.github.com:443 github.com:443 hapi.f5labs.dev:443
       - name: Set commit status as pending
-        uses: myrotvorets/set-commit-status-action@bb9abebbe49aa22e937dafbadd9fa10dac39b477 # master
+        uses: myrotvorets/set-commit-status-action@d4f92f0c517c99e67d918e0056fd9702c5808bd7 # master
         with:
           sha: ${{ github.sha }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -28,7 +28,7 @@ jobs:
           collection: tests/hapi/hapi-newman-tests-collection.json
           environment: tests/hapi/hapi-newman-tests-environment.json
       - name: Set final commit status
-        uses: myrotvorets/set-commit-status-action@bb9abebbe49aa22e937dafbadd9fa10dac39b477 # master
+        uses: myrotvorets/set-commit-status-action@d4f92f0c517c99e67d918e0056fd9702c5808bd7 # master
         if: always()
         with:
           sha: ${{ github.sha }}
