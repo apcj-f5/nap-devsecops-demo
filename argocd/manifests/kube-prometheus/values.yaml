@@ -391,11 +391,19 @@ server:
     #    release: "stable"
     #  matchExpressions:
     #    - { key: environment, operator: In, values: [ dev ] }
+<<<<<<< HEAD:argocd/manifests/kube-prometheus/values.yaml
   ## Persistent Volume Name
   ## Useful if Persistent Volumes have been provisioned in advance and you want to use a specific one
   ##
   # volumeName: ""
 
+=======
+
+    ## Persistent Volume Name
+    ## Useful if Persistent Volumes have been provisioned in advance and you want to use a specific one
+    ##
+    # volumeName: ""
+>>>>>>> 5aec6d7 (shsingh/install prometheus and grafana (#295)):argocd/manifests/prometheus/values.yaml
   emptyDir:
     ## Prometheus server emptyDir volume size limit
     ##
@@ -590,6 +598,16 @@ serverFiles:
         static_configs:
           - targets:
               - localhost:9090
+<<<<<<< HEAD:argocd/manifests/kube-prometheus/values.yaml
+=======
+      # A scrape configuration for running Prometheus on a Kubernetes cluster.
+      # This uses separate scrape configs for cluster components (i.e. API server, node)
+      # and services to allow each to use different authentication configs.
+      #
+      # Kubernetes labels will be added as Prometheus labels on metrics via the
+      # `labelmap` relabeling action.
+
+>>>>>>> 5aec6d7 (shsingh/install prometheus and grafana (#295)):argocd/manifests/prometheus/values.yaml
       # Scrape config for API servers.
       #
       # Kubernetes exposes API servers as endpoints to the default/kubernetes
@@ -598,6 +616,7 @@ serverFiles:
       # default named port `https`. This works for single API server deployments as
       # well as HA API server deployments.
       - job_name: "kubernetes-apiservers"
+<<<<<<< HEAD:argocd/manifests/kube-prometheus/values.yaml
         # A scrape configuration for running Prometheus on a Kubernetes cluster.
         # This uses separate scrape configs for cluster components (i.e. API server, node)
         # and services to allow each to use different authentication configs.
@@ -605,6 +624,8 @@ serverFiles:
         # Kubernetes labels will be added as Prometheus labels on metrics via the
         # `labelmap` relabeling action.
 
+=======
+>>>>>>> 5aec6d7 (shsingh/install prometheus and grafana (#295)):argocd/manifests/prometheus/values.yaml
         kubernetes_sd_configs:
           - role: endpoints
         # Default to scraping over https. If required, just disable this or change to
@@ -630,7 +651,16 @@ serverFiles:
         # will add targets for each API server which Kubernetes adds an endpoint to
         # the default/kubernetes service.
         relabel_configs:
+<<<<<<< HEAD:argocd/manifests/kube-prometheus/values.yaml
           - source_labels: [__meta_kubernetes_namespace, __meta_kubernetes_service_name, __meta_kubernetes_endpoint_port_name]
+=======
+          - source_labels:
+              [
+                __meta_kubernetes_namespace,
+                __meta_kubernetes_service_name,
+                __meta_kubernetes_endpoint_port_name,
+              ]
+>>>>>>> 5aec6d7 (shsingh/install prometheus and grafana (#295)):argocd/manifests/prometheus/values.yaml
             action: keep
             regex: default;kubernetes;https
       - job_name: "kubernetes-nodes"
@@ -724,6 +754,7 @@ serverFiles:
         kubernetes_sd_configs:
           - role: endpoints
         relabel_configs:
+<<<<<<< HEAD:argocd/manifests/kube-prometheus/values.yaml
           - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_scrape]
             action: keep
             regex: true
@@ -739,6 +770,31 @@ serverFiles:
             target_label: __metrics_path__
             regex: (.+)
           - source_labels: [__address__, __meta_kubernetes_service_annotation_prometheus_io_port]
+=======
+          - source_labels:
+              [__meta_kubernetes_service_annotation_prometheus_io_scrape]
+            action: keep
+            regex: true
+          - source_labels:
+              [__meta_kubernetes_service_annotation_prometheus_io_scrape_slow]
+            action: drop
+            regex: true
+          - source_labels:
+              [__meta_kubernetes_service_annotation_prometheus_io_scheme]
+            action: replace
+            target_label: __scheme__
+            regex: (https?)
+          - source_labels:
+              [__meta_kubernetes_service_annotation_prometheus_io_path]
+            action: replace
+            target_label: __metrics_path__
+            regex: (.+)
+          - source_labels:
+              [
+                __address__,
+                __meta_kubernetes_service_annotation_prometheus_io_port,
+              ]
+>>>>>>> 5aec6d7 (shsingh/install prometheus and grafana (#295)):argocd/manifests/prometheus/values.yaml
             action: replace
             target_label: __address__
             regex: (.+?)(?::\d+)?;(\d+)
@@ -778,6 +834,7 @@ serverFiles:
         kubernetes_sd_configs:
           - role: endpoints
         relabel_configs:
+<<<<<<< HEAD:argocd/manifests/kube-prometheus/values.yaml
           - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_scrape_slow]
             action: keep
             regex: true
@@ -790,6 +847,27 @@ serverFiles:
             target_label: __metrics_path__
             regex: (.+)
           - source_labels: [__address__, __meta_kubernetes_service_annotation_prometheus_io_port]
+=======
+          - source_labels:
+              [__meta_kubernetes_service_annotation_prometheus_io_scrape_slow]
+            action: keep
+            regex: true
+          - source_labels:
+              [__meta_kubernetes_service_annotation_prometheus_io_scheme]
+            action: replace
+            target_label: __scheme__
+            regex: (https?)
+          - source_labels:
+              [__meta_kubernetes_service_annotation_prometheus_io_path]
+            action: replace
+            target_label: __metrics_path__
+            regex: (.+)
+          - source_labels:
+              [
+                __address__,
+                __meta_kubernetes_service_annotation_prometheus_io_port,
+              ]
+>>>>>>> 5aec6d7 (shsingh/install prometheus and grafana (#295)):argocd/manifests/prometheus/values.yaml
             action: replace
             target_label: __address__
             regex: (.+?)(?::\d+)?;(\d+)
@@ -813,7 +891,12 @@ serverFiles:
         kubernetes_sd_configs:
           - role: service
         relabel_configs:
+<<<<<<< HEAD:argocd/manifests/kube-prometheus/values.yaml
           - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_probe]
+=======
+          - source_labels:
+              [__meta_kubernetes_service_annotation_prometheus_io_probe]
+>>>>>>> 5aec6d7 (shsingh/install prometheus and grafana (#295)):argocd/manifests/prometheus/values.yaml
             action: keep
             regex: pushgateway
       # Example scrape config for probing services via the Blackbox Exporter.
@@ -830,7 +913,12 @@ serverFiles:
         kubernetes_sd_configs:
           - role: service
         relabel_configs:
+<<<<<<< HEAD:argocd/manifests/kube-prometheus/values.yaml
           - source_labels: [__meta_kubernetes_service_annotation_prometheus_io_probe]
+=======
+          - source_labels:
+              [__meta_kubernetes_service_annotation_prometheus_io_probe]
+>>>>>>> 5aec6d7 (shsingh/install prometheus and grafana (#295)):argocd/manifests/prometheus/values.yaml
             action: keep
             regex: true
           - source_labels: [__address__]
@@ -861,6 +949,7 @@ serverFiles:
         kubernetes_sd_configs:
           - role: pod
         relabel_configs:
+<<<<<<< HEAD:argocd/manifests/kube-prometheus/values.yaml
           - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
             action: keep
             regex: true
@@ -868,6 +957,18 @@ serverFiles:
             action: drop
             regex: true
           - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scheme]
+=======
+          - source_labels:
+              [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
+            action: keep
+            regex: true
+          - source_labels:
+              [__meta_kubernetes_pod_annotation_prometheus_io_scrape_slow]
+            action: drop
+            regex: true
+          - source_labels:
+              [__meta_kubernetes_pod_annotation_prometheus_io_scheme]
+>>>>>>> 5aec6d7 (shsingh/install prometheus and grafana (#295)):argocd/manifests/prometheus/values.yaml
             action: replace
             regex: (https?)
             target_label: __scheme__
@@ -875,12 +976,28 @@ serverFiles:
             action: replace
             target_label: __metrics_path__
             regex: (.+)
+<<<<<<< HEAD:argocd/manifests/kube-prometheus/values.yaml
           - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_port, __meta_kubernetes_pod_ip]
+=======
+          - source_labels:
+              [
+                __meta_kubernetes_pod_annotation_prometheus_io_port,
+                __meta_kubernetes_pod_ip,
+              ]
+>>>>>>> 5aec6d7 (shsingh/install prometheus and grafana (#295)):argocd/manifests/prometheus/values.yaml
             action: replace
             regex: (\d+);(([A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4})
             replacement: "[$2]:$1"
             target_label: __address__
+<<<<<<< HEAD:argocd/manifests/kube-prometheus/values.yaml
           - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_port, __meta_kubernetes_pod_ip]
+=======
+          - source_labels:
+              [
+                __meta_kubernetes_pod_annotation_prometheus_io_port,
+                __meta_kubernetes_pod_ip,
+              ]
+>>>>>>> 5aec6d7 (shsingh/install prometheus and grafana (#295)):argocd/manifests/prometheus/values.yaml
             action: replace
             regex: (\d+);((([0-9]+?)(\.|$)){4})
             replacement: $2:$1
@@ -920,10 +1037,19 @@ serverFiles:
         kubernetes_sd_configs:
           - role: pod
         relabel_configs:
+<<<<<<< HEAD:argocd/manifests/kube-prometheus/values.yaml
           - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape_slow]
             action: keep
             regex: true
           - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scheme]
+=======
+          - source_labels:
+              [__meta_kubernetes_pod_annotation_prometheus_io_scrape_slow]
+            action: keep
+            regex: true
+          - source_labels:
+              [__meta_kubernetes_pod_annotation_prometheus_io_scheme]
+>>>>>>> 5aec6d7 (shsingh/install prometheus and grafana (#295)):argocd/manifests/prometheus/values.yaml
             action: replace
             regex: (https?)
             target_label: __scheme__
@@ -931,12 +1057,28 @@ serverFiles:
             action: replace
             target_label: __metrics_path__
             regex: (.+)
+<<<<<<< HEAD:argocd/manifests/kube-prometheus/values.yaml
           - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_port, __meta_kubernetes_pod_ip]
+=======
+          - source_labels:
+              [
+                __meta_kubernetes_pod_annotation_prometheus_io_port,
+                __meta_kubernetes_pod_ip,
+              ]
+>>>>>>> 5aec6d7 (shsingh/install prometheus and grafana (#295)):argocd/manifests/prometheus/values.yaml
             action: replace
             regex: (\d+);(([A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4})
             replacement: "[$2]:$1"
             target_label: __address__
+<<<<<<< HEAD:argocd/manifests/kube-prometheus/values.yaml
           - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_port, __meta_kubernetes_pod_ip]
+=======
+          - source_labels:
+              [
+                __meta_kubernetes_pod_annotation_prometheus_io_port,
+                __meta_kubernetes_pod_ip,
+              ]
+>>>>>>> 5aec6d7 (shsingh/install prometheus and grafana (#295)):argocd/manifests/prometheus/values.yaml
             action: replace
             regex: (\d+);((([0-9]+?)(\.|$)){4})
             replacement: $2:$1
