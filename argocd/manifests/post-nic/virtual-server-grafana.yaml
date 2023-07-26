@@ -1,0 +1,18 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: grafana
+  namespace: grafana
+spec:
+  host: ops.f5labs.dev
+  tls:
+    redirect:
+      enable: true
+  upstreams:
+    - name: kube-prometheus-stack-grafana
+      service: kube-prometheus-stack-grafana
+      port: 80
+  routes:
+    - path: /
+      action:
+        pass: kube-prometheus-stack-grafana
