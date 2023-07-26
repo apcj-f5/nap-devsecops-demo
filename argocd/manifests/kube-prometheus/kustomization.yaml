@@ -1,8 +1,8 @@
 namespace: grafana
 helmCharts:
-  - name: prometheus
+  - name: kube-prometheus-stack
     repo: https://prometheus-community.github.io/helm-charts
-    releaseName: prometheus
-    namespace: prometheus
+    releaseName: kube-prometheus-stack
+    namespace: grafana
     includeCRDs: true
     valuesFile: values.yaml
