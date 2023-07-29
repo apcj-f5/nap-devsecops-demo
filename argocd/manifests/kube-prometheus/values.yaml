@@ -748,9 +748,9 @@ alertmanager:
     # name: ""
     annotations: {}
     data: {}
-  #   auth: |
-  #     foo:$apr1$OFG3Xybp$ckL0FHDAkoXYIlH9.cysT0
-  #     someoneelse:$apr1$DMZX2Z4q$6SbQIfyuLQd.xmo/P0m2c.
+    #   auth: |
+    #     foo:$apr1$OFG3Xybp$ckL0FHDAkoXYIlH9.cysT0
+    #     someoneelse:$apr1$DMZX2Z4q$6SbQIfyuLQd.xmo/P0m2c.
 ## Using default values from https://github.com/grafana/helm-charts/blob/main/charts/grafana/values.yaml
 ##
 grafana:
@@ -1817,9 +1817,9 @@ prometheusOperator:
         duration: "" # default to be 5y
       admissionCert:
         duration: "" # default to be 1y
-      # issuerRef:
-      #   name: "issuer"
-      #   kind: "ClusterIssuer"
+        # issuerRef:
+        #   name: "issuer"
+        #   kind: "ClusterIssuer"
   ## Namespaces to scope the interaction of the Prometheus Operator and the apiserver (allow list).
   ## This is mutually exclusive with denyNamespaces. Setting this to an empty object will disable the configuration
   ##
@@ -2143,14 +2143,14 @@ prometheus:
     #   endpointSelector:
     #   egress:
     #   ingress:
+  # egress:
+  # - {}
+  # ingress:
+  # - {}
+  # podSelector:
+  #   matchLabels:
+  #     app: prometheus
 
-    # egress:
-    # - {}
-    # ingress:
-    # - {}
-    # podSelector:
-    #   matchLabels:
-    #     app: prometheus
   ## Service account for Prometheuses to use.
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/
   ##
@@ -3548,9 +3548,9 @@ thanosRuler:
     # name: ""
     annotations: {}
     data: {}
-  #   auth: |
-  #     foo:$apr1$OFG3Xybp$ckL0FHDAkoXYIlH9.cysT0
-  #     someoneelse:$apr1$DMZX2Z4q$6SbQIfyuLQd.xmo/P0m2c.
+    #   auth: |
+    #     foo:$apr1$OFG3Xybp$ckL0FHDAkoXYIlH9.cysT0
+    #     someoneelse:$apr1$DMZX2Z4q$6SbQIfyuLQd.xmo/P0m2c.
 ## Setting to true produces cleaner resource names, but requires a data migration because the name of the persistent volume changes. Therefore this should only be set once on initial installation.
 ##
 cleanPrometheusOperatorObjectNames: false
