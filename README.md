@@ -13,15 +13,11 @@
 
 ---
 
-[![hapi.f5labs.dev - ZAP Baseline Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/hapi.f5labs.dev-zap-baseline.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+Baseline+Scan"+in:title)
-[![hapi.f5labs.dev - ZAP API Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/hapi.f5labs.dev-zap-api.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+API+Scan"+in:title)
-[![hapi.f5labs.dev - ZAP Full Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/hapi.f5labs.dev-zap-full.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+Full+Scan"+in:title)
-
-[![bank.f5labs.dev - ZAP Baseline Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/bank.f5labs.dev-zap-baseline.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+Baseline+Scan"+in:title)
-[![bank.f5labs.dev - ZAP Full Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/bank.f5labs.dev-zap-full.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+Full+Scan"+in:title)
-
-[![gql.f5labs.dev - ZAP Baseline Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/gql.f5labs.dev-zap-baseline.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+Baseline+Scan"+in:title)
-[![gql.f5labs.dev - ZAP Full Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/gql.f5labs.dev-zap-full.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+Full+Scan"+in:title)
+| [![OWASP ZAP](https://avatars.githubusercontent.com/u/6716868?s=15&v=4)](https://zaproxy.org) ZAP Baseline Scan  | [![OWASP ZAP](https://avatars.githubusercontent.com/u/6716868?s=15&v=4)](https://zaproxy.org) ZAP Full Scan  | [![OWASP ZAP](https://avatars.githubusercontent.com/u/6716868?s=15&v=4)](https://zaproxy.org) ZAP API Scan  |
+| --- | --- | --- |
+| [![hapi.f5labs.dev - ZAP Baseline Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/hapi.f5labs.dev-zap-baseline.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+Baseline+Scan"+in:title) | [![hapi.f5labs.dev - ZAP Full Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/hapi.f5labs.dev-zap-full.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+Full+Scan"+in:title) | [![hapi.f5labs.dev - ZAP API Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/hapi.f5labs.dev-zap-api.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+API+Scan"+in:title) |
+[![bank.f5labs.dev - ZAP Baseline Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/bank.f5labs.dev-zap-baseline.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+Baseline+Scan"+in:title) | [![bank.f5labs.dev - ZAP Full Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/bank.f5labs.dev-zap-full.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+Full+Scan"+in:title) |
+[![gql.f5labs.dev - ZAP Baseline Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/gql.f5labs.dev-zap-baseline.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+Baseline+Scan"+in:title) | [![gql.f5labs.dev - ZAP Full Scan](https://github.com/apcj-f5/nap-devsecops-demo/actions/workflows/gql.f5labs.dev-zap-full.yml/badge.svg)](https://github.com/apcj-f5/nap-devsecops-demo/issues?q=is:issue+is:open+"OWASP+ZAP+Full+Scan"+in:title)
 
 ---
 
