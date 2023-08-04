@@ -5,7 +5,7 @@ metadata:
 spec:
   waf:
     enable: true
-    apPolicy: "hapi-waf-default-swagger-enforcement-blocking-policy"
+    apPolicy: "hapi-waf-default-swagger-enforcement-bot-blocking-policy"
     securityLogs:
       - enable: true
         apLogConf: "hapi-waf-log-policy"
