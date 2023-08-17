@@ -2826,9 +2826,12 @@ prometheus:
     ## port to 2379 and allow etcd scraping provided it is running on all Kubernetes master nodes
     ##
     additionalScrapeConfigs: []
-    # - job_name: kube-etcd
-    #   kubernetes_sd_configs:
-    #     - role: node
+    - job_name: scrape-node-metrics
+      kubernetes_sd_configs:
+        - role: node
+    - job_name: scrape-pod-metrics
+      kubernetes_sd_configs:
+        - role: pod
     #   scheme: https
     #   tls_config:
     #     ca_file:   /etc/prometheus/secrets/etcd-client-cert/etcd-ca
