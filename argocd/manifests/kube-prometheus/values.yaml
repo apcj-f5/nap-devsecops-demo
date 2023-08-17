@@ -2825,10 +2825,13 @@ prometheus:
     ## The scrape configuration example below will find master nodes, provided they have the name .*mst.*, relabel the
     ## port to 2379 and allow etcd scraping provided it is running on all Kubernetes master nodes
     ##
-    additionalScrapeConfigs: []
-    # - job_name: kube-etcd
-    #   kubernetes_sd_configs:
-    #     - role: node
+    additionalScrapeConfigs:
+      - job_name: scrape-node-metrics
+        kubernetes_sd_configs:
+          - role: node
+      - job_name: scrape-pod-metrics
+        kubernetes_sd_configs:
+          - role: pod
     #   scheme: https
     #   tls_config:
     #     ca_file:   /etc/prometheus/secrets/etcd-client-cert/etcd-ca
@@ -3175,7 +3178,6 @@ prometheus:
 ## Explicit list of namespace names to select
 ##
 # matchNames: []
-
 ## Endpoints of the selected pods to be monitored
 ## https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/api.md#podmetricsendpoint
 ##
