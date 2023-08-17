@@ -2489,7 +2489,7 @@ prometheus:
     ## Defaults to 30s.
     ## ref: https://github.com/prometheus-operator/prometheus-operator/blob/release-0.44/pkg/prometheus/promcfg.go#L180-L183
     ##
-    scrapeInterval: ""
+    scrapeInterval: "15s"
     ## Number of seconds to wait for target to respond before erroring
     ##
     scrapeTimeout: ""
@@ -3127,7 +3127,7 @@ prometheus:
 
   ## Interval at which metrics should be scraped
   ##
-  #   interval: 30s
+     interval: 15s
 
   ## HTTP path to scrape for metrics
   ##
