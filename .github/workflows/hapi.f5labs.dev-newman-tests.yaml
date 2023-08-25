@@ -22,7 +22,7 @@ jobs:
           status: pending
           context: ${{ github.workflow }}
       - name: Checkout repository
-        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
       - uses: matt-ball/newman-action@d4b17b1f5b137507e65c9426171155f95caec012 # master
         with:
           collection: tests/hapi/hapi-newman-tests-collection.json
