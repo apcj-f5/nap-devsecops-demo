@@ -2,7 +2,7 @@ namespace: nginx-ingress
 helmCharts:
   - name: nginx-ingress
     repo: https://helm.nginx.com/stable
-    version: 0.18.1
+    version: 0.18.0
     releaseName: nginx-ingress
     namespace: nginx-ingress
     includeCRDs: true
