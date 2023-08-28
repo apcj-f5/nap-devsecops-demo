@@ -1,0 +1,8 @@
+---
+namespace: securecodebox
+helmCharts:
+  - name: secureCodeBox
+    repo: https://charts.securecodebox.io
+    namespace: securecodebox
+    includeCRDs: true
+    valuesFile: values.yaml
