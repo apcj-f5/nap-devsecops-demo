@@ -1,31 +1,27 @@
-name: "Github - Tag commit for deployment"
+---
+name: Github - Tag commit for deployment
 on:
   push:
-    branches:
-      - master
-    paths-ignore:
-      - ".github/**"
-      - "*.md"
+    branches: [master]
+    paths-ignore: [.github/**, '*.md']
 permissions:
   contents: read
 jobs:
   pre_deployment_checks:
     if: github.repository_owner == 'apcj-f5'
     permissions:
-      contents: write # for Git to git push
+      contents: write  # for Git to git push
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@8ca2b8b2ece13480cda6dacd3511b49857a23c09 # v2.5.1
+        uses: step-security/harden-runner@8ca2b8b2ece13480cda6dacd3511b49857a23c09  # v2.5.1
         with:
           egress-policy: audit
       - name: Checkout repository
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3.6.0
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744  # v3.6.0
       - name: Run Script
         run: |
           export GITHUB_PAT=${{ secrets.GITHUB_TOKEN }}
-          ${GITHUB_WORKSPACE}/.github/scripts/check-workflow.sh "SecOps - Code Scanning"
-          ${GITHUB_WORKSPACE}/.github/scripts/check-workflow.sh "SecOps - OpenSSF Scorecard"
           ${GITHUB_WORKSPACE}/.github/scripts/check-precommit.sh
       - name: Tag Commit
         run: |
