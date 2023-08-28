@@ -1,7 +1,7 @@
 ---
 namespace: securecodebox
 helmCharts:
-  - name: secureCodeBox
+  - name: operator
     repo: https://charts.securecodebox.io
     namespace: securecodebox
     includeCRDs: true
