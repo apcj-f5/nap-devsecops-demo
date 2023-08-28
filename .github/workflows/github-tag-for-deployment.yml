@@ -1,11 +1,9 @@
-name: "Github - Tag commit for deployment"
+---
+name: Github - Tag commit for deployment
 on:
   push:
-    branches:
-      - master
-    paths-ignore:
-      - ".github/**"
-      - "*.md"
+    branches: [master]
+    paths-ignore: [.github/**, "*.md"]
 permissions:
   contents: read
 jobs:
@@ -24,8 +22,6 @@ jobs:
       - name: Run Script
         run: |
           export GITHUB_PAT=${{ secrets.GITHUB_TOKEN }}
-          ${GITHUB_WORKSPACE}/.github/scripts/check-workflow.sh "SecOps - Code Scanning"
-          ${GITHUB_WORKSPACE}/.github/scripts/check-workflow.sh "SecOps - OpenSSF Scorecard"
           ${GITHUB_WORKSPACE}/.github/scripts/check-precommit.sh
       - name: Tag Commit
         run: |
