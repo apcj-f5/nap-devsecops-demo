@@ -1,12 +1,11 @@
----
 apiVersion: k8s.nginx.org/v1alpha1
 kind: TransportServer
 metadata:
   name: mqtt
 spec:
   host: mqtt.f5labs.dev
-  streamSnippets: mqtt on;
-  serverSnippets: listen 1883;
+  # streamSnippets: mqtt on;
+  # serverSnippets: listen 1883;
   upstreams:
     - name: emqx-core
       service: emqx-listeners
