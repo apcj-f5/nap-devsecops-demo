@@ -1,8 +1,9 @@
+---
 namespace: mqtt
 helmCharts:
-  - name: emqx-operator
+  - name: emqx
     repo: https://repos.emqx.io/charts
     namespace: mqtt
     includeCRDs: true
-    # valuesFile: values.yaml
-resources: [emqx.yaml]
+    valuesFile: values.yaml
+# resources: [emqx.yaml]
