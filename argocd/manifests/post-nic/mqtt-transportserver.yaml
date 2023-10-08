@@ -12,5 +12,5 @@ spec:
     - name: emqx-core
       service: emqx-listeners
       port: 1883
-    - action:
-        pass: emqx-core
+  action:
+    pass: emqx-core
