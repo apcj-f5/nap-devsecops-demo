@@ -1,3 +1,4 @@
+---
 namespace: nginx-ingress
 helmCharts:
   - name: nginx-ingress
@@ -10,5 +11,5 @@ helmCharts:
 resources:
   - nginx-regcred.yaml
   - tls.yaml
-patchesStrategicMerge:
-  - configmap.yaml
+  - mqtt-globalconfiguration.yaml
+patchesStrategicMerge: [configmap.yaml]
