@@ -27,14 +27,6 @@ controller:
   config:
     name: nginx-config
   setAsDefaultIngress: true
-  controller:
-  globalConfiguration:
-    create: true
-    spec:
-      listeners:
-        - name: mqtt
-          port: 1883
-          protocol: TCP
   service:
     type: NodePort
     httpPort:
@@ -45,3 +37,10 @@ controller:
     secret: nginx-ingress/f5labs.dev
   wildcardTLS:
     secret: nginx-ingress/f5labs.dev
+  globalConfiguration:
+    create: true
+    spec:
+      listeners:
+        - name: mqtt
+          port: 1883
+          protocol: TCP
