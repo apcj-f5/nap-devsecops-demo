@@ -7,5 +7,8 @@ helmCharts:
     namespace: nginx-ingress
     includeCRDs: true
     valuesFile: values.yaml
-resources: [nginx-regcred.yaml, tls.yaml]
+resources:
+  - nginx-regcred.yaml
+  - tls.yaml
+  - mqtt-globalconfiguration.yaml
 patchesStrategicMerge: [configmap.yaml]
