@@ -1,3 +1,4 @@
+---
 ## Default values for emqx.
 ## This is a YAML-formatted file.
 ## Declare variables to be passed into your templates.
@@ -8,7 +9,7 @@ image:
   repository: emqx/emqx
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "5.3"
+  tag: "5.1"
   ## Optionally specify an array of imagePullSecrets.
   ## Secrets must be manually created in the namespace.
   ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
@@ -218,7 +219,7 @@ containerSecurityContext:
   runAsNonRoot: true
   runAsUser: 1000
 metrics:
-  enabled: true
+  enabled: false
   type: prometheus
 ssl:
   enabled: false
