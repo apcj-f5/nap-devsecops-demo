@@ -1,0 +1,18 @@
+---
+apiVersion: k8s.nginx.org/v1alpha1
+kind: TransportServer
+metadata:
+  name: mqtt
+  namepsace: mqtt
+spec:
+  listener:
+    name: mqtt
+    protocol: TCP
+  # streamSnippets: mqtt on;
+  # serverSnippets: listen 1883;
+  upstreams:
+    - name: emqx-core
+      service: emqx-listeners
+      port: 1883
+  action:
+    pass: emqx-core
