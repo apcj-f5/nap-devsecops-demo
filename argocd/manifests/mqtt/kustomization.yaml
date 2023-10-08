@@ -6,4 +6,5 @@ helmCharts:
     namespace: mqtt
     includeCRDs: true
     valuesFile: values.yaml
-# resources: [emqx.yaml]
+resources:
+  - transport-server-mqtt.yaml
