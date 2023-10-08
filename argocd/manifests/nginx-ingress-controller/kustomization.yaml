@@ -1,4 +1,3 @@
----
 namespace: nginx-ingress
 helmCharts:
   - name: nginx-ingress
@@ -8,8 +7,5 @@ helmCharts:
     namespace: nginx-ingress
     includeCRDs: true
     valuesFile: values.yaml
-resources:
-  - nginx-regcred.yaml
-  - tls.yaml
-  - mqtt-globalconfiguration.yaml
+resources: [nginx-regcred.yaml, tls.yaml]
 patchesStrategicMerge: [configmap.yaml]
