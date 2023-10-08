@@ -9,8 +9,8 @@ spec:
   # streamSnippets: mqtt on;
   # serverSnippets: listen 1883;
   upstreams:
-    - name: emqx-core
-      service: emqx-listeners
+    - name: mqtt/emqx-core
+      service: mqtt/emqx-listeners
       port: 1883
   action:
-    pass: emqx-core
+    pass: mqtt/emqx-core
