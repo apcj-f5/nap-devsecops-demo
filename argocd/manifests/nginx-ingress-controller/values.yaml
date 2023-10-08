@@ -9,6 +9,7 @@ controller:
   nginxplus: true
   enableSnippets: true
   enableLatencyMetrics: true
+  enableCustomResources: true
   serviceInsight:
     create: true
     port: 9114
