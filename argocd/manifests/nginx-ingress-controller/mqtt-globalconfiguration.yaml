@@ -1,8 +1,9 @@
+---
 apiVersion: k8s.nginx.org/v1alpha1
 kind: GlobalConfiguration
 metadata:
-  name: mqtt-listener
-  namespace: mqtt
+  name: nginx-configuration
+  namespace: nginx-ingress
 spec:
   listeners:
     - name: mqtt
