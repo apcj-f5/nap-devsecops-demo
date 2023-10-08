@@ -27,14 +27,6 @@ controller:
   config:
     name: nginx-config
   setAsDefaultIngress: true
-  controller:
-  globalConfiguration:
-    create: true
-    spec:
-      listeners:
-        - name: mqtt
-          port: 1883
-          protocol: TCP
   service:
     type: NodePort
     httpPort:
