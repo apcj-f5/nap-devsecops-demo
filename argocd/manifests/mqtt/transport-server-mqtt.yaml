@@ -1,9 +1,8 @@
----
 apiVersion: k8s.nginx.org/v1alpha1
 kind: TransportServer
 metadata:
   name: mqtt
-  namepsace: mqtt
+  namespace: mqtt
 spec:
   listener:
     name: mqtt
