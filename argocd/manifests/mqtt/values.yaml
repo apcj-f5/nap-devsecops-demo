@@ -1,4 +1,3 @@
----
 ## Default values for emqx.
 ## This is a YAML-formatted file.
 ## Declare variables to be passed into your templates.
@@ -22,7 +21,7 @@ serviceAccount:
   create: true
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
-  name: ""
+  name: mqtt
   # Annotations to add to the service account
   annotations: {}
 # The name of a secret in the same kubernetes namespace which contains values to
@@ -32,7 +31,7 @@ serviceAccount:
 # envFromSecret: "emqx-secrets"
 
 ## Forces the recreation of pods during helm upgrades. This can be useful to update configuration values even if the container image did not change.
-recreatePods: false
+recreatePods: true
 ## Sets the minReadySeconds parameter on the stateful set. This can be used to add delay between restart / updates between the single pods.
 minReadySeconds:
 clusterDomain: cluster.local
@@ -111,11 +110,11 @@ emqxConfig:
   EMQX_CLUSTER__DISCOVERY_STRATEGY: dns
   EMQX_DASHBOARD__DEFAULT_USERNAME: admin
   EMQX_DASHBOARD__DEFAULT_PASSWORD: public
-  DEV_LISTENERS__TCP__DEFAULT__BIND: 1883
+  # DEV_LISTENERS__TCP__DEFAULT__BIND: 1883
 ## EMQX Enterprise Edition requires manual creation of a Secret containing the licensed content. Write the name of Secret to the value of "emqxLicenseSecretName"
 ## Example:
 ##   kubectl create secret generic emqx-license-secret-name --from-file=/path/to/emqx.lic
-emqxLicenseSecretName:
+# emqxLicenseSecretName:
 service:
   ## Service type
   ##
