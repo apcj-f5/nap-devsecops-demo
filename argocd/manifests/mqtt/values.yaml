@@ -1,3 +1,4 @@
+---
 ## Default values for emqx.
 ## This is a YAML-formatted file.
 ## Declare variables to be passed into your templates.
@@ -110,6 +111,8 @@ emqxConfig:
   EMQX_CLUSTER__DISCOVERY_STRATEGY: dns
   EMQX_DASHBOARD__DEFAULT_USERNAME: admin
   EMQX_DASHBOARD__DEFAULT_PASSWORD: public
+  EMQX_NAME: emqx-5.1.x
+  EMQX_MANAGEMENT__LISTENER__HTTP: 9000
   # DEV_LISTENERS__TCP__DEFAULT__BIND: 1883
 ## EMQX Enterprise Edition requires manual creation of a Secret containing the licensed content. Write the name of Secret to the value of "emqxLicenseSecretName"
 ## Example:
@@ -129,6 +132,7 @@ service:
   ##
   mqttssl: 8883
   ## Port for Management
+  ##
   mgmt: 8081
   ## Port for WebSocket/HTTP
   ##
