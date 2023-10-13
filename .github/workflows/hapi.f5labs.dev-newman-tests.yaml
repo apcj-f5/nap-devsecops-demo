@@ -15,7 +15,7 @@ jobs:
           egress-policy: block
           allowed-endpoints: api.github.com:443 github.com:443 hapi.f5labs.dev:443
       - name: Set commit status as pending
-        uses: myrotvorets/set-commit-status-action@0279ab0b883cc23e340b1edb98f585655516ae3e # master
+        uses: myrotvorets/set-commit-status-action@1f65b503baf942683e5b79059a18530d783318e6 # master
         with:
           sha: ${{ github.sha }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -28,7 +28,7 @@ jobs:
           collection: tests/hapi/hapi-newman-tests-collection.json
           environment: tests/hapi/hapi-newman-tests-environment.json
       - name: Set final commit status
-        uses: myrotvorets/set-commit-status-action@0279ab0b883cc23e340b1edb98f585655516ae3e # master
+        uses: myrotvorets/set-commit-status-action@1f65b503baf942683e5b79059a18530d783318e6 # master
         if: always()
         with:
           sha: ${{ github.sha }}
