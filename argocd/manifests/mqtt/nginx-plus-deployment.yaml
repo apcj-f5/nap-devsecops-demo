@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.31.2 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: nginx-plus
+  name: nginx-plus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: nginx-plus
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.31.2 (HEAD)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/mqtt-lb-nginx-plus-default: "true"
+        io.kompose.service: nginx-plus
+    spec:
+      containers:
+        - image: nginxplus
+          name: nginx-plus
+          ports:
+            - containerPort: 1883
+              hostPort: 1883
+              protocol: TCP
+            - containerPort: 8883
+              hostPort: 8883
+              protocol: TCP
+            - containerPort: 8083
+              hostPort: 8083
+              protocol: TCP
+            - containerPort: 8084
+              hostPort: 8084
+              protocol: TCP
+            - containerPort: 8888
+              hostPort: 8888
+              protocol: TCP
+          resources: {}
+          volumeMounts:
+            - mountPath: /etc/nginx/nginx.conf
+              name: nginx-plus-claim0
+            - mountPath: /etc/nginx/certs
+              name: nginx-plus-claim1
+      restartPolicy: Always
+      volumes:
+        - name: nginx-plus-claim0
+          persistentVolumeClaim:
+            claimName: nginx-plus-claim0
+        - name: nginx-plus-claim1
+          persistentVolumeClaim:
+            claimName: nginx-plus-claim1
+status: {}
