@@ -1,8 +1,0 @@
-namespace: mqtt
-helmCharts:
-  - name: emqx
-    repo: https://repos.emqx.io/charts
-    namespace: mqtt
-    includeCRDs: true
-    valuesFile: values.yaml
-resources: [transport-server-mqtt.yaml, virtual-server-mqtt.yaml]
