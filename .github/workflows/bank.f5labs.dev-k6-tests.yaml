@@ -15,7 +15,7 @@ jobs:
           egress-policy: block
           allowed-endpoints: api.github.com:443 github.com:443 bank.f5labs.dev:443
       - name: Set commit status as pending
-        uses: myrotvorets/set-commit-status-action@1f65b503baf942683e5b79059a18530d783318e6 # master
+        uses: myrotvorets/set-commit-status-action@6c2d4f293a3b112ae3babc816ac37d182747de4f # master
         with:
           sha: ${{ github.sha }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -29,7 +29,7 @@ jobs:
           filename: tests/bank/bank-k6-tests-baseline.js
           flags: --vus 50 --duration 10s
       - name: Set final commit status
-        uses: myrotvorets/set-commit-status-action@1f65b503baf942683e5b79059a18530d783318e6 # master
+        uses: myrotvorets/set-commit-status-action@6c2d4f293a3b112ae3babc816ac37d182747de4f # master
         if: always()
         with:
           sha: ${{ github.sha }}
