@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.31.2 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: emqx1
+  name: emqx1
+spec:
+  ports:
+    - name: "18083"
+      port: 18083
+      targetPort: 18083
+  selector:
+    io.kompose.service: emqx1
+status:
+  loadBalancer: {}

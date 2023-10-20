@@ -15,21 +15,21 @@ jobs:
           egress-policy: block
           allowed-endpoints: api.github.com:443 github.com:443 bank.f5labs.dev:443
       - name: Set commit status as pending
-        uses: myrotvorets/set-commit-status-action@1f65b503baf942683e5b79059a18530d783318e6 # master
+        uses: myrotvorets/set-commit-status-action@6c2d4f293a3b112ae3babc816ac37d182747de4f # master
         with:
           sha: ${{ github.sha }}
           token: ${{ secrets.GITHUB_TOKEN }}
           status: pending
           context: ${{ github.workflow }}
       - name: Checkout repository
-        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - name: Run k6 baseline test
         uses: grafana/k6-action@v0.3.0
         with:
           filename: tests/bank/bank-k6-tests-baseline.js
           flags: --vus 50 --duration 10s
       - name: Set final commit status
-        uses: myrotvorets/set-commit-status-action@1f65b503baf942683e5b79059a18530d783318e6 # master
+        uses: myrotvorets/set-commit-status-action@6c2d4f293a3b112ae3babc816ac37d182747de4f # master
         if: always()
         with:
           sha: ${{ github.sha }}
