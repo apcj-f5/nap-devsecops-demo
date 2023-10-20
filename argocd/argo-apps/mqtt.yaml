@@ -14,12 +14,12 @@ spec:
     namespace: mqtt
     server: https://kubernetes.default.svc
   syncPolicy:
-automated:
-  prune: true
-  selfHeal: true
-  allowEmpty: true
-  syncOptions:
-    - CreateNamespace=true
-    - ApplyOutOfSyncOnly=true
-    - Replace=false
-    - ServerSideApply=true
+    automated:
+      prune: true
+      selfHeal: true
+      allowEmpty: true
+      syncOptions:
+        - CreateNamespace=true
+        - ApplyOutOfSyncOnly=true
+        - Replace=false
+        - ServerSideApply=true
