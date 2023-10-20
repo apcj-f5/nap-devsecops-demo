@@ -2087,7 +2087,7 @@ prometheusOperator:
   thanosImage:
     registry: quay.io
     repository: thanos/thanos
-    tag: v0.32.4
+    tag: v0.32.5
     sha: ""
   ## Set a Label Selector to filter watched prometheus and prometheusAgent
   ##
@@ -2508,7 +2508,7 @@ prometheus:
     image:
       registry: quay.io
       repository: prometheus/prometheus
-      tag: v2.47.1
+      tag: v2.47.2
       sha: ""
     ## Tolerations for use with node taints
     ## ref: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
@@ -3336,7 +3336,7 @@ thanosRuler:
     image:
       registry: quay.io
       repository: thanos/thanos
-      tag: v0.32.4
+      tag: v0.32.5
       sha: ""
     ## Namespaces to be selected for PrometheusRules discovery.
     ## If nil, select own namespace. Namespaces to be selected for ServiceMonitor discovery.
