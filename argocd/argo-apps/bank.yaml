@@ -3,8 +3,7 @@ kind: Application
 metadata:
   name: bank
   namespace: argocd
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  finalizers: [resources-finalizer.argocd.argoproj.io]
 spec:
   project: default
   source:
@@ -21,5 +20,4 @@ spec:
       prune: true
       selfHeal: true
       allowEmpty: true
-    syncOptions:
-      - CreateNamespace=true
+    syncOptions: [CreateNamespace=true]
