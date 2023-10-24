@@ -1,4 +1,3 @@
----
 controller:
   hostNetwork: true
   strategy:
@@ -36,10 +35,10 @@ controller:
         - name: mqtt
           port: 1883
           protocol: TCP
-          # service:
-      # type: NodePort
-      # httpPort:
-      # nodePort: 30080
+  service:
+    type: ClusterIP
+    # httpPort:
+    # nodePort: 30080
   # httpsPort:
   # nodePort: 30443
   defaultTLS:
