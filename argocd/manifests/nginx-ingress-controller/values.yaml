@@ -36,12 +36,12 @@ controller:
         - name: mqtt
           port: 1883
           protocol: TCP
-  service:
-    type: NodePort
-    httpPort:
-      nodePort: 30080
-    httpsPort:
-      nodePort: 30443
+          # service:
+      # type: NodePort
+      # httpPort:
+      # nodePort: 30080
+  # httpsPort:
+  # nodePort: 30443
   defaultTLS:
     secret: nginx-ingress/f5labs.dev
   wildcardTLS:
