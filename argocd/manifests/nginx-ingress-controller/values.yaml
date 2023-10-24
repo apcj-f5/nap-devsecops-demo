@@ -12,9 +12,9 @@ controller:
   enableCustomResources: true
   serviceInsight:
     create: true
-    port: 9114
-    secret: nginx-ingress/f5labs.dev
-    scheme: http
+    # port: 9114
+    # secret: nginx-ingress/f5labs.dev
+    # scheme: http
   nginxStatus:
     allowCidrs: 0.0.0.0/0
   appprotect:
@@ -28,13 +28,13 @@ controller:
   config:
     name: nginx-config
   setAsDefaultIngress: true
-  globalConfiguration:
-    create: true
-    spec:
-      listeners:
-        - name: mqtt
-          port: 1883
-          protocol: TCP
+  # globalConfiguration:
+  # create: true
+  # spec:
+  # listeners:
+  # - name: mqtt
+  # port: 1883
+  # protocol: TCP
   service:
     type: ClusterIP
     # httpPort:
