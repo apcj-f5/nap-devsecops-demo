@@ -5,7 +5,7 @@ metadata:
 spec:
   waf:
     enable: true
-    apPolicy: "bank-waf-server-technologies-blocking-policy"
+    apPolicy: "bank-waf-transparent-policy"
     securityLogs:
       - enable: true
         apLogConf: "bank-waf-log-policy"
