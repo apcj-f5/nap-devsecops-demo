@@ -10,6 +10,6 @@ spec:
     applicationLanguage: utf-8
     enforcementMode: blocking
     server-technologies:
-      - Python
-      - PostgreSQL
-      - Spring Boot
+      - "Python"
+      - "PostgreSQL"
+      - "Spring Boot"
