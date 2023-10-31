@@ -1,0 +1,48 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-case-conflict
+        name: "**CHECK** Case conflict"
+      - id: check-added-large-files
+        name: "**CHECK** Large files"
+        args: ["--maxkb=5120"]
+      - id: check-executables-have-shebangs
+        name: "**CHECK** Executables for shebangs"
+      - id: check-merge-conflict
+        name: "**CHECK** Merge conflicts"
+      - id: check-symlinks
+        name: "**CHECK** Symlinks"
+      - id: end-of-file-fixer
+        name: "**CHECK** End of files"
+      - id: trailing-whitespace
+        name: "**CHECK** Trailing whitespace"
+      - id: check-yaml
+        name: "**CHECK** YAML linter"
+        args: ["--allow-multiple-documents"]
+      - id: check-toml
+        name: "**CHECK** TOML linter"
+      - id: check-json
+        name: "**CHECK** JSON linter"
+      - id: check-xml
+        name: "**CHECK** XML linter"
+      - id: requirements-txt-fixer
+        name: "**CHECK** Text linter"
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v3.0.3
+    hooks:
+      - id: prettier
+        name: "**CHECK** General linter"
+        files: \.(js|ts|jsx|tsx|css|less|html|json|markdown|md|yaml|yml)$
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.0
+    hooks:
+      - id: gitleaks
+        name: "**CHECK** Hardcoded secrets"
+        description: Detect hardcoded secrets using Gitleaks
+        entry: gitleaks protect --verbose --redact --staged
+        language: golang
+        pass_filenames: false
+ci:
+  autofix_prs: false
+  submodules: false
