@@ -1,0 +1,13 @@
+apiVersion: appprotect.f5.com/v1beta1
+kind: APPolicy
+metadata:
+  name: "bank-waf-server-technologies-blocking-policy"
+spec:
+  policy:
+    name: "bank-waf-server-technologies-blocking-policy"
+    template:
+      name: POLICY_TEMPLATE_NGINX_BASE
+    applicationLanguage: utf-8
+    enforcementMode: blocking
+    server-technologies:
+      - serverTechnologyName: "Python, PostgreSQL, Spring Boot"
