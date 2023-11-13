@@ -1,0 +1,7 @@
+namespace: crapi
+helmCharts:
+  - name: crapi
+    repo: https://github.com/OWASP/crAPI/blob/develop/deploy/helm/
+    namespace: crapi
+    includeCRDs: true
+    valuesFile: values.yaml
