@@ -21,5 +21,6 @@ spec:
       syncOptions:
         # - CreateNamespace=true
         - ApplyOutOfSyncOnly=true
-      # - Replace=false
-      # - ServerSideApply=true
+      # syncOptions:
+      # - CreateNamespace=true
+      # - ApplyOutOfSyncOnly=true
