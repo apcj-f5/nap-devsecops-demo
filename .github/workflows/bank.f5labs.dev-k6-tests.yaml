@@ -24,7 +24,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - name: Run k6 baseline test
-        uses: grafana/k6-action@v0.3.0
+        uses: grafana/k6-action@v0.3.1
         with:
           filename: tests/bank/bank-k6-tests-baseline.js
           flags: --vus 50 --duration 10s
