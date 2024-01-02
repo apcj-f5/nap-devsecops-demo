@@ -1,9 +1,8 @@
----
 apiVersion: bitnami.com/v1alpha1
 kind: SealedSecret
 metadata:
   creationTimestamp: null
-  name: newregcred
+  name: regcred
   namespace: nginx-ingress
 spec:
   encryptedData:
@@ -11,6 +10,6 @@ spec:
   template:
     metadata:
       creationTimestamp: null
-      name: newregcred
+      name: regcred
       namespace: nginx-ingress
     type: kubernetes.io/dockerconfigjson
