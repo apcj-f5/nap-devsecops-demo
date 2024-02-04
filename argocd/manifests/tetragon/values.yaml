@@ -161,7 +161,7 @@ tetragonOperator:
   image:
     override: ~
     repository: quay.io/cilium/tetragon-operator
-    tag: v1.0.0
+    tag: v1.0.2
     # tetragon-operator image-digest
     suffix: ""
     pullPolicy: IfNotPresent
