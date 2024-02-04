@@ -22,7 +22,7 @@ jobs:
         with:
           ref: master
       - name: ZAP Scan
-        uses: zaproxy/action-api-scan@v0.5.0
+        uses: zaproxy/action-api-scan@v0.6.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           docker_name: "owasp/zap2docker-stable"
