@@ -21,7 +21,7 @@ jobs:
         uses: zaproxy/action-full-scan@v0.8.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          docker_name: "owasp/zap2docker-stable"
+          docker_name: "ghcr.io/zaproxy/zaproxy:stable"
           target: "https://hapi.f5labs.dev"
           issue_title: "hapi.f5labs.dev - OWASP ZAP Full Scan"
           fail_action: "true"
