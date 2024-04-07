@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mqtt
+  name: crapi
   namespace: argocd
   finalizers: [resources-finalizer.argocd.argoproj.io]
 spec:
@@ -9,17 +9,13 @@ spec:
   sources:
     - repoURL: https://github.com/apcj-f5/nap-devsecops-demo.git
       targetRevision: deploy
-      path: argocd/manifests/mqtt
+      path: argocd/manifests/crapi
   destination:
-    namespace: mqtt
+    namespace: crapi
     server: https://kubernetes.default.svc
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
       allowEmpty: true
-      syncOptions:
-        - CreateNamespace=true
-        - ApplyOutOfSyncOnly=true
-        - Replace=false
-        - ServerSideApply=true
+      syncOptions: [CreateNamespace=true]

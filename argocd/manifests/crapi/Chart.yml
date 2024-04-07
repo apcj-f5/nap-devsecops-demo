@@ -1,0 +1,8 @@
+apiVersion: v2
+name: crapi
+tpe: application
+version: 0.1.1
+dependencies:
+  - name: crapi
+    version: 0.1.1
+    repository: "https://github.com/OWASP/crAPI/tree/develop/deploy/helm"

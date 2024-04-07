@@ -9,13 +9,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Harden Runner
-        uses: step-security/harden-runner@1b05615854632b887b69ae1be8cbefe72d3ae423 # v2.6.0
+        uses: step-security/harden-runner@eb238b55efaa70779f274895e782ed17c84f2895 # v2.6.1
         with:
           disable-sudo: true
           egress-policy: block
           allowed-endpoints: api.github.com:443 github.com:443 bank.f5labs.dev:443
       - name: Set commit status as pending
-        uses: myrotvorets/set-commit-status-action@3b2aa8bb09b0a920d68a9b09adebca014d4c8cf0 # master
+        uses: myrotvorets/set-commit-status-action@f18bd4b4a6b34cd21680107325c62ece880da854 # master
         with:
           sha: ${{ github.sha }}
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -24,12 +24,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - name: Run k6 baseline test
-        uses: grafana/k6-action@v0.3.0
+        uses: grafana/k6-action@v0.3.1
         with:
           filename: tests/bank/bank-k6-tests-baseline.js
           flags: --vus 50 --duration 10s
       - name: Set final commit status
-        uses: myrotvorets/set-commit-status-action@3b2aa8bb09b0a920d68a9b09adebca014d4c8cf0 # master
+        uses: myrotvorets/set-commit-status-action@f18bd4b4a6b34cd21680107325c62ece880da854 # master
         if: always()
         with:
           sha: ${{ github.sha }}
