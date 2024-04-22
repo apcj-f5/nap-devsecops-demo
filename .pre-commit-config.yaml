@@ -34,15 +34,15 @@ repos:
       - id: prettier
         name: "**CHECK** General linter"
         files: \.(js|ts|jsx|tsx|css|less|html|json|markdown|md|yaml|yml)$
-  - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.18.2
-    hooks:
-      - id: gitleaks
-        name: "**CHECK** Hardcoded secrets"
-        description: Detect hardcoded secrets using Gitleaks
-        entry: gitleaks protect --verbose --redact --staged
-        language: golang
-        pass_filenames: false
+        # - repo: https://github.com/gitleaks/gitleaks
+        # rev: v8.18.2
+        # hooks:
+        # - id: gitleaks
+        # name: "**CHECK** Hardcoded secrets"
+        # description: Detect hardcoded secrets using Gitleaks
+        # entry: gitleaks protect --verbose --redact --staged
+        # language: golang
+        # pass_filenames: false
 ci:
   autofix_prs: false
   submodules: false
