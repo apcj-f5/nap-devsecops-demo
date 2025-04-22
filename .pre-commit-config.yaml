@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v5.0.0
     hooks:
       - id: check-case-conflict
         name: "**CHECK** Case conflict"
@@ -29,13 +29,13 @@ repos:
       - id: requirements-txt-fixer
         name: "**CHECK** Text linter"
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v3.1.0
+    rev: v4.0.0-alpha.8
     hooks:
       - id: prettier
         name: "**CHECK** General linter"
         files: \.(js|ts|jsx|tsx|css|less|html|json|markdown|md|yaml|yml)$
   - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.18.0
+    rev: v8.24.3
     hooks:
       - id: gitleaks
         name: "**CHECK** Hardcoded secrets"
