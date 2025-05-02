@@ -1,10 +1,10 @@
 apiVersion: appprotect.f5.com/v1beta1
 kind: APPolicy
 metadata:
-  name: "bank-waf-default-blocking-policy"
+  name: "bank-waf-default-blocking-403-respnose-policy"
 spec:
   policy:
-    name: "bank-waf-default-blocking-policy"
+    name: "bank-waf-default-blocking-403-response-policy"
     template:
       name: POLICY_TEMPLATE_NGINX_BASE
     applicationLanguage: utf-8
