@@ -2,7 +2,7 @@ namespace: grafana
 helmCharts:
   - name: kube-prometheus-stack
     repo: https://prometheus-community.github.io/helm-charts
-    version: 70.8.0
+    version: 70.10.0
     releaseName: kube-prometheus-stack
     namespace: grafana
     includeCRDs: true
