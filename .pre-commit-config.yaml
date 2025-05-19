@@ -35,7 +35,7 @@ repos:
         name: "**CHECK** General linter"
         files: \.(js|ts|jsx|tsx|css|less|html|json|markdown|md|yaml|yml)$
   - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.24.3
+    rev: v8.26.0
     hooks:
       - id: gitleaks
         name: "**CHECK** Hardcoded secrets"
