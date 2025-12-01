@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v5.0.0
+    rev: v6.0.0
     hooks:
       - id: check-case-conflict
         name: "**CHECK** Case conflict"
@@ -35,7 +35,7 @@ repos:
         name: "**CHECK** General linter"
         files: \.(js|ts|jsx|tsx|css|less|html|json|markdown|md|yaml|yml)$
   - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.24.3
+    rev: v8.30.0
     hooks:
       - id: gitleaks
         name: "**CHECK** Hardcoded secrets"
